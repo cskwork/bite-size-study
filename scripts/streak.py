@@ -9,6 +9,7 @@ GitHub 잔디처럼 "깨기 아까운" 연속 기록이 행동 유지의 핵심.
 from __future__ import annotations
 
 import json
+import sys
 from calendar import monthrange
 from datetime import date, timedelta
 from pathlib import Path
@@ -164,8 +165,6 @@ def show_weekly_heatmap() -> None:
 
 
 def main() -> None:
-    import sys
-
     args = sys.argv[1:]
     command = args[0] if args else "all"
 

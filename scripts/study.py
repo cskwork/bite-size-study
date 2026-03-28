@@ -415,12 +415,13 @@ def _run_interactive_session(
             "study_count": progress["cards"].get(card["id"], {}).get("study_count", 0) + 1,
         }
         updated_cards = {**progress["cards"], card["id"]: card_progress}
+        new_total_xp = progress["total_xp"] + total_xp
         progress = {
             **progress,
             "cards": updated_cards,
-            "total_xp": progress["total_xp"] + total_xp,
+            "total_xp": new_total_xp,
+            "level": calc_level(new_total_xp),
         }
-        progress["level"] = calc_level(progress["total_xp"])
 
         results.append({"card_id": card["id"], "xp": total_xp, "correct": quiz_correct})
         studied_cards.append(card)
@@ -491,9 +492,10 @@ def main() -> None:
         show_progress()
     elif args[0] == "cards":
         cards = load_all_cards()
+        studied = load_progress()["cards"]
         console.print(f"\n  총 {len(cards)}장의 카드가 있습니다.\n")
         for card in cards:
-            status = "✓" if card["id"] in load_progress()["cards"] else "○"
+            status = "✓" if card["id"] in studied else "○"
             console.print(f"  {status} [{card.get('subject', '?')}] {card['title']} ({card['id']})")
     else:
         console.print("[info]사용법: python study.py [start|progress|cards][/]")

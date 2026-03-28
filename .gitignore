@@ -1,5 +1,27 @@
+# Python
 __pycache__/
 *.pyc
+*.pyo
 .pytest_cache/
-data/
 .coverage
+htmlcov/
+
+# Virtual environments
+venv/
+.venv/
+
+# Environment / secrets
+.env
+.env.*
+
+# Runtime data
+data/
+*.log
+
+# macOS
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.swp

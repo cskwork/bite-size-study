@@ -302,6 +302,26 @@ class TestCheckAnswer:
     def test_blank_whitespace_tolerance(self):
         assert check_answer("blank", " 세그먼트 ", "세그먼트") is True
 
+    def test_multi_answer_all_correct(self):
+        """다중 답안: 모든 파트를 쉼표로 구분하여 입력하면 정답."""
+        assert check_answer("blank", "4, 5", "4, 5") is True
+
+    def test_multi_answer_partial_match(self):
+        """다중 답안: 각 파트가 부분 매칭되어도 정답."""
+        assert check_answer("blank", "Degree, Cardinality", "Degree(차수), Cardinality(카디널리티)") is True
+
+    def test_multi_answer_only_one_part(self):
+        """다중 답안: 하나만 입력하면 오답."""
+        assert check_answer("blank", "4", "4, 5") is False
+
+    def test_multi_answer_wrong_order(self):
+        """다중 답안: 순서가 다르면 오답 (빈칸 순서대로 입력해야 함)."""
+        assert check_answer("blank", "5, 4", "4, 5") is False
+
+    def test_multi_answer_wrong_count(self):
+        """다중 답안: 개수가 다르면 오답."""
+        assert check_answer("blank", "4, 5, 6", "4, 5") is False
+
 
 # ══════════════════════════════════════════════════
 #  show 함수 스모크 테스트 (크래시 방지)

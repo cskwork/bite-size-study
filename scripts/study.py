@@ -256,10 +256,23 @@ def show_card(card: dict[str, Any], index: int, total: int) -> None:
 
 
 def check_answer(quiz_type: str, user_answer: str, correct_answer: str) -> bool:
-    """퀴즈 정답을 판정한다. 양방향 부분 매칭 지원."""
+    """퀴즈 정답을 판정한다. 다중 답안(쉼표 구분)은 모든 파트 매칭 필요."""
     if quiz_type == "ox":
         return user_answer.upper() == correct_answer.upper()
-    # choice, blank: 양방향 부분 매칭 (핵심 키워드만 입력해도 정답)
+
+    # 다중 답안 처리: 정답에 쉼표가 있으면 각 파트를 개별 매칭
+    answer_parts = [p.strip().lower() for p in correct_answer.split(",")]
+    if len(answer_parts) > 1:
+        user_parts = [p.strip().lower() for p in user_answer.split(",")]
+        # 사용자 답안 수가 정답 수와 같아야 하고, 각 파트가 매칭되어야 함
+        if len(user_parts) != len(answer_parts):
+            return False
+        return all(
+            up in ap or ap in up
+            for up, ap in zip(user_parts, answer_parts)
+        )
+
+    # 단일 답안: 양방향 부분 매칭 (핵심 키워드만 입력해도 정답)
     user_lower = user_answer.lower().strip()
     answer_lower = correct_answer.lower().strip()
     return user_lower in answer_lower or answer_lower in user_lower
@@ -278,13 +291,17 @@ def run_quiz(card: dict[str, Any]) -> bool:
     console.print()
     console.print(Panel(f"[bold]{question}[/]", title="퀴즈", border_style="yellow"))
 
+    # 다중 답안 힌트
+    answer_parts = [p.strip() for p in answer.split(",")]
+    multi_hint = f" [dim](쉼표로 {len(answer_parts)}개 입력)[/]" if len(answer_parts) > 1 else ""
+
     try:
         if quiz_type == "ox":
             user_answer = Prompt.ask("  O 또는 X", choices=["O", "X", "o", "x"])
         elif quiz_type == "choice":
             user_answer = Prompt.ask("  정답 입력")
         else:  # blank
-            user_answer = Prompt.ask("  빈칸 채우기")
+            user_answer = Prompt.ask(f"  빈칸 채우기{multi_hint}")
     except UnicodeDecodeError:
         console.print("  [warning]입력 인코딩 오류 — 건너뜁니다[/]")
         console.print(f"  정답: [bold]{answer}[/]")

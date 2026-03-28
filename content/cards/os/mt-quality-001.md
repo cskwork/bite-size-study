@@ -3,7 +3,9 @@ id: "mt-quality-001"
 subject: "MT"
 chapter: "quality"
 title: "소프트웨어 품질 특성 — ISO/IEC 25010"
-difficulty: 1
+
+difficulty: 3
+priority: 1
 tags: [품질, ISO25010, 기능적합성, 신뢰성, 사용성, 유지보수성, 이식성]
 quiz:
   type: "choice"

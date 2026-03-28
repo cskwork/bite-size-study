@@ -3,7 +3,9 @@ id: "se-requirements-001"
 subject: "SE"
 chapter: "requirements"
 title: "UML 다이어그램 종류 (구조/행위 분류)"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [UML, 다이어그램, 구조, 행위, 모델링]
 quiz:
   type: "choice"

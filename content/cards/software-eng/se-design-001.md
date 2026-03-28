@@ -3,7 +3,9 @@ id: "se-design-001"
 subject: "SE"
 chapter: "design"
 title: "디자인패턴 - GoF 생성패턴 5가지"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [디자인패턴, GoF, 생성패턴, 객체지향]
 quiz:
   type: "blank"

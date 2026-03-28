@@ -3,7 +3,9 @@ id: "db-sql-002"
 subject: "DB"
 chapter: "sql"
 title: "JOIN 종류 (INNER, LEFT, RIGHT, FULL OUTER, CROSS, SELF)"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [JOIN, INNER JOIN, OUTER JOIN, CROSS JOIN, SELF JOIN, SQL]
 quiz:
   type: "blank"

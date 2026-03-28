@@ -3,7 +3,9 @@ id: "pg-language-001"
 subject: "PG"
 chapter: "language"
 title: "C언어 포인터 기초"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [C언어, 포인터, 주소, 참조, 역참조]
 quiz:
   type: "choice"

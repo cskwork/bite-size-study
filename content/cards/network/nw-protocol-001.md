@@ -3,7 +3,9 @@ id: "nw-protocol-001"
 subject: "NW"
 chapter: "protocol"
 title: "OSI 7계층 모델"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [OSI, 7계층, 프로토콜, PDU, 네트워크]
 quiz:
   type: "blank"

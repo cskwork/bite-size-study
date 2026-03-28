@@ -3,7 +3,9 @@ id: "db-sql-001"
 subject: "DB"
 chapter: "sql"
 title: "DDL 명령어 (CREATE, ALTER, DROP, TRUNCATE)"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [DDL, CREATE, ALTER, DROP, TRUNCATE, SQL, 데이터정의어]
 quiz:
   type: "choice"

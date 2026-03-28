@@ -3,7 +3,9 @@ id: "db-optimization-001"
 subject: "DB"
 chapter: "optimization"
 title: "인덱스 (B-Tree, Hash, Bitmap) — 구조와 사용 시점"
-difficulty: 1
+
+difficulty: 3
+priority: 2
 tags: [인덱스, B-Tree, Hash, Bitmap, 성능최적화, 데이터베이스]
 quiz:
   type: "ox"

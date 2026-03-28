@@ -3,7 +3,9 @@ id: "nw-protocol-002"
 subject: "NW"
 chapter: "protocol"
 title: "TCP vs UDP 비교"
-difficulty: 1
+
+difficulty: 3
+priority: 2
 tags: [TCP, UDP, 전송계층, 연결지향, 비연결]
 quiz:
   type: "ox"

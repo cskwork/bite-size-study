@@ -11,6 +11,7 @@ bite-size-study: 뇌과학 기반 정보처리실기 학습 CLI
 
 from __future__ import annotations
 
+import io
 import json
 import random
 import sys
@@ -26,6 +27,10 @@ from rich.prompt import IntPrompt, Prompt
 from rich.table import Table
 from rich.text import Text
 from rich.theme import Theme
+
+# ── stdin UTF-8 강제 설정 (Python 3.9 + macOS 한글 입력 호환) ──
+if hasattr(sys.stdin, "reconfigure"):
+    sys.stdin.reconfigure(encoding="utf-8", errors="replace")
 
 # ── 경로 설정 ──────────────────────────────────
 ROOT = Path(__file__).resolve().parent.parent
@@ -110,18 +115,26 @@ def select_today_cards(
     progress: dict[str, Any],
     config: dict[str, Any],
 ) -> list[dict[str, Any]]:
-    """오늘 학습할 카드를 선택한다. 새 카드 우선, 복습 카드 추가."""
+    """오늘 학습할 카드를 선택한다. 출제빈도(priority) 높은 카드 우선."""
     daily_new = config["session"]["daily_cards"]
     max_review = config["session"]["max_review_cards"]
 
-    # 새 카드: 아직 학습하지 않은 카드
-    new_cards = [c for c in cards if c["id"] not in progress["cards"]]
-    # 복습 카드: 이해도가 낮은 카드 (3 이하)
-    review_cards = [
-        c for c in cards
-        if c["id"] in progress["cards"]
-        and progress["cards"][c["id"]].get("understanding", 0) <= 3
-    ]
+    # 새 카드: 아직 학습하지 않은 카드 (priority 내림차순 정렬)
+    new_cards = sorted(
+        [c for c in cards if c["id"] not in progress["cards"]],
+        key=lambda c: c.get("priority", 2),
+        reverse=True,
+    )
+    # 복습 카드: 이해도가 낮은 카드 (3 이하, priority 내림차순)
+    review_cards = sorted(
+        [
+            c for c in cards
+            if c["id"] in progress["cards"]
+            and progress["cards"][c["id"]].get("understanding", 0) <= 3
+        ],
+        key=lambda c: c.get("priority", 2),
+        reverse=True,
+    )
 
     selected_new = new_cards[:daily_new]
     selected_review = review_cards[:max_review]
@@ -265,12 +278,17 @@ def run_quiz(card: dict[str, Any]) -> bool:
     console.print()
     console.print(Panel(f"[bold]{question}[/]", title="퀴즈", border_style="yellow"))
 
-    if quiz_type == "ox":
-        user_answer = Prompt.ask("  O 또는 X", choices=["O", "X", "o", "x"])
-    elif quiz_type == "choice":
-        user_answer = Prompt.ask("  정답 입력")
-    else:  # blank
-        user_answer = Prompt.ask("  빈칸 채우기")
+    try:
+        if quiz_type == "ox":
+            user_answer = Prompt.ask("  O 또는 X", choices=["O", "X", "o", "x"])
+        elif quiz_type == "choice":
+            user_answer = Prompt.ask("  정답 입력")
+        else:  # blank
+            user_answer = Prompt.ask("  빈칸 채우기")
+    except UnicodeDecodeError:
+        console.print("  [warning]입력 인코딩 오류 — 건너뜁니다[/]")
+        console.print(f"  정답: [bold]{answer}[/]")
+        return False
 
     correct = check_answer(quiz_type, user_answer, answer)
     if correct:

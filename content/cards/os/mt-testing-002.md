@@ -3,7 +3,9 @@ id: "mt-testing-002"
 subject: "MT"
 chapter: "testing"
 title: "테스트 레벨과 통합 테스트 방식"
-difficulty: 1
+
+difficulty: 3
+priority: 2
 tags: [테스트레벨, 단위테스트, 통합테스트, 시스템테스트, 인수테스트, 하향식, 상향식]
 quiz:
   type: "blank"

@@ -3,7 +3,9 @@ id: "pg-language-002"
 subject: "PG"
 chapter: "language"
 title: "Java 접근 제어자"
-difficulty: 1
+
+difficulty: 3
+priority: 1
 tags: [Java, 접근제어자, public, protected, default, private, 캡슐화]
 quiz:
   type: "choice"

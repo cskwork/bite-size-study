@@ -3,7 +3,9 @@ id: "pg-algorithm-001"
 subject: "PG"
 chapter: "algorithm"
 title: "정렬 알고리즘 비교 (시간복잡도)"
-difficulty: 1
+
+difficulty: 3
+priority: 2
 tags: [정렬, 버블정렬, 선택정렬, 삽입정렬, 퀵정렬, 합병정렬, 시간복잡도]
 quiz:
   type: "blank"

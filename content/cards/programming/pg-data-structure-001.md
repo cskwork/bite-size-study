@@ -3,7 +3,9 @@ id: "pg-data-structure-001"
 subject: "PG"
 chapter: "data-structure"
 title: "스택과 큐 (Stack & Queue)"
-difficulty: 1
+
+difficulty: 3
+priority: 2
 tags: [스택, 큐, LIFO, FIFO, 자료구조]
 quiz:
   type: "ox"

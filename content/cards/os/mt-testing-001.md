@@ -3,7 +3,9 @@ id: "mt-testing-001"
 subject: "MT"
 chapter: "testing"
 title: "소프트웨어 테스트 기법 — 화이트박스 vs 블랙박스"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [테스트, 화이트박스, 블랙박스, 동치분할, 경계값, 구문커버리지]
 quiz:
   type: "choice"

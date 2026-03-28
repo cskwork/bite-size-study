@@ -3,7 +3,9 @@ id: "nw-security-002"
 subject: "NW"
 chapter: "security"
 title: "암호화 방식 — 대칭키 vs 비대칭키 vs 해시"
-difficulty: 1
+
+difficulty: 3
+priority: 2
 tags: [암호화, 대칭키, 비대칭키, AES, RSA, SHA, 해시]
 quiz:
   type: "blank"

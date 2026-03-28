@@ -4,6 +4,7 @@ subject: "{subject_code}"
 chapter: "{chapter_id}"
 title: "{제목}"
 difficulty: 1          # 1: 기초, 2: 응용, 3: 기출심화
+priority: 2            # 출제빈도: 3(매회), 2(자주), 1(가끔)
 tags: []
 quiz:
   type: "blank"        # blank(빈칸), ox(O/X), choice(선택)

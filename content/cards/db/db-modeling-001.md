@@ -3,7 +3,9 @@ id: "db-modeling-001"
 subject: "DB"
 chapter: "modeling"
 title: "정규화 단계 (1NF~BCNF) — 각 단계 조건과 이상 현상"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [정규화, 1NF, 2NF, 3NF, BCNF, 함수종속, 이상현상]
 quiz:
   type: "blank"

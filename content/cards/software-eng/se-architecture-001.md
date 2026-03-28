@@ -3,7 +3,9 @@ id: "se-architecture-001"
 subject: "SE"
 chapter: "architecture"
 title: "소프트웨어 아키텍처 패턴"
-difficulty: 1
+
+difficulty: 3
+priority: 2
 tags: [아키텍처, 레이어드, MVC, 파이프필터, 클라이언트서버]
 quiz:
   type: "ox"

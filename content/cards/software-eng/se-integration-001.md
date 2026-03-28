@@ -3,7 +3,9 @@ id: "se-integration-001"
 subject: "SE"
 chapter: "integration"
 title: "미들웨어 유형"
-difficulty: 1
+
+difficulty: 3
+priority: 1
 tags: [미들웨어, WAS, MOM, RPC, ORB, 분산시스템]
 quiz:
   type: "choice"

@@ -3,7 +3,9 @@ id: "mt-config-001"
 subject: "MT"
 chapter: "config"
 title: "형상관리(SCM) 절차와 도구"
-difficulty: 1
+
+difficulty: 3
+priority: 2
 tags: [형상관리, SCM, Git, SVN, CVS, 형상식별, 형상통제, 형상감사]
 quiz:
   type: "ox"

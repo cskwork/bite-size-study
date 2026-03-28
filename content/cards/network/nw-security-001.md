@@ -3,7 +3,9 @@ id: "nw-security-001"
 subject: "NW"
 chapter: "security"
 title: "보안 공격 유형"
-difficulty: 1
+
+difficulty: 3
+priority: 3
 tags: [보안, DoS, DDoS, SQL인젝션, XSS, CSRF, 스니핑]
 quiz:
   type: "choice"

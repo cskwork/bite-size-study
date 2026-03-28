@@ -1,0 +1,24 @@
+[project]
+name = "bite-size-study"
+version = "1.0.0"
+description = "뇌과학 기반 정보처리실기 학습 CLI"
+requires-python = ">=3.9"
+dependencies = [
+    "rich>=13.0",
+    "pyyaml>=6.0",
+    "typer[all]>=0.9",
+]
+
+[project.scripts]
+bite = "bite_size_study.cli:run"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["bite_size_study*", "scripts*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

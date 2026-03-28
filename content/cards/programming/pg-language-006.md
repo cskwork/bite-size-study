@@ -26,7 +26,7 @@ quiz:
 ### 키워드
 - **interface**: 인터페이스 선언. 메서드는 기본적으로 `public abstract`
 - **implements**: 클래스가 인터페이스를 구현할 때 사용
-- **abstract class**: 추상 메서드를 1개 이상 포함하는 클래스. 인스턴스화 불가
+- **abstract class**: abstract 키워드로 선언된 클래스. 추상 메서드가 없어도 선언 가능. 인스턴스화 불가
 - **abstract 메서드**: 선언만 있고 구현 없는 메서드. 자식에서 반드시 오버라이딩
 - **default 메서드**: Java 8+에서 인터페이스에 기본 구현 제공 가능
 - **다중 구현**: 클래스는 여러 인터페이스를 동시에 implements 가능

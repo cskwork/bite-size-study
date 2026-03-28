@@ -10,7 +10,7 @@ tags: [관계대수, SELECT, PROJECT, JOIN, DIVISION, 릴레이션, 기호, 기�
 quiz:
   type: "blank"
   question: "다음 관계대수 기호와 연산명을 매칭하시오.\n\n① σ(시그마) = ______\n② π(파이) = ______\n③ ⋈ = ______\n④ ÷ = ______"
-  answer: "① 셀렉트(SELECT/선택) — 행 필터, ② 프로젝트(PROJECT/프로젝션) — 열 추출, ③ 조인(JOIN) — 두 릴레이션 결합, ④ 디비전(DIVISION) — 2025-2회, 2025-3회 기출"
+  answer: "① 셀렉트(SELECT/선택) — 행 필터, ② 프로젝트(PROJECT/프로젝션) — 열 추출, ③ 조인(JOIN) — 두 릴레이션 결합, ④ 디비전(DIVISION) — S의 모든 튜플에 대응되는 R의 튜플 반환"
 ---
 
 ## 관계대수 연산 (SELECT, PROJECT, JOIN, DIVISION)

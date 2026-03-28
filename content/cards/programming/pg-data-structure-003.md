@@ -43,9 +43,9 @@ quiz:
     / \   \
    4   5   6
 
-전위 (R-L-R): 1 2 4 5 3 6
-중위 (L-R-R): 4 2 5 1 3 6
-후위 (L-R-R): 4 5 2 6 3 1
+전위 (Root-Left-Right): 1 2 4 5 3 6
+중위 (Left-Root-Right): 4 2 5 1 3 6
+후위 (Left-Right-Root): 4 5 2 6 3 1
 ```
 
 ### 재귀 코드로 이해하기

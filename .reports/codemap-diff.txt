@@ -1,0 +1,39 @@
+Codemap Analysis Report — 2026-03-28
+=====================================
+
+Status: INITIAL GENERATION (no previous codemaps)
+
+Files Scanned:
+  Python scripts:   2 (study.py, streak.py)
+  Test files:       2 (test_study.py, test_streak.py)
+  Config files:     2 (config.yaml, subjects.yaml)
+  Card templates:   1 (card_template.md)
+  Learning cards:   50 (db:10, network:10, os:10, programming:11, software-eng:9)
+  Research docs:    4 (exam trends, raw data)
+  Total:            ~56 tracked files
+
+Architecture Summary:
+  - Single-app Python CLI (no web, no API, no DB)
+  - Rich TUI for terminal rendering
+  - File-based state (JSON), content (Markdown+YAML)
+  - 2 entry points: study.py (session), streak.py (visualization)
+
+Test Coverage:
+  - 55 test cases across 2 test files
+  - Unit + integration + smoke tests
+  - Key areas: calc_level, streak, card selection, quiz matching, UI rendering
+
+Dependencies:
+  - Runtime: rich, pyyaml
+  - Dev: pytest, pytest-cov, mypy
+
+Codemaps Generated:
+  - docs/CODEMAPS/architecture.md  — system diagram, entry points, key algorithms
+  - docs/CODEMAPS/backend.md       — function map, CLI commands, quiz logic, test inventory
+  - docs/CODEMAPS/data.md          — card schema, state files, config structure, research layer
+  - docs/CODEMAPS/dependencies.md  — packages, file dependency graph
+
+Notes:
+  - No frontend codemap needed (CLI-only, no web UI)
+  - content/subjects.yaml is reference-only (not imported by code)
+  - Research layer (research/, data/raw/) feeds card creation pipeline, not runtime

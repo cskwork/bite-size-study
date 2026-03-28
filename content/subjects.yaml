@@ -1,0 +1,88 @@
+# 정보처리실기 과목 구조
+# NCS 기반 5과목 체계
+
+subjects:
+  software-eng:
+    name: "소프트웨어 설계"
+    code: "SE"
+    chapters:
+      - id: requirements
+        name: "요구사항 확인"
+        topics: ["현행 시스템 분석", "요구사항 정의", "UML"]
+      - id: design
+        name: "화면 설계"
+        topics: ["UI/UX 설계", "UI 표준", "스토리보드"]
+      - id: architecture
+        name: "애플리케이션 설계"
+        topics: ["소프트웨어 아키텍처", "디자인패턴", "인터페이스 설계"]
+      - id: integration
+        name: "인터페이스 설계"
+        topics: ["미들웨어", "EAI", "ESB"]
+
+  programming:
+    name: "소프트웨어 개발"
+    code: "PG"
+    chapters:
+      - id: data-structure
+        name: "자료구조"
+        topics: ["배열", "스택/큐", "트리", "그래프", "해시"]
+      - id: algorithm
+        name: "알고리즘"
+        topics: ["정렬", "탐색", "재귀", "그리디", "DP"]
+      - id: language
+        name: "프로그래밍 언어"
+        topics: ["C", "Java", "Python", "SQL 활용"]
+      - id: module
+        name: "모듈 구현"
+        topics: ["단위 모듈", "공통 모듈", "배치 프로그램"]
+
+  db:
+    name: "데이터베이스 구축"
+    code: "DB"
+    chapters:
+      - id: modeling
+        name: "논리 데이터베이스 설계"
+        topics: ["ER 모델", "정규화", "반정규화"]
+      - id: physical
+        name: "물리 데이터베이스 설계"
+        topics: ["인덱스", "파티셔닝", "클러스터"]
+      - id: sql
+        name: "SQL 활용"
+        topics: ["DDL", "DML", "DCL", "JOIN", "서브쿼리"]
+      - id: optimization
+        name: "SQL 최적화"
+        topics: ["실행계획", "옵티마이저", "힌트"]
+
+  network:
+    name: "시스템 통합"
+    code: "NW"
+    chapters:
+      - id: protocol
+        name: "네트워크 기초"
+        topics: ["OSI 7계층", "TCP/IP", "라우팅"]
+      - id: security
+        name: "IT 보안"
+        topics: ["암호화", "인증", "접근제어", "보안 공격"]
+      - id: system
+        name: "시스템 구축"
+        topics: ["서버", "스토리지", "클라우드"]
+      - id: infra
+        name: "인프라 관리"
+        topics: ["형상관리", "배포", "모니터링"]
+
+  maintenance:
+    name: "소프트웨어 유지보수"
+    code: "MT"
+    chapters:
+      - id: testing
+        name: "소프트웨어 테스트"
+        topics: ["테스트 기법", "테스트 레벨", "테스트 케이스"]
+      - id: quality
+        name: "품질 관리"
+        topics: ["ISO 9126", "ISO 25010", "CMM/CMMI"]
+      - id: config
+        name: "형상 관리"
+        topics: ["SVN", "Git", "형상관리 절차"]
+      - id: project
+        name: "프로젝트 관리"
+        topics: ["일정관리", "비용관리", "위험관리"]

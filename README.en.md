@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/logo.png" alt="bite-size-study" width="120">
+  <img src="docs/assets/logo.svg" alt="bite-size-study" width="120">
 </p>
 
 <h1 align="center">bite-size-study</h1>
@@ -22,9 +22,20 @@
 
 ---
 
-<p align="center">
-  <img src="docs/assets/demo.gif" alt="bite-size-study demo" width="600">
-</p>
+```
+$ bite
+
+  Lv.3 (12/51 XP)  |  Streak: 7 days 🔥  |  Cards: 28 studied
+
+  ┌─── bite-size-study ──────────────────────────┐
+  │  ▸ Start Study    Today's card session        │
+  │    Progress       Subject progress overview   │
+  │    Card List      View all cards              │
+  │    Streak Stats   XP, streaks, study days     │
+  │    Calendar       Monthly study calendar      │
+  │    Heatmap        7-week study heatmap        │
+  └── [↑↓] Move  [Enter] Select  [q] Quit ──────┘
+```
 
 ## Why bite-size-study?
 

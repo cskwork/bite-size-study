@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/assets/logo.png" alt="bite-size-study" width="120">
+  <img src="docs/assets/logo.svg" alt="bite-size-study" width="120">
 </p>
 
 <h1 align="center">bite-size-study</h1>
@@ -22,9 +22,20 @@
 
 ---
 
-<p align="center">
-  <img src="docs/assets/demo.gif" alt="bite-size-study demo" width="600">
-</p>
+```
+$ bite
+
+  Lv.3 (12/51 XP)  |  스트릭: 7일 🔥  |  카드: 28장 학습
+
+  ┌─── bite-size-study ──────────────────────┐
+  │  ▸ 학습 시작    오늘의 카드 학습 세션     │
+  │    학습 현황    과목별 진행률 확인         │
+  │    카드 목록    전체 카드 확인             │
+  │    스트릭 통계  XP, 스트릭, 학습일 통계   │
+  │    학습 캘린더  월간 학습 캘린더           │
+  │    히트맵      최근 7주 학습 히트맵        │
+  └── [↑↓] 이동  [Enter] 선택  [q] 종료 ────┘
+```
 
 ## 왜 bite-size-study인가?
 

@@ -8,7 +8,7 @@ import typer
 
 app = typer.Typer(
     name="bite",
-    help="뇌과학 기반 정보처리실기 학습 CLI",
+    help="Neuroscience-powered micro-learning CLI",
     no_args_is_help=False,
     add_completion=False,
 )
@@ -81,6 +81,48 @@ def heatmap() -> None:
     from bite_size_study.streak import show_weekly_heatmap
 
     show_weekly_heatmap()
+
+
+@app.command()
+def init(
+    path: Optional[str] = typer.Argument(
+        None, help="카드덱을 생성할 경로 (기본: content/cards/new-deck)"
+    ),
+) -> None:
+    """새 카드덱을 초기화한다. 템플릿과 예시 카드를 생성."""
+    from bite_size_study.paths import ROOT
+
+    deck_name = path or "new-deck"
+    deck_path = ROOT / "content" / "cards" / deck_name
+    if deck_path.exists():
+        typer.echo(f"  이미 존재하는 경로입니다: {deck_path}")
+        raise typer.Exit(code=1)
+
+    deck_path.mkdir(parents=True)
+
+    example_card = (
+        '---\n'
+        f'id: "{deck_name}-001"\n'
+        f'subject: "{deck_name.upper()[:2]}"\n'
+        f'title: "Example Card"\n'
+        'difficulty: 1\n'
+        'priority: 2\n'
+        'quiz:\n'
+        '  type: "blank"\n'
+        '  question: "Fill in the ___"\n'
+        '  answer: "blank"\n'
+        '---\n'
+        '\n'
+        '## Example Card\n'
+        '\n'
+        '### Key Concepts\n'
+        '- Edit this card or add more .md files to this directory.\n'
+    )
+    (deck_path / f"{deck_name}-001.md").write_text(example_card, encoding="utf-8")
+
+    typer.echo(f"\n  카드덱이 생성되었습니다: {deck_path}")
+    typer.echo(f"  예시 카드: {deck_path / f'{deck_name}-001.md'}")
+    typer.echo("  카드를 추가하려면 이 디렉토리에 .md 파일을 만드세요.\n")
 
 
 def run() -> None:

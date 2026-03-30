@@ -1,13 +1,50 @@
 [project]
 name = "bite-size-study"
-version = "1.0.0"
-description = "뇌과학 기반 정보처리실기 학습 CLI"
+version = "1.1.0"
+description = "Neuroscience-powered micro-learning CLI with streaks, XP, and spaced repetition"
+readme = "README.md"
+license = {text = "MIT"}
 requires-python = ">=3.9"
+authors = [
+    {name = "cskwork"},
+]
+keywords = [
+    "flashcard", "cli", "study", "spaced-repetition", "micro-habit",
+    "neuroscience", "learning", "streak", "xp", "gamification",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Education",
+    "Topic :: Education :: Computer Aided Instruction (CAI)",
+    "Typing :: Typed",
+]
 dependencies = [
     "rich>=13.0",
     "pyyaml>=6.0",
     "typer[all]>=0.9",
 ]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.4.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/cskwork/bite-size-study"
+Repository = "https://github.com/cskwork/bite-size-study"
+Issues = "https://github.com/cskwork/bite-size-study/issues"
+Documentation = "https://github.com/cskwork/bite-size-study#readme"
 
 [project.scripts]
 bite = "bite_size_study.cli:run"
@@ -17,8 +54,15 @@ requires = ["setuptools>=68.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
-include = ["bite_size_study*", "scripts*"]
+include = ["bite_size_study*"]
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
 testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 99
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP"]

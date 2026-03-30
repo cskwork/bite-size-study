@@ -4,9 +4,13 @@ bite CLI 테스트 — Typer CliRunner 기반.
 
 from __future__ import annotations
 
+import shutil
+from pathlib import Path
+
 from typer.testing import CliRunner
 
 from bite_size_study.cli import app
+from bite_size_study.paths import ROOT
 
 runner = CliRunner()
 
@@ -88,7 +92,7 @@ class TestCliHelpSubcommands:
         """앱 설명이 help에 포함되어야 한다."""
         result = runner.invoke(app, ["--help"])
         assert result.exit_code == 0
-        assert "뇌과학" in result.output or "학습" in result.output
+        assert "micro-learning" in result.output.lower() or "학습" in result.output
 
 
 class TestCliOutputContent:
@@ -227,3 +231,52 @@ class TestCliMenu:
         result = runner.invoke(app, [], input="5\n")
         assert result.exit_code == 0
         assert "캘린더" in result.output
+
+
+class TestCliInit:
+    """bite init 커맨드 테스트."""
+
+    def _cleanup(self, deck_name: str) -> None:
+        deck_path = ROOT / "content" / "cards" / deck_name
+        if deck_path.exists():
+            shutil.rmtree(deck_path)
+
+    def test_init_creates_deck(self):
+        """init이 카드덱 디렉토리와 예시 카드를 생성한다."""
+        deck_name = "_test_deck_init"
+        self._cleanup(deck_name)
+        try:
+            result = runner.invoke(app, ["init", deck_name])
+            assert result.exit_code == 0
+            assert "카드덱이 생성되었습니다" in result.output
+
+            deck_path = ROOT / "content" / "cards" / deck_name
+            assert deck_path.exists()
+            assert (deck_path / f"{deck_name}-001.md").exists()
+
+            card_content = (deck_path / f"{deck_name}-001.md").read_text()
+            assert "id:" in card_content
+            assert "quiz:" in card_content
+        finally:
+            self._cleanup(deck_name)
+
+    def test_init_existing_deck_fails(self):
+        """이미 존재하는 경로에 init하면 에러를 반환한다."""
+        result = runner.invoke(app, ["init", "db"])
+        assert result.exit_code == 1
+        assert "이미 존재" in result.output
+
+    def test_init_default_path(self):
+        """경로를 지정하지 않으면 new-deck이 기본값이다."""
+        self._cleanup("new-deck")
+        try:
+            result = runner.invoke(app, ["init"])
+            assert result.exit_code == 0
+            assert (ROOT / "content" / "cards" / "new-deck").exists()
+        finally:
+            self._cleanup("new-deck")
+
+    def test_init_help(self):
+        """init --help가 정상 동작한다."""
+        result = runner.invoke(app, ["init", "--help"])
+        assert result.exit_code == 0

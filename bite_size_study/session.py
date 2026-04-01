@@ -16,6 +16,7 @@ from rich.text import Text
 from bite_size_study.core import (
     calc_level,
     check_answer,
+    extract_answer_key,
     load_all_cards,
     select_today_cards,
     update_streak,
@@ -108,7 +109,8 @@ def run_quiz(card: dict[str, Any]) -> bool:
     console.print()
     console.print(Panel(f"[bold]{question}[/]", title="퀴즈", border_style="yellow"))
 
-    answer_parts = [p.strip() for p in answer.split(",")]
+    answer_key = extract_answer_key(answer)
+    answer_parts = [p.strip() for p in answer_key.split(",")]
     multi_hint = (
         f" [dim](쉼표로 {len(answer_parts)}개 입력)[/]"
         if len(answer_parts) > 1

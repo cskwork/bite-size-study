@@ -124,12 +124,24 @@ def update_streak(streak: dict[str, Any]) -> dict[str, Any]:
 
 
 # ── 퀴즈 판정 ─────────────────────────────────
+def extract_answer_key(answer: str) -> str:
+    """정답 문자열에서 비교용 핵심 부분만 추출한다.
+
+    카드의 answer 필드는 'actual_answer — explanation (기출 출처)' 형태이므로
+    ' — ' 이후의 설명/메타데이터를 제거하여 비교에 사용한다.
+    """
+    idx = answer.find(" — ")
+    return answer[:idx].strip() if idx != -1 else answer.strip()
+
+
 def check_answer(quiz_type: str, user_answer: str, correct_answer: str) -> bool:
     """퀴즈 정답을 판정한다. 다중 답안(쉼표 구분)은 모든 파트 매칭 필요."""
     if quiz_type == "ox":
-        return user_answer.upper() == correct_answer.upper()
+        answer_key = extract_answer_key(correct_answer)
+        return user_answer.upper() == answer_key.upper()
 
-    answer_parts = [p.strip().lower() for p in correct_answer.split(",")]
+    answer_key = extract_answer_key(correct_answer)
+    answer_parts = [p.strip().lower() for p in answer_key.split(",")]
     if len(answer_parts) > 1:
         user_parts = [p.strip().lower() for p in user_answer.split(",")]
         if len(user_parts) != len(answer_parts):
@@ -140,5 +152,5 @@ def check_answer(quiz_type: str, user_answer: str, correct_answer: str) -> bool:
         )
 
     user_lower = user_answer.lower().strip()
-    answer_lower = correct_answer.lower().strip()
+    answer_lower = answer_key.lower()
     return user_lower in answer_lower or answer_lower in user_lower

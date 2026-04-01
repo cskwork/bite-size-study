@@ -26,6 +26,7 @@ from bite_size_study.paths import (
 from bite_size_study.core import (  # noqa: F401
     calc_level,
     check_answer,
+    extract_answer_key,
     load_all_cards,
     parse_card,
     select_today_cards,

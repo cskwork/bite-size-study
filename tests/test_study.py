@@ -18,6 +18,7 @@ import pytest
 from scripts.study import (
     calc_level,
     check_answer,
+    extract_answer_key,
     load_all_cards,
     load_config,
     load_progress,
@@ -321,6 +322,53 @@ class TestCheckAnswer:
     def test_multi_answer_wrong_count(self):
         """다중 답안: 개수가 다르면 오답."""
         assert check_answer("blank", "4, 5, 6", "4, 5") is False
+
+    def test_multi_answer_with_metadata(self):
+        """실제 카드: 정답에 기출 출처 메타데이터가 포함되어도 정답 판정."""
+        real_answer = "Degree = 4 (속성/컬럼 수), Cardinality = 5 (튜플/행 수) — 2024-2회, 2025-1회 기출"
+        assert check_answer("blank", "4, 5", real_answer) is True
+        assert check_answer("blank", "Degree = 4, Cardinality = 5", real_answer) is True
+
+    def test_multi_answer_with_metadata_wrong(self):
+        """실제 카드: 메타데이터가 있어도 틀린 답은 오답."""
+        real_answer = "Degree = 4 (속성/컬럼 수), Cardinality = 5 (튜플/행 수) — 2024-2회, 2025-1회 기출"
+        assert check_answer("blank", "5, 4", real_answer) is False
+
+    def test_single_answer_with_explanation(self):
+        """단일 답안에 설명이 붙어도 정답 판정."""
+        assert check_answer("blank", "고립성", "고립성(Isolation) — 동시에 실행되는 트랜잭션") is True
+
+    def test_ox_with_explanation(self):
+        """OX 문제에 설명이 붙어도 정답 판정."""
+        assert check_answer("ox", "X", "X — Hash join은 정렬 불필요") is True
+
+    def test_sql_multi_answer_with_explanation(self):
+        """SQL 다중 답안에 설명이 붙어도 정답 판정."""
+        real_answer = "INSERT, SELECT — INSERT INTO...SELECT 구문으로 삽입한다 (2024-2회 기출)"
+        assert check_answer("blank", "INSERT, SELECT", real_answer) is True
+
+
+# ══════════════════════════════════════════════════
+#  extract_answer_key 테스트
+# ══════════════════════════════════════════════════
+class TestExtractAnswerKey:
+    def test_strips_explanation(self):
+        result = extract_answer_key("4, 5 — 설명 텍스트")
+        assert result == "4, 5"
+
+    def test_strips_metadata_with_commas(self):
+        result = extract_answer_key(
+            "Degree = 4 (속성/컬럼 수), Cardinality = 5 (튜플/행 수) — 2024-2회, 2025-1회 기출"
+        )
+        assert result == "Degree = 4 (속성/컬럼 수), Cardinality = 5 (튜플/행 수)"
+
+    def test_no_explanation(self):
+        result = extract_answer_key("제2정규형(2NF)")
+        assert result == "제2정규형(2NF)"
+
+    def test_whitespace_only_answer(self):
+        result = extract_answer_key("  CROSS  ")
+        assert result == "CROSS"
 
 
 # ══════════════════════════════════════════════════

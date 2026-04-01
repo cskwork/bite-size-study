@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>운영체제 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-links">
+    <a href="index.html">🏠 홈</a>
+    <a href="java.html">☕ Java</a>
+    <a href="python.html">🐍 Python</a>
+    <a href="c.html">⚙️ C</a>
+    <a href="sql.html">🗄️ SQL</a>
+    <a href="network.html">🌐 네트워크</a>
+    <a href="os.html" class="active">💻 OS</a>
+    <a href="software-engineering.html">🔧 소프트웨어공학</a>
+    <a href="db.html">📊 DB</a>
+    <a href="algorithm.html">🧮 알고리즘</a>
+    <a href="uml.html">📐 UML</a>
+    <a href="newtech.html">🆕 신기술</a>
+    <a href="integration.html">🔗 통합</a>
+  </div>
+</nav>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <span class="label">진행률</span>
+  <div class="track"><div class="fill" id="prog-fill"></div></div>
+  <span class="count" id="prog-text">0 / 10</span>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>💻 운영체제 문제</h1>
+  <p class="subtitle">정보처리기사 실기 기출 유형 10선 — 계산 문제 포함, 단계별 풀이 제공</p>
+  <span class="badge badge-blue">프로세스</span>
+  <span class="badge badge-red">스케줄링</span>
+  <span class="badge badge-purple">교착상태</span>
+  <span class="badge badge-green">메모리</span>
+  <span class="badge badge-orange">리눅스</span>
+</div>
+
+<!-- CONCEPT GRID -->
+<div class="concept-grid">
+  <div class="concept-card">
+    <h3>프로세스</h3>
+    <p>생성→준비→실행→대기→종료 상태 전이</p>
+  </div>
+  <div class="concept-card">
+    <h3>CPU 스케줄링</h3>
+    <p>FCFS, SJF, RR, Priority 알고리즘</p>
+  </div>
+  <div class="concept-card">
+    <h3>교착상태</h3>
+    <p>상호배제, 점유대기, 비선점, 환형대기</p>
+  </div>
+  <div class="concept-card">
+    <h3>페이지 교체</h3>
+    <p>FIFO, LRU, LFU, Optimal 알고리즘</p>
+  </div>
+  <div class="concept-card">
+    <h3>디스크 스케줄링</h3>
+    <p>FCFS, SSTF, SCAN, C-SCAN 알고리즘</p>
+  </div>
+  <div class="concept-card">
+    <h3>메모리 관리</h3>
+    <p>페이징(고정), 세그먼테이션(가변)</p>
+  </div>
+  <div class="concept-card">
+    <h3>동기화</h3>
+    <p>세마포어(카운팅), 뮤텍스(이진)</p>
+  </div>
+  <div class="concept-card">
+    <h3>리눅스 명령어</h3>
+    <p>chmod, grep, ps, kill 등 필수 명령어</p>
+  </div>
+</div>
+
+<!-- ========== 문제 1 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 1</span>
+    <div class="q-meta">
+      <span class="q-topic">프로세스 상태 전이</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 프로세스 상태 전이도의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 프로세스 상태 전이도 */</span>
+
+                  ┌─────────────┐
+    (①)           │             │    (②)
+ ──────→ [ New ] ──→ [ Ready ] ──→ [ Running ] ──→ [ Exit ]
+                     ↑      │         │                (⑤)
+                     │      │         │ (③)
+                     │  (④) │         ↓
+                     │      │    [ Waiting ]
+                     │      │    (= Blocked)
+                     └──────┘
+
+상태 전이 이벤트:
+① New → Ready:    (  ⑥  )
+② Ready → Running: (  ⑦  )
+③ Running → Waiting: (  ⑧  )
+④ Waiting → Ready:  (  ⑨  )
+⑤ Running → Ready:  (  ⑩  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 생성(Admit) ② 디스패치(Dispatch) ③ I/O 요청 또는 이벤트 대기<br>④ I/O 완료 또는 이벤트 발생 ⑤ 종료(Exit/Terminate)<br>⑥ 프로세스 생성 후 준비 큐에 삽입 ⑦ 스케줄러가 CPU 할당 (디스패치)<br>⑧ I/O 요청, 자원 대기 등 ⑨ I/O 완료, 자원 가용 등<br>⑩ 타임아웃(Time-out) / 선점(Preemption)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 프로세스 5가지 상태와 전이 조건을 정확히 기억하세요.<br>
+        <div class="step">• <strong>New:</strong> 프로세스 생성 중, PCB(Process Control Block) 생성</div>
+        <div class="step">• <strong>Ready:</strong> CPU 할당을 기다리는 상태, 준비 큐에서 대기</div>
+        <div class="step">• <strong>Running:</strong> CPU를 할당받아 실행 중인 상태</div>
+        <div class="step">• <strong>Waiting(Blocked):</strong> I/O 완료 등 이벤트를 기다리는 상태</div>
+        <div class="step">• <strong>Exit(Terminated):</strong> 실행 완료, 자원 반납, PCB 제거</div>
+        <div class="trap">⚠️ Running→Ready(선점)는 타임 슬라이스 만료 또는 높은 우선순위 프로세스 도착 시 발생합니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 2 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 2</span>
+    <div class="q-meta">
+      <span class="q-topic">CPU 스케줄링 계산</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 프로세스들에 대해 SJF(Shortest Job First, 비선점) 스케줄링을 적용했을 때 평균 대기시간과 평균 반환시간을 구하시오.</p>
+<pre><code><span class="cmt">/* CPU 스케줄링 - SJF (비선점) */</span>
+
+┌──────────┬──────────┬──────────┐
+│ 프로세스   │ 도착시간  │ 실행시간  │
+├──────────┼──────────┼──────────┤
+│    P1    │    <span class="num">0</span>     │    <span class="num">6</span>     │
+│    P2    │    <span class="num">1</span>     │    <span class="num">8</span>     │
+│    P3    │    <span class="num">2</span>     │    <span class="num">3</span>     │
+│    P4    │    <span class="num">3</span>     │    <span class="num">4</span>     │
+└──────────┴──────────┴──────────┘
+
+(1) 간트 차트를 그리시오: (  ①  )
+(2) 각 프로세스의 대기시간: (  ②  )
+(3) 평균 대기시간: (  ③  )
+(4) 평균 반환시간(Turnaround Time): (  ④  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① |P1(0~6)|P3(6~9)|P4(9~13)|P2(13~21)|<br>② P1=0, P2=12, P3=4, P4=6<br>③ 평균 대기시간 = (0+12+4+6)/4 = 5.5<br>④ 평균 반환시간 = (6+20+7+10)/4 = 10.75</div>
+      <div class="explanation">
+        <strong>핵심:</strong> SJF 비선점은 실행 중인 프로세스가 끝날 때마다 대기 중 가장 짧은 프로세스를 선택합니다.<br>
+        <div class="step"><strong>Step 1. 실행 순서 결정</strong><br>
+          t=0: P1만 도착 → P1 실행 (실행시간 6)<br>
+          t=6: P1 완료, P2(8), P3(3), P4(4) 대기 중 → 최소 P3 선택<br>
+          t=9: P3 완료, P2(8), P4(4) 대기 중 → 최소 P4 선택<br>
+          t=13: P4 완료, P2(8) 대기 → P2 실행</div>
+        <div class="step"><strong>Step 2. 간트 차트</strong><br>
+          |--P1--|--P3--|--P4--|----P2----|<br>
+          0     6     9     13        21</div>
+        <div class="step"><strong>Step 3. 대기시간 계산</strong> (대기시간 = 시작시간 - 도착시간)<br>
+          P1: 0 - 0 = <strong>0</strong><br>
+          P2: 13 - 1 = <strong>12</strong><br>
+          P3: 6 - 2 = <strong>4</strong><br>
+          P4: 9 - 3 = <strong>6</strong><br>
+          평균 = (0 + 12 + 4 + 6) / 4 = <strong>5.5</strong></div>
+        <div class="step"><strong>Step 4. 반환시간 계산</strong> (반환시간 = 완료시간 - 도착시간)<br>
+          P1: 6 - 0 = <strong>6</strong><br>
+          P2: 21 - 1 = <strong>20</strong><br>
+          P3: 9 - 2 = <strong>7</strong><br>
+          P4: 13 - 3 = <strong>10</strong><br>
+          평균 = (6 + 20 + 7 + 10) / 4 = <strong>10.75</strong></div>
+        <div class="trap">⚠️ 비선점 vs 선점(SRTF): 비선점은 실행 중 교체 불가, 선점은 더 짧은 프로세스 도착 시 교체 가능!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 3 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 3</span>
+    <div class="q-meta">
+      <span class="q-topic">교착상태</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">교착상태(Deadlock)의 발생 조건 4가지와 해결 방법을 쓰시오.</p>
+<pre><code><span class="cmt">/* 교착상태 발생 조건 (4가지 모두 동시 충족 시 발생) */</span>
+
+(1) (  ①  ): 한 자원은 한 프로세스만 사용 가능
+(2) (  ②  ): 자원을 보유한 채 다른 자원을 요청
+(3) (  ③  ): 다른 프로세스가 보유한 자원을 강제로 빼앗을 수 없음
+(4) (  ④  ): 프로세스 간 자원 요청이 원형으로 연결
+
+<span class="cmt">/* 교착상태 해결 방법 */</span>
+(⑤): 교착상태가 발생하지 않도록 사전에 조건 부정
+(⑥): 안전 상태를 유지하도록 자원 할당 (예: 은행원 알고리즘)
+(⑦): 교착상태 발생 후 탐지하여 회복
+(⑧): 교착상태를 무시 (발생 확률이 낮을 때)</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 상호 배제 (Mutual Exclusion) ② 점유와 대기 (Hold and Wait)<br>③ 비선점 (Non-preemption) ④ 환형 대기 (Circular Wait)<br>⑤ 예방 (Prevention) ⑥ 회피 (Avoidance) ⑦ 탐지 및 회복 (Detection & Recovery)<br>⑧ 무시 (Ignore) - 타조 알고리즘</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 4가지 조건이 모두 충족되어야 교착상태가 발생합니다. 하나라도 깨면 해결!<br>
+        <div class="step">• <strong>상호 배제:</strong> 공유 가능한 자원(읽기 전용 파일)은 교착상태 미발생</div>
+        <div class="step">• <strong>점유와 대기:</strong> 필요한 자원을 한꺼번에 요청하면 예방 가능</div>
+        <div class="step">• <strong>비선점:</strong> 자원을 선점 가능하게 하면 예방 가능 (실용적이지 않은 경우 多)</div>
+        <div class="step">• <strong>환형 대기:</strong> 자원에 번호를 부여하고 오름차순으로만 요청하면 예방 가능</div>
+        <div class="step">• <strong>은행원 알고리즘 (Banker's Algorithm):</strong> 안전 상태인지 확인 후 자원 할당 (회피 기법)</div>
+        <div class="trap">⚠️ "상점비환"으로 외우세요: 상호배제, 점유대기, 비선점, 환형대기. 시험 단골 문제입니다!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 4 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 4</span>
+    <div class="q-meta">
+      <span class="q-topic">페이지 교체 알고리즘</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">페이지 프레임이 3개일 때, 다음 페이지 참조열에 대해 FIFO와 LRU 알고리즘의 페이지 부재(Page Fault) 횟수를 구하시오.</p>
+<pre><code><span class="cmt">/* 페이지 교체 알고리즘 - 프레임 3개 */</span>
+
+페이지 참조열: <span class="num">7, 0, 1, 2, 0, 3, 0, 4, 2, 3</span>
+
+<span class="cmt">/* (1) FIFO 알고리즘으로 풀이하시오 */</span>
+참조: 7  0  1  2  0  3  0  4  2  3
+F1:  (                                )
+F2:  (                                )
+F3:  (                                )
+부재: (                                )
+
+FIFO 총 페이지 부재 횟수: (  ①  )
+
+<span class="cmt">/* (2) LRU 알고리즘으로 풀이하시오 */</span>
+참조: 7  0  1  2  0  3  0  4  2  3
+F1:  (                                )
+F2:  (                                )
+F3:  (                                )
+부재: (                                )
+
+LRU 총 페이지 부재 횟수: (  ②  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① FIFO: 9회 페이지 부재<br>② LRU: 9회 페이지 부재</div>
+      <div class="explanation">
+        <strong>핵심:</strong> FIFO는 가장 먼저 들어온 페이지를 교체, LRU는 가장 오랫동안 사용되지 않은 페이지를 교체<br>
+        <div class="step"><strong>FIFO 풀이 (가장 먼저 들어온 것을 교체)</strong><br>
+<pre>참조: 7   0   1   2   0   3   0   4   2   3
+F1:  [7] [7] [7] [2] [2] [2] [0] [0] [0] [3]
+F2:  [ ] [0] [0] [0] [0] [3] [3] [4] [4] [4]
+F3:  [ ] [ ] [1] [1] [1] [1] [1] [1] [2] [2]
+부재:  ●   ●   ●   ●       ●   ●   ●   ●   ●</pre>
+          t=0: 7 적재(F), t=1: 0 적재(F), t=2: 1 적재(F)<br>
+          t=3: 2 → 7이 가장 오래됨 → 7 교체(F)<br>
+          t=4: 0 → 이미 존재(Hit)<br>
+          t=5: 3 → 0이 가장 오래됨 → 0 교체(F)<br>
+          t=6: 0 → 1이 가장 오래됨 → 1 교체(F)<br>
+          t=7: 4 → 2가 가장 오래됨 → 2 교체(F)<br>
+          t=8: 2 → 3이 가장 오래됨 → 3 교체(F)<br>
+          t=9: 3 → 0이 가장 오래됨 → 0 교체(F)<br>
+          총 <strong>9회</strong> 페이지 부재</div>
+        <div class="step"><strong>LRU 풀이 (가장 오래 사용 안 된 것을 교체)</strong><br>
+<pre>참조: 7   0   1   2   0   3   0   4   2   3
+F1:  [7] [7] [7] [2] [2] [2] [2] [4] [4] [3]
+F2:  [ ] [0] [0] [0] [0] [0] [0] [0] [2] [2]
+F3:  [ ] [ ] [1] [1] [1] [3] [3] [3] [3] [3] (수정)
+부재:  ●   ●   ●   ●       ●   ●*  ●   ●   ●</pre>
+          t=3: 2 → 가장 오래 사용 안 된 7 교체(F)<br>
+          t=4: 0 → Hit (0을 최근 사용으로 갱신)<br>
+          t=5: 3 → 가장 오래 사용 안 된 1 교체(F)<br>
+          t=6: 0 → Hit (이미 있음)<br>
+          t=7: 4 → 가장 오래 사용 안 된 2 교체(F)<br>
+          t=8: 2 → 가장 오래 사용 안 된 3... 등<br>
+          총 <strong>9회</strong> 페이지 부재</div>
+        <div class="trap">⚠️ Belady's Anomaly: FIFO에서 프레임 수를 늘려도 페이지 부재가 증가할 수 있는 현상. LRU는 이 현상이 없습니다!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 5 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 5</span>
+    <div class="q-meta">
+      <span class="q-topic">디스크 스케줄링</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">현재 헤드 위치가 50일 때, 다음 요청 큐에 대해 SSTF 디스크 스케줄링의 총 헤드 이동량을 구하시오.</p>
+<pre><code><span class="cmt">/* 디스크 스케줄링 - SSTF */</span>
+
+현재 헤드 위치: <span class="num">50</span>
+요청 큐: <span class="num">82, 170, 43, 140, 24, 16, 190</span>
+
+<span class="cmt">/* 처리 순서와 이동량을 구하시오 */</span>
+처리 순서: (  ①  )
+총 헤드 이동량: (  ②  )
+
+<span class="cmt">/* 참고: 디스크 스케줄링 알고리즘 비교 */</span>
+(③): 요청 순서대로 처리 (공평하지만 비효율적)
+(④): 현재 헤드에서 가장 가까운 요청 먼저 처리
+(⑤): 한 방향으로 이동하며 처리 후 반대 방향으로
+(⑥): 한 방향으로만 처리, 끝에서 처음으로 점프</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 50→43→24→16→82→140→170→190<br>② 총 이동량 = 208<br>③ FCFS ④ SSTF ⑤ SCAN (엘리베이터) ⑥ C-SCAN</div>
+      <div class="explanation">
+        <strong>핵심:</strong> SSTF(Shortest Seek Time First)는 현재 위치에서 가장 가까운 트랙을 먼저 서비스합니다.<br>
+        <div class="step"><strong>Step 1. 각 요청과의 거리 계산</strong><br>
+          현재=50: |82-50|=32, |170-50|=120, |43-50|=7, |140-50|=90, |24-50|=26, |16-50|=34, |190-50|=140<br>
+          → 가장 가까운: 43 (거리 7)</div>
+        <div class="step"><strong>Step 2. 순서대로 처리</strong><br>
+          50→43: |50-43| = <strong>7</strong><br>
+          43→24: |43-24| = <strong>19</strong><br>
+          24→16: |24-16| = <strong>8</strong><br>
+          16→82: |16-82| = <strong>66</strong><br>
+          82→140: |82-140| = <strong>58</strong><br>
+          140→170: |140-170| = <strong>30</strong><br>
+          170→190: |170-190| = <strong>20</strong></div>
+        <div class="step"><strong>Step 3. 총 이동량</strong><br>
+          7 + 19 + 8 + 66 + 58 + 30 + 20 = <strong>208</strong></div>
+        <div class="trap">⚠️ SSTF는 기아(Starvation) 문제 발생 가능 — 멀리 있는 요청이 계속 후순위로 밀릴 수 있습니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 6 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 6</span>
+    <div class="q-meta">
+      <span class="q-topic">메모리 관리</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 메모리 관리 기법의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 메모리 관리 기법 비교 */</span>
+
+┌──────────┬───────────────────┬───────────────────┐
+│   구분    │     페이징         │   세그먼테이션      │
+│          │    (Paging)       │  (Segmentation)    │
+├──────────┼───────────────────┼───────────────────┤
+│ 분할 단위 │   (  ①  )         │   (  ②  )         │
+│ 크기     │   (  ③  )         │   (  ④  )         │
+│ 단편화   │ (  ⑤  ) 단편화 발생 │ (  ⑥  ) 단편화 발생 │
+│ 주소 변환 │ 페이지번호+오프셋   │   (  ⑦  )         │
+│ 테이블   │   (  ⑧  )         │ 세그먼트 테이블     │
+│ 장점     │ 외부 단편화 없음    │   (  ⑨  )         │
+└──────────┴───────────────────┴───────────────────┘
+
+<span class="cmt">/* 단편화 개념 */</span>
+(⑩) 단편화: 할당된 영역 내에서 사용하지 않는 공간
+(⑪) 단편화: 할당되지 않은 작은 빈 공간들이 산재</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 페이지 (Page) ② 세그먼트 (Segment)<br>③ 고정 크기 ④ 가변 크기<br>⑤ 내부(Internal) ⑥ 외부(External)<br>⑦ 세그먼트번호 + 오프셋 (변위)<br>⑧ 페이지 테이블 (Page Table)<br>⑨ 논리적 단위로 분할 (코드/데이터/스택 등 의미 있는 단위)<br>⑩ 내부(Internal) ⑪ 외부(External)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 페이징=고정크기→내부단편화, 세그먼테이션=가변크기→외부단편화<br>
+        <div class="step">• <strong>페이징:</strong> 프로세스를 동일 크기 페이지로 나누어 프레임에 적재 → 외부 단편화 해결</div>
+        <div class="step">• <strong>세그먼테이션:</strong> 논리적 단위(코드, 데이터, 스택)로 분할 → 공유/보호 용이</div>
+        <div class="step">• <strong>내부 단편화:</strong> 페이지 크기 4KB인데 실제 3KB만 사용 → 1KB 낭비</div>
+        <div class="step">• <strong>외부 단편화:</strong> 메모리에 빈 공간은 충분하지만 연속적이지 않아 할당 불가</div>
+        <div class="step">• <strong>페이지 테이블:</strong> 논리 주소의 페이지 번호 → 물리 주소의 프레임 번호 매핑</div>
+        <div class="trap">⚠️ 페이지드 세그먼테이션: 두 기법을 결합하여 세그먼트를 다시 페이지로 분할하는 방식도 있습니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 7 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 7</span>
+    <div class="q-meta">
+      <span class="q-topic">세마포어 · 뮤텍스</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 동기화 도구에 대한 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 세마포어와 뮤텍스 비교 */</span>
+
+┌──────────┬───────────────────┬───────────────────┐
+│   구분    │    세마포어         │     뮤텍스          │
+│          │   (Semaphore)     │     (Mutex)        │
+├──────────┼───────────────────┼───────────────────┤
+│ 값 범위   │   (  ①  )         │   (  ②  )         │
+│ 소유 개념 │   (  ③  )         │   (  ④  )         │
+│ 연산     │   (  ⑤  )         │ Lock / Unlock     │
+│ 용도     │ 동기화, 자원 카운팅  │   (  ⑥  )         │
+└──────────┴───────────────────┴───────────────────┘
+
+<span class="cmt">/* 세마포어 연산 (P/V 연산) */</span>
+P(S) 연산 (= (  ⑦  )):
+  S = S - <span class="num">1</span>;
+  <span class="kw">if</span> (S &lt; <span class="num">0</span>) { <span class="cmt">// 프로세스를 대기 큐에 삽입</span> }
+
+V(S) 연산 (= (  ⑧  )):
+  S = S + <span class="num">1</span>;
+  <span class="kw">if</span> (S &lt;= <span class="num">0</span>) { <span class="cmt">// 대기 큐에서 프로세스 깨움</span> }
+
+<span class="cmt">/* 임계영역 관련 조건 3가지 */</span>
+(⑨): 한 프로세스가 임계영역에 있으면 다른 프로세스 진입 불가
+(⑩): 임계영역에 아무도 없으면 진입을 막으면 안 됨
+(⑪): 유한 시간 내에 임계영역에 진입할 수 있어야 함</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 0 이상의 정수 (카운팅) ② 0 또는 1 (이진)<br>③ 소유 개념 없음 ④ 소유 개념 있음 (잠근 스레드만 해제 가능)<br>⑤ P(Wait) / V(Signal) ⑥ 상호 배제 (Mutual Exclusion)<br>⑦ Wait (대기) ⑧ Signal (신호)<br>⑨ 상호 배제 (Mutual Exclusion) ⑩ 진행 (Progress) ⑪ 한정 대기 (Bounded Waiting)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 세마포어는 카운팅 가능, 뮤텍스는 이진(0/1)으로 상호배제 전용<br>
+        <div class="step">• <strong>이진 세마포어:</strong> 값이 0 또는 1 → 뮤텍스와 유사하지만 소유 개념 차이</div>
+        <div class="step">• <strong>카운팅 세마포어:</strong> 값이 N → N개의 자원을 관리 (예: 동시 접속 수 제한)</div>
+        <div class="step">• <strong>P 연산 (Wait/Down):</strong> 자원 사용 요청, S를 1 감소</div>
+        <div class="step">• <strong>V 연산 (Signal/Up):</strong> 자원 반납, S를 1 증가</div>
+        <div class="step">• <strong>뮤텍스 소유:</strong> Lock을 건 스레드만 Unlock 가능 (세마포어는 다른 프로세스가 V 연산 가능)</div>
+        <div class="trap">⚠️ P/V 연산은 네덜란드어: P=Proberen(시도), V=Verhogen(증가). 시험에서 P/V 코드 해석 문제 출제!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 8 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 8</span>
+    <div class="q-meta">
+      <span class="q-topic">파일 시스템</span>
+      <span class="q-diff">★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 파일 시스템에 대한 설명의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 파일 시스템 비교 */</span>
+
+┌──────────┬──────────────┬──────────────┬──────────────┐
+│   구분    │    FAT32     │    NTFS      │    ext4      │
+├──────────┼──────────────┼──────────────┼──────────────┤
+│ 운영체제  │  (  ①  )     │  (  ②  )     │  (  ③  )     │
+│ 최대 파일 │  (  ④  )     │  16TB        │  16TB        │
+│ 저널링   │  (  ⑤  )     │   지원       │   지원       │
+│ 보안(ACL)│  미지원      │  (  ⑥  )     │   지원       │
+│ 특징     │ 호환성 우수   │  암호화 지원  │  (  ⑦  )     │
+└──────────┴──────────────┴──────────────┴──────────────┘
+
+<span class="cmt">/* Unix/Linux inode */</span>
+(⑧): 파일의 메타데이터를 저장하는 자료구조
+  - 저장 내용: (  ⑨  )
+  - 저장하지 않는 것: (  ⑩  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① Windows, DOS (범용) ② Windows ③ Linux<br>④ 4GB ⑤ 미지원 ⑥ 지원 (Access Control List)<br>⑦ 대용량 파일 시스템에 최적화, 지연 할당<br>⑧ inode (Index Node)<br>⑨ 파일 크기, 소유자, 권한, 타임스탬프, 데이터 블록 포인터 등<br>⑩ 파일 이름 (파일 이름은 디렉토리 엔트리에 저장)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 각 파일 시스템의 특징과 제한사항을 비교하세요.<br>
+        <div class="step">• <strong>FAT32:</strong> 단순 구조, 범용 호환성, 4GB 파일 크기 제한이 최대 단점</div>
+        <div class="step">• <strong>NTFS:</strong> 저널링, ACL 보안, 암호화(EFS), 압축, 대용량 지원</div>
+        <div class="step">• <strong>ext4:</strong> Linux 표준, 저널링, 대용량 지원, 지연 할당으로 성능 향상</div>
+        <div class="step">• <strong>inode:</strong> Unix/Linux에서 파일마다 고유한 번호(inode number) 부여, 파일 이름은 포함하지 않음</div>
+        <div class="step">• <strong>저널링:</strong> 변경사항을 로그에 먼저 기록 → 시스템 장애 시 복구 가능</div>
+        <div class="trap">⚠️ inode에 파일 이름이 저장되지 않는다는 점은 시험에서 자주 출제됩니다!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 9 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 9</span>
+    <div class="q-meta">
+      <span class="q-topic">리눅스 명령어</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 유닉스/리눅스 명령어의 실행 결과 또는 기능을 쓰시오.</p>
+<pre><code><span class="cmt">/* 리눅스 명령어 문제 */</span>
+
+(1) 파일 권한이 <span class="str">rwxr-x---</span> 일 때 8진수 표현: (  ①  )
+
+(2) 다음 명령어의 의미:
+    <span class="fn">chmod</span> <span class="num">754</span> file.txt  →  (  ②  )
+
+(3) <span class="fn">chmod</span>의 기호 모드:
+    <span class="fn">chmod</span> u+x,g-w,o=r file.txt
+    → 소유자에게 (  ③  ) 권한 추가
+    → 그룹에서 (  ④  ) 권한 제거
+    → 기타 사용자에 (  ⑤  ) 권한만 설정
+
+(4) 프로세스 관련 명령어:
+    <span class="fn">ps</span> -ef        →  (  ⑥  )
+    <span class="fn">kill</span> -9 1234  →  (  ⑦  )
+
+(5) 텍스트 검색 명령어:
+    <span class="fn">grep</span> -r <span class="str">"error"</span> /var/log/  →  (  ⑧  )
+
+(6) 파이프와 리다이렉션:
+    <span class="fn">cat</span> file.txt | <span class="fn">grep</span> <span class="str">"hello"</span> | <span class="fn">wc</span> -l  →  (  ⑨  )
+
+(7) 기타 명령어:
+    <span class="fn">crontab</span> -e  →  (  ⑩  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 750<br>② 소유자(rwx=7), 그룹(r-x=5), 기타(r--=4) 권한 설정<br>③ 실행(x) ④ 쓰기(w) ⑤ 읽기(r)<br>⑥ 모든 프로세스를 상세 정보와 함께 출력<br>⑦ PID 1234 프로세스를 강제 종료 (SIGKILL)<br>⑧ /var/log/ 디렉토리에서 재귀적으로 "error" 문자열 검색<br>⑨ file.txt에서 "hello"가 포함된 줄의 수를 출력<br>⑩ 크론탭(예약 작업) 편집</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 권한 8진수 변환과 주요 명령어 옵션을 외우세요.<br>
+        <div class="step"><strong>chmod 권한 계산:</strong><br>
+          r(읽기)=4, w(쓰기)=2, x(실행)=1<br>
+          rwx = 4+2+1 = <strong>7</strong><br>
+          r-x = 4+0+1 = <strong>5</strong><br>
+          --- = 0+0+0 = <strong>0</strong><br>
+          → rwxr-x--- = <strong>750</strong></div>
+        <div class="step">• <strong>kill 시그널:</strong> -9(SIGKILL 강제종료), -15(SIGTERM 정상종료), -2(SIGINT=Ctrl+C)</div>
+        <div class="step">• <strong>ps 옵션:</strong> -e(모든 프로세스), -f(상세정보), -aux(BSD 형식)</div>
+        <div class="step">• <strong>grep 옵션:</strong> -r(재귀), -i(대소문자 무시), -n(줄번호), -c(매칭 수)</div>
+        <div class="step">• <strong>파이프(|):</strong> 앞 명령의 출력을 뒤 명령의 입력으로 전달</div>
+        <div class="trap">⚠️ chmod 755, 644, 750 등 자주 쓰이는 권한 조합은 반드시 외우세요. 시험 단골!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 10 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 10</span>
+    <div class="q-meta">
+      <span class="q-topic">가상메모리 · 스래싱</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 가상메모리 관련 개념의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 가상메모리 핵심 개념 */</span>
+
+(1) (  ①  ): 실제 물리 메모리보다 큰 주소 공간을
+    사용할 수 있게 하는 메모리 관리 기법
+
+(2) (  ②  ): 프로세스가 실행 중 특정 시간 동안
+    자주 참조하는 페이지들의 집합
+
+(3) (  ③  ): 다중 프로그래밍의 정도가 높아져
+    페이지 부재가 급증하고 CPU 이용률이
+    급격히 떨어지는 현상
+
+<span class="cmt">/* 스래싱 관련 그래프 */</span>
+
+  CPU     ┃        ╱╲
+  이용률   ┃      ╱    ╲
+          ┃    ╱        ╲  ← (③) 발생
+          ┃  ╱            ╲
+          ┃╱                ╲___
+          ┗━━━━━━━━━━━━━━━━━━━━━
+           다중 프로그래밍 정도 →
+
+(4) 스래싱 예방 방법:
+    - (  ④  ) 모델 사용
+    - (  ⑤  ) 제어
+    - 프로세스 수 조절
+
+(5) (  ⑥  ): 프로세스 실행 시 필요한 페이지만
+    메모리에 적재하는 기법
+
+(6) 페이지 부재율(Page Fault Rate):
+    상한선 초과 → (  ⑦  )
+    하한선 미만 → (  ⑧  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 가상 메모리 (Virtual Memory)<br>② 워킹셋 (Working Set)<br>③ 스래싱 (Thrashing)<br>④ 워킹셋 (Working Set) ⑤ 페이지 부재 빈도 (PFF, Page Fault Frequency)<br>⑥ 요구 페이징 (Demand Paging)<br>⑦ 프레임 추가 할당 ⑧ 프레임 회수</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 스래싱은 페이지 부재가 과다하여 실제 작업보다 페이지 교체에 더 많은 시간을 소비하는 현상<br>
+        <div class="step">• <strong>워킹셋:</strong> 시간 윈도우 Δ 동안 참조된 페이지 집합 → 이만큼의 프레임을 보장해야 함</div>
+        <div class="step">• <strong>스래싱 원인:</strong> 프레임 부족 → 페이지 부재 빈발 → I/O 급증 → CPU 유휴 → OS가 프로세스 추가 → 악순환</div>
+        <div class="step">• <strong>PFF (Page Fault Frequency):</strong> 페이지 부재율의 상한/하한을 설정하여 프레임 수를 동적 조절</div>
+        <div class="step">• <strong>요구 페이징:</strong> 실행에 필요한 페이지만 메모리에 올림 → 초기 적재 시간 단축</div>
+        <div class="step">• <strong>선반입(Prepaging):</strong> 필요할 것으로 예상되는 페이지를 미리 적재</div>
+        <div class="step">• <strong>지역성(Locality):</strong> 시간적 지역성(최근 참조 페이지 재참조), 공간적 지역성(인접 페이지 참조)</div>
+        <div class="trap">⚠️ 워킹셋 크기 = 시간 윈도우 Δ 내의 고유 페이지 수. 스래싱 방지의 핵심 개념입니다!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  정보처리기사 실기 대비 학습 자료 | 운영체제 문제 10선
+</footer>
+
+<script>
+(function() {
+  const total = document.querySelectorAll('.question-card details').length;
+  let revealed = 0;
+  const progText = document.getElementById('prog-text');
+  const progFill = document.getElementById('prog-fill');
+
+  function updateProgress() {
+    progText.textContent = revealed + ' / ' + total;
+    progFill.style.width = (revealed / total * 100) + '%';
+  }
+
+  document.querySelectorAll('.question-card details').forEach(function(det) {
+    let counted = false;
+    det.addEventListener('toggle', function() {
+      if (det.open && !counted) {
+        counted = true;
+        revealed++;
+        updateProgress();
+      }
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

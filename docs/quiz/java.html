@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-links">
+    <a href="index.html">🏠 홈</a>
+    <a href="java.html" class="active">☕ Java</a>
+    <a href="python.html">🐍 Python</a>
+    <a href="c.html">⚙️ C</a>
+    <a href="sql.html">🗄️ SQL</a>
+    <a href="network.html">🌐 네트워크</a>
+    <a href="os.html">💻 OS</a>
+    <a href="software-engineering.html">🔧 소프트웨어공학</a>
+    <a href="db.html">📊 DB</a>
+    <a href="algorithm.html">🧮 알고리즘</a>
+    <a href="uml.html">📐 UML</a>
+    <a href="newtech.html">🆕 신기술</a>
+    <a href="integration.html">🔗 통합</a>
+  </div>
+</nav>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <span class="label">진행률</span>
+  <div class="track"><div class="fill" id="prog-fill"></div></div>
+  <span class="count" id="prog-text">0 / 10</span>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>☕ Java 코드 예측 문제</h1>
+  <p class="subtitle">정보처리기사 실기 기출 유형 10선 — 답을 확인하며 학습하세요</p>
+  <span class="badge badge-red">다형성</span>
+  <span class="badge badge-purple">상속</span>
+  <span class="badge badge-blue">String</span>
+  <span class="badge badge-orange">예외처리</span>
+  <span class="badge badge-green">static</span>
+</div>
+
+<!-- CONCEPT GRID -->
+<div class="concept-grid">
+  <div class="concept-card">
+    <h3>다형성</h3>
+    <p>부모 타입으로 자식 객체 참조, 오버라이딩된 메서드 호출</p>
+  </div>
+  <div class="concept-card">
+    <h3>오버라이딩</h3>
+    <p>상속받은 메서드를 자식 클래스에서 재정의</p>
+  </div>
+  <div class="concept-card">
+    <h3>추상클래스</h3>
+    <p>abstract 키워드, 인스턴스 생성 불가, 추상 메서드 포함</p>
+  </div>
+  <div class="concept-card">
+    <h3>인터페이스</h3>
+    <p>다중 구현 가능, default 메서드(Java 8+)</p>
+  </div>
+  <div class="concept-card">
+    <h3>생성자 체이닝</h3>
+    <p>this()·super()로 생성자 간 호출 연쇄</p>
+  </div>
+  <div class="concept-card">
+    <h3>String</h3>
+    <p>charAt, substring, replace 등 불변 객체 메서드</p>
+  </div>
+  <div class="concept-card">
+    <h3>컬렉션</h3>
+    <p>ArrayList, HashMap 등 동적 자료구조</p>
+  </div>
+  <div class="concept-card">
+    <h3>예외처리</h3>
+    <p>try-catch-finally 실행 순서와 흐름 제어</p>
+  </div>
+  <div class="concept-card">
+    <h3>static</h3>
+    <p>클래스 레벨 변수/메서드, 인스턴스 공유</p>
+  </div>
+  <div class="concept-card">
+    <h3>접근제어자</h3>
+    <p>public, protected, default, private 범위</p>
+  </div>
+</div>
+
+<!-- ========== 문제 1 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 1</span>
+    <div class="q-meta">
+      <span class="q-topic">다형성 · 상속</span>
+      <span class="q-diff">★★☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">class</span> <span class="tp">Parent</span> {
+    <span class="tp">String</span> x = <span class="str">"Parent"</span>;
+    <span class="kw">public void</span> <span class="fn">show</span>() {
+        System.out.println(x);
+    }
+}
+
+<span class="kw">class</span> <span class="tp">Child</span> <span class="kw">extends</span> <span class="tp">Parent</span> {
+    <span class="tp">String</span> x = <span class="str">"Child"</span>;
+    <span class="kw">public void</span> <span class="fn">show</span>() {
+        System.out.println(x);
+    }
+}
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="tp">Parent</span> p = <span class="kw">new</span> <span class="tp">Child</span>();
+        System.out.println(p.x);
+        p.<span class="fn">show</span>();
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">Parent<br>Child</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 필드(변수)는 참조 타입을 따르고, 메서드는 실제 객체 타입을 따릅니다.<br>
+        <div class="step">• <strong>p.x</strong> → 필드는 다형성이 적용되지 않으므로 <code>Parent</code>의 x = "Parent" 출력</div>
+        <div class="step">• <strong>p.show()</strong> → 메서드는 오버라이딩이 적용되어 <code>Child</code>의 show() 실행 → "Child" 출력</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 2 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 2</span>
+    <div class="q-meta">
+      <span class="q-topic">String 메서드</span>
+      <span class="q-diff">★☆☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="tp">String</span> s = <span class="str">"Hello World"</span>;
+        System.out.println(s.<span class="fn">charAt</span>(<span class="num">6</span>));
+        System.out.println(s.<span class="fn">substring</span>(<span class="num">0</span>, <span class="num">5</span>));
+        System.out.println(s.<span class="fn">replace</span>(<span class="str">"World"</span>, <span class="str">"Java"</span>));
+        System.out.println(s.<span class="fn">length</span>());
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">W<br>Hello<br>Hello Java<br>11</div>
+      <div class="explanation">
+        <strong>핵심:</strong> String 인덱스는 0부터 시작합니다.<br>
+        <div class="step">• <strong>charAt(6)</strong> → 인덱스 6의 문자 = 'W' (공백이 인덱스 5)</div>
+        <div class="step">• <strong>substring(0, 5)</strong> → 인덱스 0~4까지 = "Hello"</div>
+        <div class="step">• <strong>replace("World", "Java")</strong> → "Hello Java" (원본 s는 변경되지 않음)</div>
+        <div class="step">• <strong>length()</strong> → "Hello World"는 공백 포함 11자</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 3 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 3</span>
+    <div class="q-meta">
+      <span class="q-topic">ArrayList · 컬렉션</span>
+      <span class="q-diff">★★☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">import</span> java.util.ArrayList;
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="tp">ArrayList</span>&lt;<span class="tp">Integer</span>&gt; list = <span class="kw">new</span> <span class="tp">ArrayList</span>&lt;&gt;();
+        list.<span class="fn">add</span>(<span class="num">10</span>);
+        list.<span class="fn">add</span>(<span class="num">20</span>);
+        list.<span class="fn">add</span>(<span class="num">30</span>);
+        list.<span class="fn">add</span>(<span class="num">1</span>, <span class="num">50</span>);
+        list.<span class="fn">remove</span>(<span class="num">2</span>);
+        <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; list.<span class="fn">size</span>(); i++) {
+            System.out.print(list.<span class="fn">get</span>(i) + <span class="str">" "</span>);
+        }
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">10 50 30 </div>
+      <div class="explanation">
+        <strong>핵심:</strong> add(index, value)는 해당 위치에 삽입, remove(index)는 해당 위치 삭제<br>
+        <div class="step">• add(10) → [10]</div>
+        <div class="step">• add(20) → [10, 20]</div>
+        <div class="step">• add(30) → [10, 20, 30]</div>
+        <div class="step">• <strong>add(1, 50)</strong> → 인덱스 1에 50 삽입 → [10, <strong>50</strong>, 20, 30]</div>
+        <div class="step">• <strong>remove(2)</strong> → 인덱스 2 제거(20) → [10, 50, 30]</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 4 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 4</span>
+    <div class="q-meta">
+      <span class="q-topic">try-catch-finally</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        System.out.print(<span class="str">"A"</span>);
+        <span class="kw">try</span> {
+            System.out.print(<span class="str">"B"</span>);
+            <span class="kw">int</span> a = <span class="num">10</span> / <span class="num">0</span>;
+            System.out.print(<span class="str">"C"</span>);
+        } <span class="kw">catch</span> (<span class="tp">ArithmeticException</span> e) {
+            System.out.print(<span class="str">"D"</span>);
+        } <span class="kw">finally</span> {
+            System.out.print(<span class="str">"E"</span>);
+        }
+        System.out.print(<span class="str">"F"</span>);
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">ABDEF</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 예외 발생 시 try 블록의 나머지는 건너뛰고, catch → finally 순서로 실행됩니다.<br>
+        <div class="step">• "A" 출력 → try 진입 → "B" 출력</div>
+        <div class="step">• <strong>10/0</strong>에서 ArithmeticException 발생 → "C"는 건너뜀</div>
+        <div class="step">• catch 블록 → "D" 출력</div>
+        <div class="step">• <strong>finally는 항상 실행</strong> → "E" 출력</div>
+        <div class="step">• 예외가 처리되었으므로 프로그램 계속 → "F" 출력</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 5 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 5</span>
+    <div class="q-meta">
+      <span class="q-topic">static 변수</span>
+      <span class="q-diff">★★☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">class</span> <span class="tp">Counter</span> {
+    <span class="kw">static int</span> count = <span class="num">0</span>;
+    <span class="kw">int</span> num;
+
+    <span class="tp">Counter</span>() {
+        count++;
+        num = count;
+    }
+}
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="tp">Counter</span> c1 = <span class="kw">new</span> <span class="tp">Counter</span>();
+        <span class="tp">Counter</span> c2 = <span class="kw">new</span> <span class="tp">Counter</span>();
+        <span class="tp">Counter</span> c3 = <span class="kw">new</span> <span class="tp">Counter</span>();
+        System.out.println(c1.num + <span class="str">" "</span> + c2.num + <span class="str">" "</span> + c3.num);
+        System.out.println(<span class="tp">Counter</span>.count);
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">1 2 3<br>3</div>
+      <div class="explanation">
+        <strong>핵심:</strong> static 변수는 모든 인스턴스가 공유합니다.<br>
+        <div class="step">• c1 생성: count=1, c1.num=1</div>
+        <div class="step">• c2 생성: count=2, c2.num=2</div>
+        <div class="step">• c3 생성: count=3, c3.num=3</div>
+        <div class="step">• <strong>num</strong>은 인스턴스 변수이므로 각 객체가 고유 값 보유</div>
+        <div class="step">• <strong>Counter.count</strong>는 static이므로 최종 값 3</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 6 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 6</span>
+    <div class="q-meta">
+      <span class="q-topic">추상클래스 · 인터페이스</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">interface</span> <span class="tp">Flyable</span> {
+    <span class="kw">default void</span> <span class="fn">move</span>() {
+        System.out.println(<span class="str">"Fly"</span>);
+    }
+}
+
+<span class="kw">abstract class</span> <span class="tp">Animal</span> {
+    <span class="kw">abstract void</span> <span class="fn">sound</span>();
+    <span class="kw">void</span> <span class="fn">move</span>() {
+        System.out.println(<span class="str">"Walk"</span>);
+    }
+}
+
+<span class="kw">class</span> <span class="tp">Bird</span> <span class="kw">extends</span> <span class="tp">Animal</span> <span class="kw">implements</span> <span class="tp">Flyable</span> {
+    <span class="kw">void</span> <span class="fn">sound</span>() {
+        System.out.println(<span class="str">"Tweet"</span>);
+    }
+}
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="tp">Bird</span> b = <span class="kw">new</span> <span class="tp">Bird</span>();
+        b.<span class="fn">sound</span>();
+        b.<span class="fn">move</span>();
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">Tweet<br>Walk</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 클래스의 메서드가 인터페이스의 default 메서드보다 우선합니다.<br>
+        <div class="step">• <strong>b.sound()</strong> → Bird에서 구현한 추상 메서드 → "Tweet"</div>
+        <div class="step">• <strong>b.move()</strong> → Animal 클래스의 move()와 Flyable의 default move()가 충돌</div>
+        <div class="step">• <strong>클래스 우선 원칙</strong>에 따라 Animal의 move() = "Walk" 실행</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 7 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 7</span>
+    <div class="q-meta">
+      <span class="q-topic">생성자 체이닝</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">class</span> <span class="tp">A</span> {
+    <span class="tp">A</span>() {
+        System.out.print(<span class="str">"A"</span>);
+    }
+    <span class="tp">A</span>(<span class="kw">int</span> x) {
+        <span class="kw">this</span>();
+        System.out.print(<span class="str">"B"</span>);
+    }
+}
+
+<span class="kw">class</span> <span class="tp">B</span> <span class="kw">extends</span> <span class="tp">A</span> {
+    <span class="tp">B</span>() {
+        <span class="kw">super</span>(<span class="num">10</span>);
+        System.out.print(<span class="str">"C"</span>);
+    }
+    <span class="tp">B</span>(<span class="kw">int</span> x) {
+        <span class="kw">this</span>();
+        System.out.print(<span class="str">"D"</span>);
+    }
+}
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="tp">B</span> obj = <span class="kw">new</span> <span class="tp">B</span>(<span class="num">5</span>);
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">ABCD</div>
+      <div class="explanation">
+        <strong>핵심:</strong> this()와 super()를 통한 생성자 호출 순서를 추적합니다.<br>
+        <div class="step">• <strong>new B(5)</strong> → B(int x) 호출</div>
+        <div class="step">• B(int x)에서 <strong>this()</strong> → B() 호출</div>
+        <div class="step">• B()에서 <strong>super(10)</strong> → A(int x) 호출</div>
+        <div class="step">• A(int x)에서 <strong>this()</strong> → A() 호출</div>
+        <div class="step">• A() → "A" 출력, A(int x) 복귀 → "B" 출력</div>
+        <div class="step">• B() 복귀 → "C" 출력, B(int x) 복귀 → "D" 출력</div>
+        <div class="step">• 최종: <strong>ABCD</strong></div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 8 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 8</span>
+    <div class="q-meta">
+      <span class="q-topic">오버로딩 · 오버라이딩</span>
+      <span class="q-diff">★★☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">class</span> <span class="tp">Shape</span> {
+    <span class="kw">void</span> <span class="fn">draw</span>() {
+        System.out.println(<span class="str">"Shape"</span>);
+    }
+    <span class="kw">void</span> <span class="fn">draw</span>(<span class="tp">String</span> color) {
+        System.out.println(<span class="str">"Shape:"</span> + color);
+    }
+}
+
+<span class="kw">class</span> <span class="tp">Circle</span> <span class="kw">extends</span> <span class="tp">Shape</span> {
+    <span class="kw">void</span> <span class="fn">draw</span>() {
+        System.out.println(<span class="str">"Circle"</span>);
+    }
+}
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="tp">Shape</span> s = <span class="kw">new</span> <span class="tp">Circle</span>();
+        s.<span class="fn">draw</span>();
+        s.<span class="fn">draw</span>(<span class="str">"Red"</span>);
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">Circle<br>Shape:Red</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 오버라이딩(재정의)과 오버로딩(매개변수 다름)을 구분하세요.<br>
+        <div class="step">• <strong>s.draw()</strong> → Circle이 draw()를 <strong>오버라이딩</strong>했으므로 "Circle" 출력</div>
+        <div class="step">• <strong>s.draw("Red")</strong> → Circle에는 draw(String)이 없으므로 Shape의 <strong>오버로딩</strong>된 draw(String) 실행 → "Shape:Red"</div>
+        <div class="trap">오버로딩: 같은 이름, 다른 매개변수 / 오버라이딩: 같은 시그니처, 재정의</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 9 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 9</span>
+    <div class="q-meta">
+      <span class="q-topic">형변환 · instanceof</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">class</span> <span class="tp">Animal</span> {
+    <span class="tp">String</span> type = <span class="str">"Animal"</span>;
+    <span class="kw">void</span> <span class="fn">info</span>() { System.out.println(<span class="str">"Animal"</span>); }
+}
+<span class="kw">class</span> <span class="tp">Dog</span> <span class="kw">extends</span> <span class="tp">Animal</span> {
+    <span class="tp">String</span> type = <span class="str">"Dog"</span>;
+    <span class="kw">void</span> <span class="fn">info</span>() { System.out.println(<span class="str">"Dog"</span>); }
+    <span class="kw">void</span> <span class="fn">bark</span>() { System.out.println(<span class="str">"Woof"</span>); }
+}
+
+<span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="tp">Animal</span> a = <span class="kw">new</span> <span class="tp">Dog</span>();
+        System.out.println(a <span class="kw">instanceof</span> <span class="tp">Animal</span>);
+        System.out.println(a <span class="kw">instanceof</span> <span class="tp">Dog</span>);
+        a.<span class="fn">info</span>();
+
+        <span class="tp">Dog</span> d = (<span class="tp">Dog</span>) a;
+        d.<span class="fn">bark</span>();
+        System.out.println(d.type);
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">true<br>true<br>Dog<br>Woof<br>Dog</div>
+      <div class="explanation">
+        <strong>핵심:</strong> instanceof는 실제 객체 타입을 검사합니다.<br>
+        <div class="step">• <strong>a instanceof Animal</strong> → Dog는 Animal의 자식이므로 <strong>true</strong></div>
+        <div class="step">• <strong>a instanceof Dog</strong> → 실제 객체가 Dog이므로 <strong>true</strong></div>
+        <div class="step">• <strong>a.info()</strong> → 메서드는 다형성 적용 → "Dog"</div>
+        <div class="step">• <strong>(Dog) a</strong> → 다운캐스팅 (실제 Dog 객체이므로 안전)</div>
+        <div class="step">• <strong>d.bark()</strong> → 다운캐스팅 후 Dog 고유 메서드 호출 가능 → "Woof"</div>
+        <div class="step">• <strong>d.type</strong> → Dog의 필드 = "Dog"</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 10 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 10</span>
+    <div class="q-meta">
+      <span class="q-topic">배열 · 반복문</span>
+      <span class="q-diff">★★☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 Java 코드의 실행 결과를 쓰시오.</p>
+<pre><code><span class="kw">public class</span> <span class="tp">Main</span> {
+    <span class="kw">public static void</span> <span class="fn">main</span>(<span class="tp">String</span>[] args) {
+        <span class="kw">int</span>[][] arr = {{<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>}, {<span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>}, {<span class="num">7</span>, <span class="num">8</span>, <span class="num">9</span>}};
+        <span class="kw">int</span> sum = <span class="num">0</span>;
+        <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; arr.length; i++) {
+            sum += arr[i][i];
+        }
+        System.out.println(sum);
+
+        <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; arr.length; i++) {
+            <span class="kw">for</span> (<span class="kw">int</span> j = <span class="num">0</span>; j &lt; arr[i].length; j++) {
+                <span class="kw">if</span> (arr[i][j] % <span class="num">2</span> != <span class="num">0</span>)
+                    System.out.print(arr[i][j] + <span class="str">" "</span>);
+            }
+        }
+    }
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">15<br>1 3 5 7 9 </div>
+      <div class="explanation">
+        <strong>핵심:</strong> 2차원 배열의 대각선 합과 조건부 출력<br>
+        <div class="step">• <strong>대각선 합:</strong> arr[0][0]=1 + arr[1][1]=5 + arr[2][2]=9 = <strong>15</strong></div>
+        <div class="step">• <strong>홀수 출력:</strong> 1, 3, 5, 7, 9 (% 2 != 0 조건을 만족하는 원소)</div>
+        <div class="step">• 2차원 배열 탐색 시 행(i)과 열(j)의 인덱스 관계를 파악하는 것이 핵심</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  정보처리기사 실기 대비 학습 자료 | Java 코드 예측 문제 10선
+</footer>
+
+<script>
+(function() {
+  const total = document.querySelectorAll('.question-card details').length;
+  let revealed = 0;
+  const progText = document.getElementById('prog-text');
+  const progFill = document.getElementById('prog-fill');
+
+  function updateProgress() {
+    progText.textContent = revealed + ' / ' + total;
+    progFill.style.width = (revealed / total * 100) + '%';
+  }
+
+  document.querySelectorAll('.question-card details').forEach(function(det) {
+    let counted = false;
+    det.addEventListener('toggle', function() {
+      if (det.open && !counted) {
+        counted = true;
+        revealed++;
+        updateProgress();
+      }
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UML/디자인패턴 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-links">
+    <a href="index.html">🏠 홈</a>
+    <a href="java.html">☕ Java</a>
+    <a href="python.html">🐍 Python</a>
+    <a href="c.html">⚙️ C</a>
+    <a href="sql.html">🗄️ SQL</a>
+    <a href="network.html">🌐 네트워크</a>
+    <a href="os.html">💻 OS</a>
+    <a href="software-engineering.html">🔧 소프트웨어공학</a>
+    <a href="db.html">📊 DB</a>
+    <a href="algorithm.html">🧮 알고리즘</a>
+    <a href="uml.html" class="active">📐 UML</a>
+    <a href="newtech.html">🆕 신기술</a>
+    <a href="integration.html">🔗 통합</a>
+  </div>
+</nav>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <span class="label">진행률</span>
+  <div class="track"><div class="fill" id="prog-fill"></div></div>
+  <span class="count" id="prog-text">0 / 10</span>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>📐 UML / 디자인패턴 문제</h1>
+  <p class="subtitle">정보처리기사 실기 기출 유형 10선 — UML 다이어그램, GoF 패턴, SOLID 원칙</p>
+  <span class="badge badge-red">UML</span>
+  <span class="badge badge-purple">GoF 패턴</span>
+  <span class="badge badge-blue">생성 패턴</span>
+  <span class="badge badge-orange">구조 패턴</span>
+  <span class="badge badge-green">행위 패턴</span>
+</div>
+
+<!-- CONCEPT GRID -->
+<div class="concept-grid">
+  <div class="concept-card">
+    <h3>UML 다이어그램</h3>
+    <p>구조(7) + 행위(7) = 14가지 다이어그램</p>
+  </div>
+  <div class="concept-card">
+    <h3>클래스 다이어그램</h3>
+    <p>클래스 간 관계: 연관, 집합, 합성, 의존, 일반화, 실체화</p>
+  </div>
+  <div class="concept-card">
+    <h3>유스케이스</h3>
+    <p>액터와 시스템 기능 간 상호작용</p>
+  </div>
+  <div class="concept-card">
+    <h3>시퀀스 다이어그램</h3>
+    <p>객체 간 메시지 교환의 시간 순서</p>
+  </div>
+  <div class="concept-card">
+    <h3>GoF 생성 패턴</h3>
+    <p>객체 생성 방식을 캡슐화 (5가지)</p>
+  </div>
+  <div class="concept-card">
+    <h3>GoF 구조 패턴</h3>
+    <p>클래스/객체 구성을 통한 구조 확장 (7가지)</p>
+  </div>
+  <div class="concept-card">
+    <h3>GoF 행위 패턴</h3>
+    <p>객체 간 책임 분배와 알고리즘 (11가지)</p>
+  </div>
+  <div class="concept-card">
+    <h3>SOLID 원칙</h3>
+    <p>객체지향 설계 5대 원칙</p>
+  </div>
+  <div class="concept-card">
+    <h3>상태 다이어그램</h3>
+    <p>객체의 상태 변화와 이벤트</p>
+  </div>
+  <div class="concept-card">
+    <h3>활동 다이어그램</h3>
+    <p>비즈니스 프로세스 흐름 (fork, join, decision)</p>
+  </div>
+</div>
+
+<!-- ========== 문제 1 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 1</span>
+    <div class="q-meta">
+      <span class="q-topic">UML 다이어그램 종류</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">UML 2.0의 다이어그램은 크게 <strong>구조 다이어그램(7가지)</strong>과 <strong>행위 다이어그램(7가지)</strong>으로 나뉩니다. 14가지 다이어그램의 이름을 모두 쓰시오.</p>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">아래 해설 참조</div>
+      <div class="explanation">
+<pre><code>┌─── UML 2.0 다이어그램 (14가지) ───────────────┐
+│                                                │
+│  ★ 구조 다이어그램 (Structure, 7가지)          │
+│  ┌──────────────────────────────────────┐      │
+│  │ 1. 클래스 다이어그램 (Class)         │      │
+│  │ 2. 객체 다이어그램 (Object)          │      │
+│  │ 3. 컴포넌트 다이어그램 (Component)   │      │
+│  │ 4. 배치 다이어그램 (Deployment)      │      │
+│  │ 5. 복합구조 다이어그램 (Composite)   │      │
+│  │ 6. 패키지 다이어그램 (Package)       │      │
+│  │ 7. 프로파일 다이어그램 (Profile)     │      │
+│  └──────────────────────────────────────┘      │
+│                                                │
+│  ★ 행위 다이어그램 (Behavior, 7가지)           │
+│  ┌──────────────────────────────────────┐      │
+│  │ 1. 유스케이스 다이어그램 (Use Case)  │      │
+│  │ 2. 활동 다이어그램 (Activity)        │      │
+│  │ 3. 상태 머신 다이어그램 (State)      │      │
+│  │ 4. 시퀀스 다이어그램 (Sequence)      │      │
+│  │ 5. 커뮤니케이션 다이어그램 (Comm.)   │      │
+│  │ 6. 상호작용 개요 다이어그램           │      │
+│  │    (Interaction Overview)            │      │
+│  │ 7. 타이밍 다이어그램 (Timing)        │      │
+│  └──────────────────────────────────────┘      │
+└────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• 💡 암기 팁 구조: <strong>클객컴배복패프</strong></div>
+        <div class="step">• 💡 암기 팁 행위: <strong>유활상시커상타</strong></div>
+        <div class="step">• 시퀀스, 커뮤니케이션, 상호작용개요, 타이밍은 <strong>상호작용 다이어그램</strong>의 하위</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 2 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 2</span>
+    <div class="q-meta">
+      <span class="q-topic">클래스 다이어그램 관계</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">클래스 다이어그램에서 사용하는 다음 관계들의 <strong>의미, 표기법(화살표), 예시</strong>를 각각 설명하시오.</p>
+<pre><code>(1) 연관 (Association)
+(2) 집합 (Aggregation)
+(3) 합성 (Composition)
+(4) 의존 (Dependency)
+(5) 일반화 (Generalization)
+(6) 실체화 (Realization)</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">아래 해설 참조</div>
+      <div class="explanation">
+<pre><code>┌─── 클래스 다이어그램 관계 ────────────────────────┐
+│                                                    │
+│ (1) 연관 (Association)                             │
+│     A ────────→ B      실선 + 화살표              │
+│     "A가 B를 참조/사용" (has-a 느슨한 관계)        │
+│     예: 학생 → 수강과목                            │
+│                                                    │
+│ (2) 집합 (Aggregation)                             │
+│     A ◇────→ B        빈 마름모 + 실선            │
+│     "전체-부분" 관계, 독립적 생명주기              │
+│     예: 팀 ◇── 선수 (팀 해체해도 선수 존재)       │
+│                                                    │
+│ (3) 합성 (Composition)                             │
+│     A ◆────→ B        채운 마름모 + 실선          │
+│     "전체-부분" 관계, 동일 생명주기                │
+│     예: 건물 ◆── 방 (건물 파괴 시 방도 소멸)      │
+│                                                    │
+│ (4) 의존 (Dependency)                              │
+│     A - - - -→ B       점선 + 화살표              │
+│     "일시적 사용" (매개변수, 지역변수)             │
+│     예: 자동차 - - → 주유소                       │
+│                                                    │
+│ (5) 일반화 (Generalization)                        │
+│     B ────▷ A          실선 + 빈 삼각형           │
+│     "상속" 관계 (is-a)                             │
+│     예: 고양이 ──▷ 동물                           │
+│                                                    │
+│ (6) 실체화 (Realization)                           │
+│     B - - -▷ A         점선 + 빈 삼각형           │
+│     "인터페이스 구현"                              │
+│     예: ArrayList - -▷ List(인터페이스)            │
+└────────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• <strong>집합 vs 합성</strong>: 생명주기 의존 여부가 핵심 차이</div>
+        <div class="step">• <strong>일반화 vs 실체화</strong>: 상속(실선) vs 인터페이스 구현(점선)</div>
+        <div class="step">• 의존 관계가 가장 약한 결합도, 합성이 가장 강한 결합도</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 3 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 3</span>
+    <div class="q-meta">
+      <span class="q-topic">유스케이스 다이어그램</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 유스케이스 다이어그램에서 <strong>(가), (나), (다)</strong>에 들어갈 관계를 쓰고, <code>&lt;&lt;include&gt;&gt;</code>와 <code>&lt;&lt;extend&gt;&gt;</code>의 차이를 설명하시오.</p>
+<pre><code>   ┌─────────────────────────────────┐
+   │         온라인 쇼핑몰            │
+   │                                  │
+   │  ┌──────────┐   (가)   ┌──────┐ │
+   │  │ 상품 주문 │ ------→ │ 로그인│ │
+   │  └──────────┘          └──────┘ │
+   │       │                          │
+ 고객     │ (나)                      │
+   │       ↓                          │
+   │  ┌──────────┐                    │
+   │  │쿠폰 적용  │                    │
+   │  └──────────┘                    │
+   │                                  │
+   │  ┌──────────┐  (다)  ┌────────┐ │
+   │  │ 결제 처리 │ -----→│ 영수증 │ │
+   │  └──────────┘        │ 발급   │ │
+   │                      └────────┘ │
+   └─────────────────────────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">(가) &lt;&lt;include&gt;&gt; (나) &lt;&lt;extend&gt;&gt; (다) &lt;&lt;include&gt;&gt;</div>
+      <div class="explanation">
+<pre><code>┌─── include vs extend ──────────────────────────┐
+│                                                  │
+│  &lt;&lt;include&gt;&gt; (포함)                             │
+│  ━━━━━━━━━━━━━━━━━━━━                            │
+│  • 기본 유스케이스 실행 시 반드시 포함            │
+│  • 방향: 기본 ──→ 포함되는 유스케이스            │
+│  • 예: 상품주문 시 로그인은 필수                  │
+│        결제처리 시 영수증발급은 필수              │
+│                                                  │
+│  &lt;&lt;extend&gt;&gt; (확장)                              │
+│  ━━━━━━━━━━━━━━━━━━━━                            │
+│  • 특정 조건에서만 선택적으로 수행               │
+│  • 방향: 확장 유스케이스 ──→ 기본 유스케이스     │
+│  • 예: 쿠폰 적용은 쿠폰이 있을 때만 수행        │
+└──────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• <strong>include</strong>: 필수적 포함 (반드시 실행)</div>
+        <div class="step">• <strong>extend</strong>: 선택적 확장 (조건부 실행)</div>
+        <div class="step">• 화살표 방향 주의! include는 기본→포함, extend는 확장→기본</div>
+        <div class="step">• 액터(Actor): 시스템 외부에서 상호작용하는 사람/시스템</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 4 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 4</span>
+    <div class="q-meta">
+      <span class="q-topic">시퀀스 다이어그램</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 시퀀스 다이어그램의 구성요소 <strong>(가)~(마)</strong>의 명칭을 쓰시오.</p>
+<pre><code>  (가)          (가)          (가)
+ [고객]      [주문시스템]    [DB]
+   |              |            |
+   | ─── (나) ──→ |            |   1. 주문 요청
+   |              |            |
+   |              | ── (나) ──→|   2. 주문 저장
+   |              |            |
+   |              | ←─ (다) ──│   3. 저장 확인
+   |              |            |
+   |  ┌── (라) ──┐|            |
+   |  │  주문검증 ││            |   4. 자체 처리
+   |  └──────────┘|            |
+   |              |            |
+   | ←── (다) ───│            |   5. 주문 완료
+   |              |            |
+   ▼              ▼            ▼
+        (마) - 생명선</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">
+        (가) 객체(Object/생명선 머리)<br>
+        (나) 동기 메시지(Synchronous Message)<br>
+        (다) 응답 메시지(Return Message)<br>
+        (라) 자체 메시지(Self Message)<br>
+        (마) 생명선(Lifeline)
+      </div>
+      <div class="explanation">
+<pre><code>┌─── 시퀀스 다이어그램 구성요소 ──────────────────┐
+│                                                  │
+│  객체(Object)     : 상단 사각형, 역할 표시       │
+│  생명선(Lifeline) : 객체 아래 점선(시간 흐름)    │
+│  활성 상자        : 생명선 위 좁은 사각형        │
+│                     (처리 중인 구간)              │
+│                                                  │
+│  메시지 종류:                                    │
+│  ──────→  동기 메시지 (실선+채운 화살표)         │
+│  ─ ─ ─ →  비동기 메시지 (실선+열린 화살표)      │
+│  ← ─ ─ ─  응답/반환 메시지 (점선)               │
+│  ┌──→     자체 메시지 (Self Message)             │
+│  └──┘                                            │
+│                                                  │
+│  복합 프래그먼트:                                │
+│  alt (대안), opt (선택), loop (반복)             │
+│  par (병행), break (중단)                        │
+└──────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• 시퀀스 다이어그램은 <strong>시간 순서</strong>대로 메시지를 표현</div>
+        <div class="step">• 위에서 아래로 시간이 흐름</div>
+        <div class="step">• 동기 메시지: 응답을 기다림, 비동기: 기다리지 않음</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 5 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 5</span>
+    <div class="q-meta">
+      <span class="q-topic">상태 다이어그램</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음은 주문 시스템의 상태 다이어그램입니다. 빈칸 <strong>(가)~(라)</strong>에 들어갈 상태 또는 전이 조건을 쓰시오.</p>
+<pre><code>  ●(시작)
+  │
+  ▼
+┌──────┐  주문접수   ┌──────┐  결제완료   ┌──────┐
+│ (가) │ ─────────→ │ (나) │ ─────────→ │ (다) │
+└──────┘            └──────┘            └──────┘
+                       │                    │
+                    (라) 조건              배송완료
+                       │                    │
+                       ▼                    ▼
+                   ┌──────┐            ┌──────┐
+                   │ 취소됨 │            │ 완료됨 │
+                   └──────┘            └──────┘
+                                           │
+                                           ▼
+                                         ◉(종료)</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">
+        (가) 대기 중 (Idle/Pending)<br>
+        (나) 결제 대기 (Payment Pending)<br>
+        (다) 배송 중 (Shipping)<br>
+        (라) 결제 취소/결제 실패
+      </div>
+      <div class="explanation">
+<pre><code>┌─── 상태 다이어그램 구성요소 ─────────────────────┐
+│                                                    │
+│  ● 시작 상태 (Initial State)                      │
+│     → 검은 원으로 표시                             │
+│                                                    │
+│  ◉ 종료 상태 (Final State)                        │
+│     → 이중 원으로 표시                             │
+│                                                    │
+│  ┌──────┐ 상태 (State)                            │
+│  │ 이름  │ → 둥근 사각형                           │
+│  └──────┘                                          │
+│                                                    │
+│  ──(이벤트)──→  전이 (Transition)                  │
+│     → 이벤트/조건에 의한 상태 변화                 │
+│                                                    │
+│  전이 표기: 이벤트[조건]/액션                      │
+│  예: 결제요청[잔액충분]/결제처리                    │
+└────────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• 상태 다이어그램은 <strong>하나의 객체</strong>의 상태 변화를 표현</div>
+        <div class="step">• 전이(Transition): 이벤트에 의해 한 상태에서 다른 상태로 변화</div>
+        <div class="step">• 가드 조건 [guard]: 전이 발생 조건을 대괄호로 표기</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 6 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 6</span>
+    <div class="q-meta">
+      <span class="q-topic">GoF 생성 패턴</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 설명에 해당하는 <strong>GoF 생성(Creational) 디자인 패턴</strong>의 이름을 쓰시오.</p>
+<pre><code>(1) 클래스의 인스턴스가 하나만 생성되도록 보장하고
+    전역 접근점을 제공하는 패턴
+
+(2) 객체 생성을 서브클래스에 위임하여
+    생성할 객체의 클래스를 결정하는 패턴
+
+(3) 복잡한 객체의 생성 과정과 표현을 분리하여
+    동일한 생성 절차로 다양한 표현을 만드는 패턴
+
+(4) 기존 객체를 복제(clone)하여
+    새로운 객체를 생성하는 패턴
+
+(5) 관련 객체들의 군(family)을 생성하는
+    인터페이스를 제공하는 패턴</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">
+        (1) Singleton (싱글톤)<br>
+        (2) Factory Method (팩토리 메서드)<br>
+        (3) Builder (빌더)<br>
+        (4) Prototype (프로토타입)<br>
+        (5) Abstract Factory (추상 팩토리)
+      </div>
+      <div class="explanation">
+<pre><code>┌─── GoF 생성 패턴 5가지 ──────────────────────────┐
+│                                                    │
+│  1. Singleton (싱글톤)                             │
+│     → 인스턴스 1개 보장, getInstance() 사용        │
+│     예: 데이터베이스 연결 풀, 설정 관리            │
+│                                                    │
+│  2. Factory Method (팩토리 메서드)                 │
+│     → 객체 생성을 서브클래스에 위임                │
+│     → "어떤 클래스"를 만들지 서브클래스가 결정     │
+│     예: 문서 앱 - createDocument()                 │
+│                                                    │
+│  3. Abstract Factory (추상 팩토리)                 │
+│     → 관련 객체 군을 한꺼번에 생성                 │
+│     → 팩토리의 팩토리                              │
+│     예: Windows/Mac UI 컴포넌트 세트               │
+│                                                    │
+│  4. Builder (빌더)                                 │
+│     → 복잡한 객체를 단계별로 생성                  │
+│     → 생성 과정과 표현 분리                        │
+│     예: SQL 쿼리 빌더, 피자 주문                   │
+│                                                    │
+│  5. Prototype (프로토타입)                         │
+│     → 원본 객체를 clone하여 새 객체 생성           │
+│     → 생성 비용이 클 때 유용                       │
+│     예: 게임 캐릭터 복제, 스프레드시트 셀 복사     │
+└────────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• 💡 암기: <strong>"싱팩빌프추"</strong> (Singleton, Factory, Builder, Prototype, Abstract Factory)</div>
+        <div class="step">• Factory Method vs Abstract Factory: 단일 객체 vs 객체 군</div>
+        <div class="step">• 생성 패턴의 공통 목적: 객체 생성의 <strong>유연성과 재사용성</strong> 향상</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 7 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 7</span>
+    <div class="q-meta">
+      <span class="q-topic">GoF 구조 패턴</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 설명에 해당하는 <strong>GoF 구조(Structural) 디자인 패턴</strong>의 이름을 쓰시오.</p>
+<pre><code>(1) 호환되지 않는 인터페이스를 가진 클래스들을
+    함께 동작할 수 있도록 변환하는 패턴
+
+(2) 구현부에서 추상층을 분리하여
+    각각 독립적으로 변형할 수 있게 하는 패턴
+
+(3) 객체들을 트리 구조로 구성하여
+    부분-전체 계층을 표현하는 패턴
+
+(4) 객체에 동적으로 새로운 기능을
+    추가할 수 있게 하는 패턴
+
+(5) 복잡한 서브시스템에 대한 간단한
+    통합 인터페이스를 제공하는 패턴
+
+(6) 다른 객체에 대한 접근을 제어하기 위해
+    대리자를 제공하는 패턴</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">
+        (1) Adapter (어댑터)<br>
+        (2) Bridge (브리지)<br>
+        (3) Composite (컴포지트)<br>
+        (4) Decorator (데코레이터)<br>
+        (5) Facade (퍼사드)<br>
+        (6) Proxy (프록시)
+      </div>
+      <div class="explanation">
+<pre><code>┌─── GoF 구조 패턴 (주요 6가지 + 1) ──────────────┐
+│                                                    │
+│  1. Adapter (어댑터) - "변환기"                    │
+│     → 인터페이스 변환, 호환성 제공                 │
+│     예: 110V→220V 변환 어댑터                      │
+│                                                    │
+│  2. Bridge (브리지) - "분리"                       │
+│     → 추상과 구현을 분리, 독립적 확장              │
+│     예: 도형(원,사각형) × 색상(빨강,파랑)          │
+│                                                    │
+│  3. Composite (컴포지트) - "트리"                  │
+│     → 개별 객체와 복합 객체를 동일하게 다룸        │
+│     예: 파일시스템(파일+폴더)                      │
+│                                                    │
+│  4. Decorator (데코레이터) - "감싸기"              │
+│     → 상속 없이 동적으로 기능 추가                 │
+│     예: 커피 + 우유 + 시럽 (토핑 추가)             │
+│                                                    │
+│  5. Facade (퍼사드) - "정면"                       │
+│     → 복잡한 시스템의 단순한 인터페이스            │
+│     예: 컴퓨터 전원 버튼 (내부 복잡한 부팅 과정)   │
+│                                                    │
+│  6. Proxy (프록시) - "대리자"                      │
+│     → 접근 제어, 지연 로딩, 보안                   │
+│     예: 이미지 프록시, 원격 프록시                  │
+│                                                    │
+│  7. Flyweight (플라이웨이트) - "경량"              │
+│     → 공유를 통해 메모리 절약                      │
+│     예: 문자 폰트 객체 공유                        │
+└────────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• 💡 암기: <strong>"어브컴데퍼프플"</strong></div>
+        <div class="step">• Adapter vs Bridge: Adapter는 기존 호환, Bridge는 설계 시 분리</div>
+        <div class="step">• Decorator vs Proxy: Decorator는 기능 추가, Proxy는 접근 제어</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 8 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 8</span>
+    <div class="q-meta">
+      <span class="q-topic">GoF 행위 패턴</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 설명에 해당하는 <strong>GoF 행위(Behavioral) 디자인 패턴</strong>의 이름을 쓰시오.</p>
+<pre><code>(1) 객체의 상태 변화를 관찰하여
+    의존 객체들에게 자동으로 통지하는 패턴
+
+(2) 알고리즘 군을 정의하고 캡슐화하여
+    실행 시 교환 가능하게 하는 패턴
+
+(3) 요청을 객체로 캡슐화하여
+    매개변수화, 큐잉, 로깅, 취소를 지원하는 패턴
+
+(4) 알고리즘의 구조(골격)를 상위 클래스에서 정의하고
+    세부 단계를 하위 클래스에서 구현하는 패턴
+
+(5) 객체의 내부 상태에 따라 행위를 변경하여
+    마치 클래스가 바뀌는 것처럼 보이게 하는 패턴</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">
+        (1) Observer (옵서버)<br>
+        (2) Strategy (전략)<br>
+        (3) Command (커맨드)<br>
+        (4) Template Method (템플릿 메서드)<br>
+        (5) State (상태)
+      </div>
+      <div class="explanation">
+<pre><code>┌─── GoF 행위 패턴 (주요 5가지) ───────────────────┐
+│                                                    │
+│  1. Observer (옵서버) - "관찰자/구독"              │
+│     → 1:N 의존 관계, 상태 변화 시 자동 통지       │
+│     예: 유튜브 구독, 이벤트 리스너                 │
+│     → publish-subscribe 패턴                       │
+│                                                    │
+│  2. Strategy (전략) - "교환 가능한 알고리즘"       │
+│     → 알고리즘을 캡슐화하여 런타임에 교체          │
+│     예: 정렬 전략(버블/퀵/머지) 교체               │
+│     → if-else 대신 전략 객체로 분리                │
+│                                                    │
+│  3. Command (커맨드) - "명령 객체화"               │
+│     → 요청을 객체로 캡슐화                         │
+│     → Undo/Redo, 매크로 기록 가능                  │
+│     예: 리모컨 버튼, 주문 시스템                   │
+│                                                    │
+│  4. Template Method (템플릿 메서드) - "골격 정의"  │
+│     → 상위 클래스에서 알고리즘 골격 정의           │
+│     → 하위 클래스에서 세부 단계 오버라이드         │
+│     예: 음료 제조(물끓이기→우려내기→컵에따르기)    │
+│                                                    │
+│  5. State (상태) - "상태에 따른 행위 변경"         │
+│     → 상태를 객체로 표현, 상태별 행위 위임         │
+│     예: 자판기 상태(동전없음/동전있음/판매중)      │
+└────────────────────────────────────────────────────┘
+
+기타 행위 패턴:
+  Iterator, Mediator, Memento, Chain of Responsibility,
+  Visitor, Interpreter</code></pre>
+        <div class="step">• Strategy vs State: Strategy는 <strong>알고리즘 교체</strong>, State는 <strong>상태 전환</strong></div>
+        <div class="step">• Template Method: <strong>상속</strong> 기반, Strategy: <strong>구성(위임)</strong> 기반</div>
+        <div class="step">• Observer: MVC 패턴의 핵심 (Model→View 통지)</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 9 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 9</span>
+    <div class="q-meta">
+      <span class="q-topic">SOLID 원칙</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">객체지향 설계의 <strong>SOLID 원칙</strong> 5가지의 영문 명칭과 의미를 쓰시오.</p>
+<pre><code>S - ( ? )
+O - ( ? )
+L - ( ? )
+I - ( ? )
+D - ( ? )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">아래 해설 참조</div>
+      <div class="explanation">
+<pre><code>┌─── SOLID 원칙 ───────────────────────────────────┐
+│                                                    │
+│  S - Single Responsibility Principle               │
+│      단일 책임 원칙                                │
+│      "클래스는 하나의 책임만 가져야 한다"          │
+│      → 변경의 이유가 하나여야 함                   │
+│                                                    │
+│  O - Open/Closed Principle                         │
+│      개방-폐쇄 원칙                                │
+│      "확장에는 열려 있고, 변경에는 닫혀야 한다"    │
+│      → 기존 코드 수정 없이 기능 추가               │
+│                                                    │
+│  L - Liskov Substitution Principle                 │
+│      리스코프 치환 원칙                            │
+│      "자식 클래스는 부모 클래스를 대체할 수 있다"  │
+│      → 상속 관계의 올바른 설계                     │
+│                                                    │
+│  I - Interface Segregation Principle               │
+│      인터페이스 분리 원칙                          │
+│      "클라이언트가 사용하지 않는 인터페이스에      │
+│       의존하지 않아야 한다"                        │
+│      → 작고 구체적인 인터페이스로 분리             │
+│                                                    │
+│  D - Dependency Inversion Principle                │
+│      의존 역전 원칙                                │
+│      "고수준 모듈은 저수준 모듈에 의존하면 안되고  │
+│       추상화에 의존해야 한다"                      │
+│      → 인터페이스/추상클래스에 의존                │
+└────────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• 💡 암기: <strong>단개리인의</strong> (단일책임, 개방폐쇄, 리스코프, 인터페이스분리, 의존역전)</div>
+        <div class="step">• SOLID는 <strong>결합도↓ 응집도↑</strong>를 위한 설계 원칙</div>
+        <div class="step">• 시험 빈출: 각 원칙의 영문 약자와 한글 의미 모두 숙지 필요</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 10 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 10</span>
+    <div class="q-meta">
+      <span class="q-topic">활동 다이어그램</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 활동 다이어그램에서 <strong>(가)~(마)</strong> 기호의 명칭과 역할을 쓰시오.</p>
+<pre><code>        ● (가)
+        │
+        ▼
+  ┌───────────┐
+  │  주문 접수  │
+  └───────────┘
+        │
+    ◆ (나)
+   ╱       ╲
+[재고있음]  [재고없음]
+  │              │
+  ▼              ▼
+┌──────┐    ┌──────┐
+│결제처리│    │입고대기│
+└──────┘    └──────┘
+  │              │
+  ═══════════════    ← (다)
+  │              │
+  ▼              ▼
+┌──────┐    ┌──────┐
+│포장    │    │송장발행│
+└──────┘    └──────┘
+  │              │
+  ═══════════════    ← (라)
+        │
+        ▼
+  ┌───────────┐
+  │   배송      │
+  └───────────┘
+        │
+        ▼
+      ◉ (마)</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">
+        (가) 시작 노드 (Initial Node)<br>
+        (나) 결정 노드 (Decision Node)<br>
+        (다) 포크 (Fork) - 병행 분기<br>
+        (라) 조인 (Join) - 병행 합류<br>
+        (마) 종료 노드 (Final Node)
+      </div>
+      <div class="explanation">
+<pre><code>┌─── 활동 다이어그램 구성요소 ─────────────────────┐
+│                                                    │
+│  ● 시작 노드 (Initial Node)                       │
+│    → 활동의 시작점, 검은 원                        │
+│                                                    │
+│  ◉ 종료 노드 (Activity Final Node)                │
+│    → 활동의 종료점, 이중 원                        │
+│                                                    │
+│  ◆ 결정 노드 (Decision Node)                      │
+│    → 조건에 따른 분기, 마름모                      │
+│    → 각 분기에 [가드 조건] 표기                    │
+│                                                    │
+│  ◆ 병합 노드 (Merge Node)                         │
+│    → 분기된 흐름을 하나로 합침, 마름모             │
+│    → 결정 노드와 모양 같으나 역할이 다름           │
+│                                                    │
+│  ═══ 포크 (Fork Bar)                              │
+│    → 하나의 흐름을 여러 병행 흐름으로 분리         │
+│    → 굵은 가로선, 동시 실행 시작                   │
+│                                                    │
+│  ═══ 조인 (Join Bar)                              │
+│    → 여러 병행 흐름을 하나로 합침                  │
+│    → 굵은 가로선, 모든 흐름 완료 대기              │
+│                                                    │
+│  ┌──────┐ 액션/활동 (Action/Activity)             │
+│  │ 이름  │ → 둥근 사각형                           │
+│  └──────┘                                          │
+│                                                    │
+│  ─────→  흐름 (Control Flow)                      │
+│    → 활동 간 제어 흐름, 화살표                     │
+└────────────────────────────────────────────────────┘</code></pre>
+        <div class="step">• <strong>Fork/Join</strong>: 병행 처리 (동시 실행) 표현</div>
+        <div class="step">• <strong>Decision/Merge</strong>: 조건 분기/합류 표현</div>
+        <div class="step">• Fork는 AND 분기 (모두 실행), Decision은 OR 분기 (하나만 실행)</div>
+        <div class="step">• 스윔레인(Swimlane): 활동의 담당자/부서를 구분하는 구역</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  정보처리기사 실기 대비 학습 자료 | UML / 디자인패턴 문제 10선
+</footer>
+
+<script>
+(function() {
+  const total = document.querySelectorAll('.question-card details').length;
+  let revealed = 0;
+  const progText = document.getElementById('prog-text');
+  const progFill = document.getElementById('prog-fill');
+
+  function updateProgress() {
+    progText.textContent = revealed + ' / ' + total;
+    progFill.style.width = (revealed / total * 100) + '%';
+  }
+
+  document.querySelectorAll('.question-card details').forEach(function(det) {
+    let counted = false;
+    det.addEventListener('toggle', function() {
+      if (det.open && !counted) {
+        counted = true;
+        revealed++;
+        updateProgress();
+      }
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

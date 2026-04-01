@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SQL 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .solve-check {
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    margin-top: 0.7rem; cursor: pointer; font-size: 0.85rem;
+    color: var(--text-secondary); user-select: none;
+  }
+  .solve-check input { accent-color: var(--green); width: 16px; height: 16px; cursor: pointer; }
+  .solve-check:has(input:checked) { color: var(--green); }
+  .question-card.solved { border-color: var(--green); }
+  .table-wrap { overflow-x: auto; margin: 0.8rem 0; }
+  .table-wrap table {
+    border-collapse: collapse; width: 100%; font-size: 0.88rem;
+    background: var(--bg-primary); border: 1px solid var(--border);
+  }
+  .table-wrap th {
+    background: var(--accent-light); color: var(--accent); font-weight: 600;
+    padding: 0.5rem 0.8rem; border: 1px solid var(--border); white-space: nowrap;
+  }
+  .table-wrap td {
+    padding: 0.4rem 0.8rem; border: 1px solid var(--border); white-space: nowrap;
+  }
+  .table-name { font-weight: 600; color: var(--accent); font-size: 0.85rem; margin-bottom: 0.3rem; }
+  .blank { color: var(--red); font-weight: 700; border-bottom: 2px solid var(--red); padding: 0 0.3rem; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">📝 정보처리기사 실기</a>
+  <div class="nav-links">
+    <a href="index.html">🏠 홈</a>
+    <a href="java.html">Java</a>
+    <a href="python.html">Python</a>
+    <a href="c.html">C언어</a>
+    <a href="sql.html" class="active">SQL</a>
+    <a href="network.html">네트워크</a>
+    <a href="os.html">운영체제</a>
+    <a href="software-engineering.html">소프트웨어공학</a>
+    <a href="db.html">DB</a>
+    <a href="algorithm.html">알고리즘</a>
+    <a href="uml.html">UML</a>
+    <a href="newtech.html">신기술</a>
+    <a href="integration.html">통합</a>
+  </div>
+</nav>
+
+<div class="progress-bar">
+  <span class="label">진행률</span>
+  <div class="track"><div class="fill" id="progressBar"></div></div>
+  <span class="count" id="progressText">0 / 10</span>
+  <button class="reset-btn" onclick="resetProgress()" style="background:var(--bg-tertiary);color:var(--text-secondary);border:1px solid var(--border);padding:0.3rem 0.8rem;border-radius:6px;cursor:pointer;font-size:0.8rem;">초기화</button>
+</div>
+
+<div class="container">
+  <div class="page-header">
+    <h1>🗄️ SQL 실기 문제</h1>
+    <p class="subtitle">정보처리기사 실기 고빈도 SQL 문제 — 실행 결과를 쓰거나 SQL문을 완성하시오.</p>
+    <span class="badge badge-blue">총 10문제</span>
+    <span class="badge badge-purple">고빈도 출제</span>
+  </div>
+
+  <!-- Q1: SELECT + WHERE + ORDER BY -->
+  <div class="question-card" id="card-1">
+    <div class="question-header">
+      <span class="q-num">Q1</span>
+      <div class="q-meta">
+        <span class="q-topic">SELECT / WHERE / ORDER BY</span>
+        <span class="q-diff">★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 테이블과 SQL문의 실행 결과를 쓰시오.</p>
+      <div class="table-name">▼ 사원(EMP) 테이블</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>EMPNO</th><th>NAME</th><th>DEPT</th><th>SALARY</th></tr>
+          <tr><td>101</td><td>김철수</td><td>개발</td><td>3500</td></tr>
+          <tr><td>102</td><td>이영희</td><td>인사</td><td>3000</td></tr>
+          <tr><td>103</td><td>박민수</td><td>개발</td><td>4000</td></tr>
+          <tr><td>104</td><td>최지연</td><td>영업</td><td>2800</td></tr>
+          <tr><td>105</td><td>정수현</td><td>개발</td><td>3200</td></tr>
+        </table>
+      </div>
+      <pre><code><span class="kw">SELECT</span> NAME, SALARY
+<span class="kw">FROM</span> EMP
+<span class="kw">WHERE</span> DEPT = <span class="str">'개발'</span> <span class="kw">AND</span> SALARY &gt;= <span class="num">3500</span>
+<span class="kw">ORDER BY</span> SALARY <span class="kw">DESC</span>;</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">박민수  4000
+김철수  3500</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">1. <code>WHERE DEPT='개발' AND SALARY >= 3500</code> → 개발부서이면서 급여 3500 이상: 김철수(3500), 박민수(4000)</div>
+          <div class="step">2. <code>ORDER BY SALARY DESC</code> → 급여 내림차순 정렬: 박민수(4000), 김철수(3500)</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(1, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q2: GROUP BY + HAVING + 집계함수 -->
+  <div class="question-card" id="card-2">
+    <div class="question-header">
+      <span class="q-num">Q2</span>
+      <div class="q-meta">
+        <span class="q-topic">GROUP BY / HAVING / 집계함수</span>
+        <span class="q-diff">★★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 테이블과 SQL문의 실행 결과를 쓰시오.</p>
+      <div class="table-name">▼ 성적(SCORE) 테이블</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>STUDENT</th><th>SUBJECT</th><th>POINT</th></tr>
+          <tr><td>홍길동</td><td>국어</td><td>85</td></tr>
+          <tr><td>홍길동</td><td>영어</td><td>90</td></tr>
+          <tr><td>홍길동</td><td>수학</td><td>75</td></tr>
+          <tr><td>이순신</td><td>국어</td><td>95</td></tr>
+          <tr><td>이순신</td><td>영어</td><td>80</td></tr>
+          <tr><td>강감찬</td><td>국어</td><td>70</td></tr>
+          <tr><td>강감찬</td><td>영어</td><td>65</td></tr>
+        </table>
+      </div>
+      <pre><code><span class="kw">SELECT</span> STUDENT, <span class="fn">AVG</span>(POINT) <span class="kw">AS</span> AVG_POINT
+<span class="kw">FROM</span> SCORE
+<span class="kw">GROUP BY</span> STUDENT
+<span class="kw">HAVING</span> <span class="fn">AVG</span>(POINT) &gt;= <span class="num">80</span>
+<span class="kw">ORDER BY</span> AVG_POINT <span class="kw">DESC</span>;</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">이순신  87.5
+홍길동  83.3...</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">1. GROUP BY STUDENT → 학생별 그룹화</div>
+          <div class="step">2. AVG 계산: 홍길동=(85+90+75)/3≈83.3, 이순신=(95+80)/2=87.5, 강감찬=(70+65)/2=67.5</div>
+          <div class="step">3. HAVING AVG(POINT) >= 80 → 강감찬(67.5) 제외</div>
+          <div class="step">4. ORDER BY AVG_POINT DESC → 이순신(87.5), 홍길동(83.3)</div>
+          <div class="trap">AVG 결과의 소수점 표현은 DBMS에 따라 다를 수 있음 (반올림/절삭 차이 주의)</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(2, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q3: JOIN -->
+  <div class="question-card" id="card-3">
+    <div class="question-header">
+      <span class="q-num">Q3</span>
+      <div class="q-meta">
+        <span class="q-topic">JOIN (INNER, LEFT)</span>
+        <span class="q-diff">★★★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 두 테이블과 SQL문의 실행 결과를 쓰시오.</p>
+      <div class="table-name">▼ 학생(STUDENT) 테이블</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>SID</th><th>SNAME</th></tr>
+          <tr><td>1</td><td>김철수</td></tr>
+          <tr><td>2</td><td>이영희</td></tr>
+          <tr><td>3</td><td>박민수</td></tr>
+        </table>
+      </div>
+      <div class="table-name">▼ 수강(ENROLL) 테이블</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>SID</th><th>COURSE</th></tr>
+          <tr><td>1</td><td>DB</td></tr>
+          <tr><td>1</td><td>OS</td></tr>
+          <tr><td>2</td><td>DB</td></tr>
+        </table>
+      </div>
+      <pre><code><span class="kw">SELECT</span> S.SNAME, E.COURSE
+<span class="kw">FROM</span> STUDENT S <span class="kw">LEFT JOIN</span> ENROLL E
+<span class="kw">ON</span> S.SID = E.SID
+<span class="kw">ORDER BY</span> S.SNAME;</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">김철수  DB
+김철수  OS
+박민수  NULL
+이영희  DB</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">1. LEFT JOIN → 왼쪽 테이블(STUDENT)의 모든 행이 결과에 포함</div>
+          <div class="step">2. 김철수(SID=1) → DB, OS 두 과목 수강</div>
+          <div class="step">3. 이영희(SID=2) → DB 한 과목 수강</div>
+          <div class="step">4. 박민수(SID=3) → 수강 내역 없음 → COURSE가 NULL</div>
+          <div class="step">5. ORDER BY SNAME → 가나다순 정렬</div>
+          <div class="trap">INNER JOIN이었다면 박민수는 결과에 포함되지 않음</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(3, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q4: 서브쿼리 -->
+  <div class="question-card" id="card-4">
+    <div class="question-header">
+      <span class="q-num">Q4</span>
+      <div class="q-meta">
+        <span class="q-topic">서브쿼리 (IN, EXISTS)</span>
+        <span class="q-diff">★★★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 테이블과 SQL문의 실행 결과를 쓰시오.</p>
+      <div class="table-name">▼ 부서(DEPT) 테이블</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>DNO</th><th>DNAME</th><th>LOC</th></tr>
+          <tr><td>10</td><td>개발</td><td>서울</td></tr>
+          <tr><td>20</td><td>인사</td><td>부산</td></tr>
+          <tr><td>30</td><td>영업</td><td>대전</td></tr>
+        </table>
+      </div>
+      <div class="table-name">▼ 사원(EMP) 테이블</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>ENAME</th><th>DNO</th><th>SALARY</th></tr>
+          <tr><td>김철수</td><td>10</td><td>3500</td></tr>
+          <tr><td>이영희</td><td>10</td><td>4200</td></tr>
+          <tr><td>박민수</td><td>20</td><td>3000</td></tr>
+          <tr><td>최지연</td><td>30</td><td>2800</td></tr>
+        </table>
+      </div>
+      <pre><code><span class="kw">SELECT</span> ENAME, SALARY
+<span class="kw">FROM</span> EMP
+<span class="kw">WHERE</span> DNO <span class="kw">IN</span> (<span class="kw">SELECT</span> DNO <span class="kw">FROM</span> DEPT <span class="kw">WHERE</span> LOC = <span class="str">'서울'</span>)
+  <span class="kw">AND</span> SALARY &gt; <span class="kw">ALL</span> (<span class="kw">SELECT</span> SALARY <span class="kw">FROM</span> EMP <span class="kw">WHERE</span> DNO = <span class="num">20</span>);</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">김철수  3500
+이영희  4200</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">1. 서브쿼리1: <code>SELECT DNO FROM DEPT WHERE LOC='서울'</code> → DNO = 10</div>
+          <div class="step">2. 서브쿼리2: <code>SELECT SALARY FROM EMP WHERE DNO=20</code> → 3000</div>
+          <div class="step">3. <code>> ALL (3000)</code> → 3000보다 큰 모든 값 → SALARY > 3000</div>
+          <div class="step">4. DNO=10이면서 SALARY > 3000 → 김철수(3500), 이영희(4200)</div>
+          <div class="trap">ALL은 서브쿼리 결과의 모든 값보다 커야 함. ANY(=SOME)는 하나라도 만족하면 됨</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(4, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q5: CREATE TABLE + 제약조건 -->
+  <div class="question-card" id="card-5">
+    <div class="question-header">
+      <span class="q-num">Q5</span>
+      <div class="q-meta">
+        <span class="q-topic">CREATE TABLE / 제약조건</span>
+        <span class="q-diff">★★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 조건을 만족하는 SQL문의 빈칸 ①~④를 채우시오.</p>
+      <p class="q-text" style="font-size:0.88rem; color:var(--text-secondary);">
+        • 학번(SNO)은 기본키<br>
+        • 이름(SNAME)은 NULL 불가<br>
+        • 학과번호(DNO)는 학과 테이블의 DNO를 참조하는 외래키<br>
+        • 나이(AGE)는 18 이상
+      </p>
+      <pre><code><span class="kw">CREATE TABLE</span> 학생 (
+    SNO    <span class="tp">INT</span>         <span class="blank">①</span>,
+    SNAME  <span class="tp">VARCHAR</span>(<span class="num">20</span>) <span class="blank">②</span>,
+    DNO    <span class="tp">INT</span>         <span class="blank">③</span>,
+    AGE    <span class="tp">INT</span>         <span class="blank">④</span>
+);</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">① PRIMARY KEY
+② NOT NULL
+③ REFERENCES 학과(DNO)  또는  FOREIGN KEY REFERENCES 학과(DNO)
+④ CHECK(AGE >= 18)</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">① PRIMARY KEY — 기본키 제약조건 (자동으로 NOT NULL + UNIQUE 포함)</div>
+          <div class="step">② NOT NULL — NULL 값 입력 불가 제약조건</div>
+          <div class="step">③ REFERENCES 학과(DNO) — 외래키 제약조건, 참조 테이블과 컬럼 명시</div>
+          <div class="step">④ CHECK(AGE >= 18) — 도메인 제약조건, 18 이상의 값만 허용</div>
+          <div class="trap">FOREIGN KEY는 컬럼 레벨에서 REFERENCES만 쓰거나, 테이블 레벨에서 FOREIGN KEY(DNO) REFERENCES 학과(DNO) 형태도 가능</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(5, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q6: INSERT, UPDATE, DELETE -->
+  <div class="question-card" id="card-6">
+    <div class="question-header">
+      <span class="q-num">Q6</span>
+      <div class="q-meta">
+        <span class="q-topic">INSERT / UPDATE / DELETE</span>
+        <span class="q-diff">★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 SQL문들을 순서대로 실행한 후 테이블의 최종 상태를 쓰시오.</p>
+      <div class="table-name">▼ 제품(PRODUCT) 초기 상태</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>PID</th><th>PNAME</th><th>PRICE</th></tr>
+          <tr><td>1</td><td>키보드</td><td>50000</td></tr>
+          <tr><td>2</td><td>마우스</td><td>30000</td></tr>
+          <tr><td>3</td><td>모니터</td><td>250000</td></tr>
+        </table>
+      </div>
+      <pre><code><span class="kw">INSERT INTO</span> PRODUCT <span class="kw">VALUES</span> (<span class="num">4</span>, <span class="str">'스피커'</span>, <span class="num">80000</span>);
+<span class="kw">UPDATE</span> PRODUCT <span class="kw">SET</span> PRICE = PRICE * <span class="num">1.1</span> <span class="kw">WHERE</span> PRICE &lt; <span class="num">100000</span>;
+<span class="kw">DELETE FROM</span> PRODUCT <span class="kw">WHERE</span> PNAME = <span class="str">'모니터'</span>;</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">PID  PNAME   PRICE
+1    키보드  55000
+2    마우스  33000
+4    스피커  88000</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">1. INSERT → (4, 스피커, 80000) 추가</div>
+          <div class="step">2. UPDATE → PRICE < 100000인 행(키보드50000, 마우스30000, 스피커80000)에 1.1배 적용 → 55000, 33000, 88000</div>
+          <div class="step">3. DELETE → PNAME='모니터' 행 삭제 (모니터 250000은 UPDATE 조건에 해당 안 됨, 그대로 250000이었다가 삭제)</div>
+          <div class="trap">UPDATE의 WHERE 조건은 UPDATE 실행 시점의 값을 기준으로 판단함</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(6, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q7: VIEW -->
+  <div class="question-card" id="card-7">
+    <div class="question-header">
+      <span class="q-num">Q7</span>
+      <div class="q-meta">
+        <span class="q-topic">VIEW 생성과 활용</span>
+        <span class="q-diff">★★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 SQL문의 빈칸 ①, ②를 채우시오.</p>
+      <div class="table-name">▼ 사원(EMP) 테이블</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>EMPNO</th><th>NAME</th><th>DEPT</th><th>SALARY</th></tr>
+          <tr><td>101</td><td>김철수</td><td>개발</td><td>3500</td></tr>
+          <tr><td>102</td><td>이영희</td><td>인사</td><td>3000</td></tr>
+          <tr><td>103</td><td>박민수</td><td>개발</td><td>4000</td></tr>
+          <tr><td>104</td><td>최지연</td><td>영업</td><td>2800</td></tr>
+        </table>
+      </div>
+      <pre><code><span class="cmt">-- 개발부서 사원만 보여주는 뷰 생성</span>
+<span class="blank">①</span> VIEW DEV_EMP <span class="kw">AS</span>
+<span class="kw">SELECT</span> EMPNO, NAME, SALARY
+<span class="kw">FROM</span> EMP
+<span class="kw">WHERE</span> DEPT = <span class="str">'개발'</span>;
+
+<span class="cmt">-- 뷰 삭제</span>
+<span class="blank">②</span> VIEW DEV_EMP;</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">① CREATE (또는 CREATE OR REPLACE)
+② DROP</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">① <code>CREATE VIEW</code> — 뷰를 생성하는 DDL. 이미 존재할 경우를 대비해 <code>CREATE OR REPLACE VIEW</code>도 가능</div>
+          <div class="step">② <code>DROP VIEW</code> — 뷰를 삭제하는 DDL</div>
+          <div class="step">뷰 조회: <code>SELECT * FROM DEV_EMP;</code> → 김철수(3500), 박민수(4000) 출력</div>
+          <div class="trap">뷰는 논리적 테이블로 실제 데이터를 저장하지 않음. 원본 테이블 데이터가 변경되면 뷰 결과도 변경됨</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(7, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q8: GRANT / REVOKE -->
+  <div class="question-card" id="card-8">
+    <div class="question-header">
+      <span class="q-num">Q8</span>
+      <div class="q-meta">
+        <span class="q-topic">권한관리 GRANT / REVOKE</span>
+        <span class="q-diff">★★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 설명에 맞는 SQL문의 빈칸 ①~④를 채우시오.</p>
+      <pre><code><span class="cmt">-- 사용자 'hong'에게 EMP 테이블에 대한</span>
+<span class="cmt">-- SELECT, INSERT 권한을 부여하고,</span>
+<span class="cmt">-- hong이 다른 사용자에게 권한을 부여할 수 있도록 허용</span>
+<span class="blank">①</span> <span class="blank">②</span> <span class="kw">ON</span> EMP <span class="kw">TO</span> hong <span class="blank">③</span>;
+
+<span class="cmt">-- 사용자 'hong'으로부터 INSERT 권한을 회수하되,</span>
+<span class="cmt">-- hong이 다른 사용자에게 부여한 INSERT 권한도 함께 회수</span>
+<span class="blank">④</span> <span class="kw">INSERT</span> <span class="kw">ON</span> EMP <span class="kw">FROM</span> hong <span class="kw">CASCADE</span>;</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">① GRANT
+② SELECT, INSERT
+③ WITH GRANT OPTION
+④ REVOKE</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">① <code>GRANT</code> — 권한 부여 DCL 명령어</div>
+          <div class="step">② <code>SELECT, INSERT</code> — 부여할 권한 목록</div>
+          <div class="step">③ <code>WITH GRANT OPTION</code> — 부여받은 권한을 다른 사용자에게도 부여할 수 있는 옵션</div>
+          <div class="step">④ <code>REVOKE</code> — 권한 회수 DCL 명령어</div>
+          <div class="trap">CASCADE는 연쇄적으로 권한을 회수. RESTRICT는 다른 사용자에게 부여된 권한이 있으면 회수 거부</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(8, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q9: 윈도우 함수 -->
+  <div class="question-card" id="card-9">
+    <div class="question-header">
+      <span class="q-num">Q9</span>
+      <div class="q-meta">
+        <span class="q-topic">윈도우 함수 (RANK, ROW_NUMBER)</span>
+        <span class="q-diff">★★★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 테이블과 SQL문의 실행 결과를 쓰시오.</p>
+      <div class="table-name">▼ 성적(RESULT) 테이블</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>NAME</th><th>CLASS</th><th>SCORE</th></tr>
+          <tr><td>김철수</td><td>A</td><td>95</td></tr>
+          <tr><td>이영희</td><td>A</td><td>90</td></tr>
+          <tr><td>박민수</td><td>A</td><td>90</td></tr>
+          <tr><td>최지연</td><td>B</td><td>85</td></tr>
+          <tr><td>정수현</td><td>B</td><td>100</td></tr>
+        </table>
+      </div>
+      <pre><code><span class="kw">SELECT</span> NAME, CLASS, SCORE,
+       <span class="fn">RANK</span>() <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> CLASS <span class="kw">ORDER BY</span> SCORE <span class="kw">DESC</span>) <span class="kw">AS</span> RK,
+       <span class="fn">ROW_NUMBER</span>() <span class="kw">OVER</span> (<span class="kw">PARTITION BY</span> CLASS <span class="kw">ORDER BY</span> SCORE <span class="kw">DESC</span>) <span class="kw">AS</span> RN
+<span class="kw">FROM</span> RESULT;</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">김철수  A  95   1  1
+이영희  A  90   2  2
+박민수  A  90   2  3
+정수현  B  100  1  1
+최지연  B  85   2  2</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">1. <code>PARTITION BY CLASS</code> → 반(A, B)별로 분리하여 순위 산출</div>
+          <div class="step">2. A반: 김철수(95)→1위, 이영희/박민수(90)→공동 2위</div>
+          <div class="step">3. <code>RANK()</code> → 동일 점수는 같은 순위, 다음 순위 건너뜀 (1, 2, 2, 4…)</div>
+          <div class="step">4. <code>ROW_NUMBER()</code> → 동일 점수라도 고유 번호 부여 (1, 2, 3…)</div>
+          <div class="step">5. B반: 정수현(100)→1위, 최지연(85)→2위</div>
+          <div class="trap">DENSE_RANK()는 동일 순위 후 다음 순위를 건너뛰지 않음 (1, 2, 2, 3…)</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(9, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+  <!-- Q10: 트랜잭션 -->
+  <div class="question-card" id="card-10">
+    <div class="question-header">
+      <span class="q-num">Q10</span>
+      <div class="q-meta">
+        <span class="q-topic">트랜잭션 (COMMIT, ROLLBACK, SAVEPOINT)</span>
+        <span class="q-diff">★★★</span>
+      </div>
+    </div>
+    <div class="question-body">
+      <p class="q-text">다음 SQL문을 순서대로 실행한 후, 테이블에 남아 있는 행을 쓰시오.</p>
+      <div class="table-name">▼ 상품(ITEM) 초기 상태 (비어 있음)</div>
+      <pre><code><span class="kw">INSERT INTO</span> ITEM <span class="kw">VALUES</span> (<span class="num">1</span>, <span class="str">'사과'</span>);
+<span class="kw">SAVEPOINT</span> S1;
+
+<span class="kw">INSERT INTO</span> ITEM <span class="kw">VALUES</span> (<span class="num">2</span>, <span class="str">'바나나'</span>);
+<span class="kw">SAVEPOINT</span> S2;
+
+<span class="kw">INSERT INTO</span> ITEM <span class="kw">VALUES</span> (<span class="num">3</span>, <span class="str">'포도'</span>);
+<span class="kw">ROLLBACK TO</span> S2;
+
+<span class="kw">INSERT INTO</span> ITEM <span class="kw">VALUES</span> (<span class="num">4</span>, <span class="str">'딸기'</span>);
+<span class="kw">ROLLBACK TO</span> S1;
+
+<span class="kw">INSERT INTO</span> ITEM <span class="kw">VALUES</span> (<span class="num">5</span>, <span class="str">'수박'</span>);
+<span class="kw">COMMIT</span>;</code></pre>
+    </div>
+    <details>
+      <summary>답 / 해설 보기</summary>
+      <div class="answer-content">
+        <div class="answer-value">1  사과
+5  수박</div>
+        <div class="explanation">
+          <strong>풀이:</strong><br>
+          <div class="step">1. INSERT (1, 사과) → 테이블: {사과}</div>
+          <div class="step">2. SAVEPOINT S1 → 사과까지 저장점</div>
+          <div class="step">3. INSERT (2, 바나나) → 테이블: {사과, 바나나}</div>
+          <div class="step">4. SAVEPOINT S2 → 바나나까지 저장점</div>
+          <div class="step">5. INSERT (3, 포도) → 테이블: {사과, 바나나, 포도}</div>
+          <div class="step">6. ROLLBACK TO S2 → 포도 취소 → 테이블: {사과, 바나나}</div>
+          <div class="step">7. INSERT (4, 딸기) → 테이블: {사과, 바나나, 딸기}</div>
+          <div class="step">8. ROLLBACK TO S1 → 바나나, 딸기 모두 취소 → 테이블: {사과}</div>
+          <div class="step">9. INSERT (5, 수박) → 테이블: {사과, 수박}</div>
+          <div class="step">10. COMMIT → 최종 확정: {사과, 수박}</div>
+          <div class="trap">ROLLBACK TO는 해당 SAVEPOINT 이후의 모든 작업을 취소함. SAVEPOINT 이전의 작업은 유지됨</div>
+        </div>
+        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(10, this.checked)"> 풀이 완료</label>
+      </div>
+    </details>
+  </div>
+
+</div>
+
+<footer>
+  정보처리기사 실기 대비 SQL 퀴즈 | 학습 진행률은 브라우저에 자동 저장됩니다
+</footer>
+
+<script>
+const TOTAL = 10;
+const STORAGE_KEY = 'sql-quiz-progress';
+
+function loadProgress() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
+  catch { return {}; }
+}
+
+function saveProgress(data) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function updateUI() {
+  const data = loadProgress();
+  const solved = Object.keys(data).filter(k => data[k]).length;
+  document.getElementById('progressBar').style.width = (solved / TOTAL * 100) + '%';
+  document.getElementById('progressText').textContent = solved + ' / ' + TOTAL;
+  for (let i = 1; i <= TOTAL; i++) {
+    const card = document.getElementById('card-' + i);
+    if (data[i]) card.classList.add('solved');
+    else card.classList.remove('solved');
+  }
+}
+
+function toggleSolved(num, checked) {
+  const data = loadProgress();
+  data[num] = checked;
+  saveProgress(data);
+  updateUI();
+}
+
+function resetProgress() {
+  localStorage.removeItem(STORAGE_KEY);
+  document.querySelectorAll('.solve-check input').forEach(cb => cb.checked = false);
+  updateUI();
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const data = loadProgress();
+  for (let i = 1; i <= TOTAL; i++) {
+    if (data[i]) {
+      const cb = document.querySelector('#card-' + i + ' .solve-check input');
+      if (cb) cb.checked = true;
+    }
+  }
+  updateUI();
+});
+</script>
+
+</body>
+</html>

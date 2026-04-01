@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>네트워크/보안 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-links">
+    <a href="index.html">🏠 홈</a>
+    <a href="java.html">☕ Java</a>
+    <a href="python.html">🐍 Python</a>
+    <a href="c.html">⚙️ C</a>
+    <a href="sql.html">🗄️ SQL</a>
+    <a href="network.html" class="active">🌐 네트워크</a>
+    <a href="os.html">💻 OS</a>
+    <a href="software-engineering.html">🔧 소프트웨어공학</a>
+    <a href="db.html">📊 DB</a>
+    <a href="algorithm.html">🧮 알고리즘</a>
+    <a href="uml.html">📐 UML</a>
+    <a href="newtech.html">🆕 신기술</a>
+    <a href="integration.html">🔗 통합</a>
+  </div>
+</nav>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <span class="label">진행률</span>
+  <div class="track"><div class="fill" id="prog-fill"></div></div>
+  <span class="count" id="prog-text">0 / 10</span>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>🌐 네트워크/보안 문제</h1>
+  <p class="subtitle">정보처리기사 실기 기출 유형 10선 — 빈칸 채우기, 용어 설명, 비교표 완성</p>
+  <span class="badge badge-blue">OSI 7계층</span>
+  <span class="badge badge-green">TCP/IP</span>
+  <span class="badge badge-red">보안 공격</span>
+  <span class="badge badge-purple">암호화</span>
+  <span class="badge badge-orange">라우팅</span>
+</div>
+
+<!-- CONCEPT GRID -->
+<div class="concept-grid">
+  <div class="concept-card">
+    <h3>OSI 7계층</h3>
+    <p>물리→데이터링크→네트워크→전송→세션→표현→응용</p>
+  </div>
+  <div class="concept-card">
+    <h3>TCP/UDP</h3>
+    <p>연결지향 vs 비연결, 신뢰성 vs 속도</p>
+  </div>
+  <div class="concept-card">
+    <h3>서브넷팅</h3>
+    <p>IP 주소 분할, 서브넷 마스크 계산</p>
+  </div>
+  <div class="concept-card">
+    <h3>라우팅</h3>
+    <p>RIP(거리벡터), OSPF(링크상태), BGP(경로벡터)</p>
+  </div>
+  <div class="concept-card">
+    <h3>암호화</h3>
+    <p>대칭키(AES), 비대칭키(RSA), 해시(SHA)</p>
+  </div>
+  <div class="concept-card">
+    <h3>보안 공격</h3>
+    <p>DDoS, SQL Injection, XSS, CSRF</p>
+  </div>
+  <div class="concept-card">
+    <h3>보안 장비</h3>
+    <p>방화벽, IDS(탐지), IPS(차단)</p>
+  </div>
+  <div class="concept-card">
+    <h3>네트워크 기술</h3>
+    <p>VPN, NAT, VLAN 가상화 기술</p>
+  </div>
+</div>
+
+<!-- ========== 문제 1 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 1</span>
+    <div class="q-meta">
+      <span class="q-topic">OSI 7계층</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 OSI 7계층 모델의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* OSI 7계층 - 각 계층의 역할과 대표 프로토콜 */</span>
+
+┌─────────┬──────────────────────┬────────────────┐
+│  계층   │       역할           │  대표 프로토콜  │
+├─────────┼──────────────────────┼────────────────┤
+│ 7. (  ①  ) │ 사용자 인터페이스 제공  │ HTTP, FTP, SMTP│
+│ 6. (  ②  ) │ 데이터 형식 변환/암호화 │ JPEG, MPEG, SSL│
+│ 5. (  ③  ) │ 대화 제어, 동기화     │ SSH, TLS       │
+│ 4. (  ④  ) │ 종단 간 신뢰성 보장   │ TCP, UDP       │
+│ 3. (  ⑤  ) │ 경로 설정(라우팅)     │ IP, ICMP, ARP  │
+│ 2. (  ⑥  ) │ 프레임 전송, MAC 주소  │ Ethernet, PPP  │
+│ 1. (  ⑦  ) │ 비트 전송, 전기 신호   │ RS-232, Hub    │
+└─────────┴──────────────────────┴────────────────┘
+
+<span class="cmt">/* 각 계층의 데이터 단위(PDU)도 함께 기억하세요 */</span>
+7~5계층: (  ⑧  )
+4계층: (  ⑨  ) / 데이터그램
+3계층: (  ⑩  )
+2계층: (  ⑪  )
+1계층: (  ⑫  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 응용(Application) ② 표현(Presentation) ③ 세션(Session)<br>④ 전송(Transport) ⑤ 네트워크(Network) ⑥ 데이터링크(Data Link) ⑦ 물리(Physical)<br>⑧ 데이터(Data/메시지) ⑨ 세그먼트(Segment) ⑩ 패킷(Packet) ⑪ 프레임(Frame) ⑫ 비트(Bit)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> OSI 7계층은 "아(응용)-파(표현)-서(세션)-트(전송)-네(네트워크)-데(데이터링크)-피(물리)"로 외우세요.<br>
+        <div class="step">• <strong>응용 계층(7):</strong> 사용자와 직접 상호작용 — HTTP(웹), FTP(파일전송), SMTP(메일전송)</div>
+        <div class="step">• <strong>표현 계층(6):</strong> 데이터 인코딩/디코딩, 압축, 암호화 수행</div>
+        <div class="step">• <strong>세션 계층(5):</strong> 연결 설정/유지/해제, 동기점(체크포인트) 관리</div>
+        <div class="step">• <strong>전송 계층(4):</strong> 포트 번호 사용, TCP(신뢰성), UDP(속도)</div>
+        <div class="step">• <strong>네트워크 계층(3):</strong> IP 주소 기반 라우팅, 최적 경로 결정</div>
+        <div class="step">• <strong>데이터링크 계층(2):</strong> MAC 주소, 오류 검출(CRC), 흐름 제어</div>
+        <div class="step">• <strong>물리 계층(1):</strong> 전기/광 신호로 비트 전송, 케이블·허브</div>
+        <div class="trap">⚠️ 함정: ARP는 IP→MAC 변환이지만 3계층(네트워크)에서 동작합니다. RARP는 MAC→IP 변환입니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 2 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 2</span>
+    <div class="q-meta">
+      <span class="q-topic">TCP vs UDP</span>
+      <span class="q-diff">★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 TCP와 UDP 비교표의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* TCP vs UDP 비교 */</span>
+
+┌─────────────┬──────────────┬──────────────┐
+│   구분       │     TCP      │     UDP      │
+├─────────────┼──────────────┼──────────────┤
+│ 연결 방식    │   (  ①  )    │   (  ②  )    │
+│ 전송 순서    │   (  ③  )    │ 순서 보장 안됨│
+│ 신뢰성      │   (  ④  )    │ 신뢰성 낮음   │
+│ 속도        │ 상대적 느림   │   (  ⑤  )    │
+│ 헤더 크기    │   (  ⑥  )    │   8바이트    │
+│ 흐름/혼잡제어│   (  ⑦  )    │    없음      │
+│ 연결 설정    │   (  ⑧  )    │    없음      │
+│ 연결 해제    │   (  ⑨  )    │    없음      │
+│ 사용 예     │ HTTP, FTP    │   (  ⑩  )    │
+└─────────────┴──────────────┴──────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 연결지향(Connection-oriented) ② 비연결(Connectionless)<br>③ 순서 보장 ④ 신뢰성 높음 ⑤ 상대적 빠름<br>⑥ 20바이트 ⑦ 있음 ⑧ 3-Way Handshake ⑨ 4-Way Handshake<br>⑩ DNS, DHCP, 스트리밍, VoIP</div>
+      <div class="explanation">
+        <strong>핵심:</strong> TCP는 신뢰성, UDP는 속도에 강점이 있습니다.<br>
+        <div class="step">• <strong>3-Way Handshake (연결):</strong> SYN → SYN+ACK → ACK</div>
+        <div class="step">• <strong>4-Way Handshake (해제):</strong> FIN → ACK → FIN → ACK</div>
+        <div class="step">• <strong>TCP 흐름제어:</strong> 슬라이딩 윈도우(Sliding Window) 방식</div>
+        <div class="step">• <strong>TCP 혼잡제어:</strong> 슬로우 스타트, 혼잡 회피, 빠른 재전송, 빠른 회복</div>
+        <div class="trap">⚠️ 시험 포인트: 3-Way / 4-Way Handshake 과정은 반드시 기억하세요!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 3 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 3</span>
+    <div class="q-meta">
+      <span class="q-topic">서브넷팅 계산</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">IP 주소 <code>192.168.10.130/26</code>에 대해 다음을 구하시오.</p>
+<pre><code><span class="cmt">/* 서브넷팅 계산 문제 */</span>
+
+주어진 IP: <span class="num">192.168.10.130</span> / <span class="num">26</span>
+
+(1) 서브넷 마스크를 10진수로 쓰시오: (  ①  )
+(2) 서브넷 하나당 사용 가능한 호스트 수: (  ②  )
+(3) 해당 IP가 속한 네트워크 주소: (  ③  )
+(4) 해당 네트워크의 브로드캐스트 주소: (  ④  )
+(5) 사용 가능한 호스트 IP 범위: (  ⑤  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 255.255.255.192<br>② 62개<br>③ 192.168.10.128<br>④ 192.168.10.191<br>⑤ 192.168.10.129 ~ 192.168.10.190</div>
+      <div class="explanation">
+        <strong>핵심:</strong> /26 → 네트워크 비트 26개, 호스트 비트 6개<br>
+        <div class="step"><strong>Step 1. 서브넷 마스크 계산</strong><br>
+          /26 = 11111111.11111111.11111111.<strong>11</strong>000000<br>
+          → 마지막 옥텟: 11000000 = 128 + 64 = <strong>192</strong><br>
+          → 서브넷 마스크: 255.255.255.192</div>
+        <div class="step"><strong>Step 2. 호스트 수 계산</strong><br>
+          호스트 비트 = 32 - 26 = <strong>6비트</strong><br>
+          전체 주소 수 = 2⁶ = 64<br>
+          사용 가능한 호스트 수 = 64 - 2 = <strong>62개</strong><br>
+          (네트워크 주소 1개 + 브로드캐스트 주소 1개 제외)</div>
+        <div class="step"><strong>Step 3. 네트워크 주소 계산</strong><br>
+          서브넷 크기 = 64 (= 256 - 192)<br>
+          130 ÷ 64 = 2.03... → 2 × 64 = <strong>128</strong><br>
+          네트워크 주소: 192.168.10.<strong>128</strong></div>
+        <div class="step"><strong>Step 4. 브로드캐스트 주소</strong><br>
+          다음 네트워크: 128 + 64 = 192<br>
+          브로드캐스트 = 192 - 1 = <strong>191</strong><br>
+          브로드캐스트 주소: 192.168.10.<strong>191</strong></div>
+        <div class="step"><strong>Step 5. 호스트 범위</strong><br>
+          시작: 네트워크 주소 + 1 = 192.168.10.<strong>129</strong><br>
+          끝: 브로드캐스트 - 1 = 192.168.10.<strong>190</strong></div>
+        <div class="trap">⚠️ 자주 나오는 CIDR: /24=256호스트, /25=128, /26=64, /27=32, /28=16, /30=4(호스트2개-P2P)</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 4 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 4</span>
+    <div class="q-meta">
+      <span class="q-topic">HTTP 상태코드</span>
+      <span class="q-diff">★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 HTTP 상태코드의 의미를 쓰시오.</p>
+<pre><code><span class="cmt">/* HTTP 상태코드 빈칸 채우기 */</span>
+
+┌──────┬──────────────────────────────┐
+│ 코드  │          의미                │
+├──────┼──────────────────────────────┤
+│ <span class="num">200</span>  │ (  ①  )                      │
+│ <span class="num">301</span>  │ (  ②  )                      │
+│ <span class="num">403</span>  │ (  ③  )                      │
+│ <span class="num">404</span>  │ (  ④  )                      │
+│ <span class="num">500</span>  │ (  ⑤  )                      │
+└──────┴──────────────────────────────┘
+
+<span class="cmt">/* 상태코드 분류 */</span>
+1xx: (  ⑥  )
+2xx: (  ⑦  )
+3xx: (  ⑧  )
+4xx: (  ⑨  )
+5xx: (  ⑩  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① OK (요청 성공) ② Moved Permanently (영구 이동) ③ Forbidden (접근 금지)<br>④ Not Found (자원 없음) ⑤ Internal Server Error (서버 내부 오류)<br>⑥ 정보(Informational) ⑦ 성공(Success) ⑧ 리다이렉션(Redirection)<br>⑨ 클라이언트 오류(Client Error) ⑩ 서버 오류(Server Error)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 첫째 자리 숫자로 응답 유형을 구분합니다.<br>
+        <div class="step">• <strong>200 OK:</strong> 요청이 정상적으로 처리됨</div>
+        <div class="step">• <strong>301 Moved Permanently:</strong> 리소스가 영구적으로 다른 URL로 이동 (SEO에 중요)</div>
+        <div class="step">• <strong>302 Found:</strong> 임시 이동 (리다이렉션)</div>
+        <div class="step">• <strong>403 Forbidden:</strong> 서버가 요청을 이해했으나 권한 부족으로 거부</div>
+        <div class="step">• <strong>404 Not Found:</strong> 요청한 리소스를 서버에서 찾을 수 없음</div>
+        <div class="step">• <strong>500 Internal Server Error:</strong> 서버 내부에서 예기치 않은 오류 발생</div>
+        <div class="trap">⚠️ 403 vs 401: 401(Unauthorized)은 인증 실패, 403(Forbidden)은 인가(권한) 실패입니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 5 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 5</span>
+    <div class="q-meta">
+      <span class="q-topic">라우팅 프로토콜</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 라우팅 프로토콜 비교표의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 라우팅 프로토콜 비교 */</span>
+
+┌──────────┬─────────────┬─────────────┬─────────────┐
+│   구분    │    RIP      │    OSPF     │    BGP      │
+├──────────┼─────────────┼─────────────┼─────────────┤
+│ 알고리즘  │  (  ①  )    │  (  ②  )    │  (  ③  )    │
+│ 메트릭   │  (  ④  )    │  (  ⑤  )    │ 경로 속성   │
+│ 최대 홉  │  (  ⑥  )    │  제한 없음   │  제한 없음   │
+│ 분류     │  (  ⑦  )    │  (  ⑧  )    │  (  ⑨  )    │
+│ 특징     │ 소규모 적합  │ 대규모 적합  │  (  ⑩  )    │
+└──────────┴─────────────┴─────────────┴─────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 거리 벡터(Distance Vector) - 벨만포드 ② 링크 상태(Link State) - 다익스트라<br>③ 경로 벡터(Path Vector) ④ 홉 수(Hop Count) ⑤ 대역폭(Cost/Bandwidth)<br>⑥ 15홉 ⑦ IGP(내부 게이트웨이) ⑧ IGP(내부 게이트웨이) ⑨ EGP(외부 게이트웨이)<br>⑩ AS(자율시스템) 간 라우팅</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 라우팅 프로토콜은 알고리즘과 적용 범위로 분류합니다.<br>
+        <div class="step">• <strong>RIP:</strong> 30초마다 라우팅 테이블 교환, 최대 15홉(16홉=도달불가), 소규모 네트워크에 적합</div>
+        <div class="step">• <strong>OSPF:</strong> 링크 상태 변화 시에만 업데이트, Area 개념으로 계층적 관리, 수렴 속도 빠름</div>
+        <div class="step">• <strong>BGP:</strong> 인터넷의 AS 간 경로 교환, ISP 간 라우팅에 사용, TCP 포트 179 사용</div>
+        <div class="step">• <strong>IGP vs EGP:</strong> IGP는 AS 내부(RIP, OSPF), EGP는 AS 간(BGP) 라우팅</div>
+        <div class="trap">⚠️ RIPv1은 클래스풀, RIPv2는 클래스리스(VLSM 지원). OSPF는 영역(Area) 0이 백본입니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 6 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 6</span>
+    <div class="q-meta">
+      <span class="q-topic">암호화 방식</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 암호화 방식의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 암호화 방식 비교 */</span>
+
+┌───────────┬─────────────┬─────────────┬─────────────┐
+│   구분     │  대칭키 암호  │  비대칭키 암호 │  해시 함수   │
+├───────────┼─────────────┼─────────────┼─────────────┤
+│ 키 구조    │  (  ①  )    │  (  ②  )    │  (  ③  )    │
+│ 대표 알고리즘│ (  ④  )    │  (  ⑤  )    │  (  ⑥  )    │
+│ 속도       │  (  ⑦  )    │  상대적 느림  │   빠름      │
+│ 키 관리    │  (  ⑧  )    │  용이        │  키 불필요   │
+│ 용도       │ 데이터 암호화 │  (  ⑨  )    │  (  ⑩  )    │
+└───────────┴─────────────┴─────────────┴─────────────┘
+
+<span class="cmt">/* 대칭키 키 개수 문제 */</span>
+n명이 대칭키 암호로 통신할 때 필요한 키 수: (  ⑪  )
+예) 10명 통신 시 키 수: (  ⑫  )개</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 암호화/복호화 키 동일 (1개) ② 공개키 + 개인키 (2개) ③ 키 없음 (단방향)<br>④ AES, DES, 3DES, SEED, ARIA ⑤ RSA, ECC, DSA ⑥ SHA-256, MD5, SHA-512<br>⑦ 빠름 ⑧ 어려움 (키 분배 문제) ⑨ 전자서명, 키 교환 ⑩ 무결성 검증, 비밀번호 저장<br>⑪ n(n-1)/2 ⑫ 45개</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 대칭키는 속도, 비대칭키는 키 관리, 해시는 무결성에 강점<br>
+        <div class="step"><strong>Step 1. 대칭키 키 수 계산</strong><br>
+          n명이 1:1 통신 → 조합 = n(n-1)/2<br>
+          10명: 10 × 9 / 2 = <strong>45개</strong></div>
+        <div class="step">• <strong>대칭키:</strong> 같은 키로 암호화/복호화 → 빠르지만 키 분배가 어려움</div>
+        <div class="step">• <strong>비대칭키:</strong> 공개키로 암호화, 개인키로 복호화 → 전자서명 가능</div>
+        <div class="step">• <strong>해시:</strong> 단방향 함수로 원문 복원 불가 → 무결성 확인용</div>
+        <div class="trap">⚠️ DES(56비트)는 취약하여 AES(128/192/256비트)로 대체. MD5도 취약하여 SHA-256 이상 사용 권장.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 7 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 7</span>
+    <div class="q-meta">
+      <span class="q-topic">보안 공격 유형</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 보안 공격 설명에 해당하는 공격 유형을 쓰시오.</p>
+<pre><code><span class="cmt">/* 보안 공격 유형 매칭 */</span>
+
+(1) 여러 대의 컴퓨터를 이용하여 특정 서버에 대량의
+    트래픽을 보내 서비스를 마비시키는 공격: (  ①  )
+
+(2) 웹 애플리케이션의 입력값에 악의적인 SQL 구문을
+    삽입하여 데이터베이스를 조작하는 공격: (  ②  )
+
+(3) 웹 페이지에 악성 스크립트를 삽입하여 다른 사용자의
+    브라우저에서 실행되게 하는 공격: (  ③  )
+
+(4) 사용자가 의도하지 않은 요청을 신뢰할 수 있는
+    웹사이트에 전송하도록 속이는 공격: (  ④  )
+
+(5) 네트워크 통신 중간에서 데이터를 가로채거나
+    변조하는 공격: (  ⑤  )
+
+(6) 이미 알려진 보안 취약점을 패치되기 전에
+    악용하는 공격: (  ⑥  )
+
+<span class="cmt">/* SQL Injection 방어 코드 예시 */</span>
+<span class="cmt">// 취약한 코드 (문자열 결합)</span>
+query = <span class="str">"SELECT * FROM users WHERE id='"</span> + input + <span class="str">"'"</span>;
+
+<span class="cmt">// 안전한 코드 (PreparedStatement - (  ⑦  ))</span>
+query = <span class="str">"SELECT * FROM users WHERE id = ?"</span>;
+pstmt.setString(<span class="num">1</span>, input);</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① DDoS (분산 서비스 거부 공격) ② SQL Injection (SQL 삽입 공격)<br>③ XSS (Cross Site Scripting) ④ CSRF (Cross Site Request Forgery)<br>⑤ MITM (Man In The Middle, 중간자 공격) ⑥ Zero-Day Attack (제로데이 공격)<br>⑦ 매개변수화된 쿼리 / 바인드 변수</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 각 공격의 원리와 방어법을 함께 암기하세요.<br>
+        <div class="step">• <strong>DDoS:</strong> 봇넷(좀비PC)을 이용한 대규모 트래픽 → 방어: 트래픽 필터링, CDN, Rate Limiting</div>
+        <div class="step">• <strong>SQL Injection:</strong> 입력값 검증 없이 쿼리 조합 → 방어: PreparedStatement, 입력값 검증, ORM</div>
+        <div class="step">• <strong>XSS:</strong> Stored(저장형), Reflected(반사형), DOM 기반 3가지 유형 → 방어: 출력 인코딩, CSP</div>
+        <div class="step">• <strong>CSRF:</strong> 사용자의 인증 세션을 악용 → 방어: CSRF 토큰, SameSite 쿠키, Referer 검증</div>
+        <div class="step">• <strong>XSS vs CSRF:</strong> XSS는 클라이언트 스크립트 실행, CSRF는 서버에 위조 요청 전송</div>
+        <div class="trap">⚠️ SQL Injection 방어의 핵심은 PreparedStatement(매개변수화 쿼리) 사용입니다. 시험에서 코드 형태로 자주 출제!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 8 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 8</span>
+    <div class="q-meta">
+      <span class="q-topic">방화벽 · IDS · IPS</span>
+      <span class="q-diff">★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 네트워크 보안 장비 비교표의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 보안 장비 비교 */</span>
+
+┌─────────┬──────────────┬──────────────┬──────────────┐
+│  구분    │   방화벽      │    IDS       │    IPS       │
+│         │  (Firewall)  │              │              │
+├─────────┼──────────────┼──────────────┼──────────────┤
+│ 풀네임   │ Firewall     │  (  ①  )     │  (  ②  )     │
+│ 주요 기능│ (  ③  )      │  (  ④  )     │  (  ⑤  )     │
+│ 차단 여부│  차단 가능    │  (  ⑥  )     │  차단 가능    │
+│ 동작 방식│ 접근 제어     │  수동적 탐지  │  (  ⑦  )     │
+│ 설치 위치│ 네트워크 경계 │  (  ⑧  )     │  인라인      │
+└─────────┴──────────────┴──────────────┴──────────────┘
+
+<span class="cmt">/* IDS 탐지 방식 */</span>
+(⑨) 탐지: 알려진 공격 패턴(시그니처)과 비교
+(⑩) 탐지: 정상 행위를 학습하고 이상 행위를 탐지</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① Intrusion Detection System (침입 탐지 시스템)<br>② Intrusion Prevention System (침입 방지 시스템)<br>③ 접근 통제 / 패킷 필터링 ④ 침입 탐지 (알림) ⑤ 침입 탐지 + 자동 차단<br>⑥ 차단 불가 (알림만) ⑦ 능동적 탐지/차단 ⑧ 미러링(복사) 포트<br>⑨ 오용(Misuse) 탐지 ⑩ 이상(Anomaly) 탐지</div>
+      <div class="explanation">
+        <strong>핵심:</strong> IDS는 탐지만, IPS는 탐지+차단까지 수행합니다.<br>
+        <div class="step">• <strong>방화벽:</strong> IP/포트 기반 접근 제어, 패킷 필터링 · 상태 검사(Stateful) · 애플리케이션 게이트웨이</div>
+        <div class="step">• <strong>IDS:</strong> 미러링 방식으로 트래픽 복사 분석 → 탐지 후 관리자에게 알림</div>
+        <div class="step">• <strong>IPS:</strong> 인라인(직렬) 방식으로 트래픽을 직접 검사 → 위협 발견 시 즉시 차단</div>
+        <div class="step">• <strong>오용 탐지:</strong> 알려진 공격만 탐지 가능 (False Negative 높음)</div>
+        <div class="step">• <strong>이상 탐지:</strong> 새로운 공격도 탐지 가능하지만 오탐(False Positive) 높음</div>
+        <div class="trap">⚠️ IDS/IPS의 탐지 방식(오용/이상)과 각 장단점을 비교하여 출제됩니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 9 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 9</span>
+    <div class="q-meta">
+      <span class="q-topic">VPN · NAT · VLAN</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 네트워크 기술의 설명에 해당하는 용어를 쓰시오.</p>
+<pre><code><span class="cmt">/* 네트워크 기술 용어 */</span>
+
+(1) 공중 네트워크를 통해 사설 네트워크를 구축하는 기술로,
+    터널링과 암호화를 사용하여 보안 통신을 제공: (  ①  )
+    - 프로토콜: IPSec, SSL/TLS, (  ②  )
+
+(2) 사설 IP 주소를 공인 IP 주소로 변환하여
+    인터넷에 접속할 수 있게 하는 기술: (  ③  )
+    - 사설 IP 대역:
+      A클래스: (  ④  )
+      B클래스: 172.16.0.0 ~ 172.31.255.255
+      C클래스: (  ⑤  )
+
+(3) 물리적 네트워크와 관계없이 논리적으로 네트워크를
+    분리하는 기술 (스위치 기반): (  ⑥  )
+    - 장점: (  ⑦  ), (  ⑧  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① VPN (Virtual Private Network, 가상 사설망)<br>② L2TP, PPTP<br>③ NAT (Network Address Translation, 네트워크 주소 변환)<br>④ 10.0.0.0 ~ 10.255.255.255<br>⑤ 192.168.0.0 ~ 192.168.255.255<br>⑥ VLAN (Virtual LAN, 가상 LAN)<br>⑦ 브로드캐스트 도메인 분리 ⑧ 보안 강화 / 네트워크 관리 용이</div>
+      <div class="explanation">
+        <strong>핵심:</strong> VPN은 보안, NAT은 IP 변환, VLAN은 논리적 분리<br>
+        <div class="step">• <strong>VPN 터널링:</strong> 데이터를 캡슐화하여 공중망에서도 안전한 통신 보장</div>
+        <div class="step">• <strong>NAT 종류:</strong> Static NAT(1:1), Dynamic NAT(N:N), PAT/NAPT(N:1 포트변환)</div>
+        <div class="step">• <strong>PAT(Port Address Translation):</strong> 하나의 공인 IP로 여러 사설 IP가 포트 번호를 다르게 하여 통신</div>
+        <div class="step">• <strong>VLAN:</strong> 스위치에서 포트 기반, MAC 기반, 프로토콜 기반으로 구성 가능</div>
+        <div class="trap">⚠️ 사설 IP 3개 대역(A: 10.x, B: 172.16~31.x, C: 192.168.x)은 반드시 암기!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 10 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 10</span>
+    <div class="q-meta">
+      <span class="q-topic">무선 보안</span>
+      <span class="q-diff">★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 무선 네트워크 보안 프로토콜의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 무선 보안 프로토콜 비교 */</span>
+
+┌──────────┬──────────────┬──────────────┬──────────────┐
+│   구분    │     WEP      │    WPA2      │    WPA3      │
+├──────────┼──────────────┼──────────────┼──────────────┤
+│ 암호 알고리즘│ (  ①  )    │  (  ②  )    │  (  ③  )    │
+│ 키 길이    │  (  ④  )    │  128/256비트  │  128/192비트  │
+│ 보안 수준  │  (  ⑤  )    │   높음       │   매우 높음   │
+│ 인증 방식  │  공유키      │  (  ⑥  )    │  SAE         │
+│ 취약점     │  (  ⑦  )    │  KRACK 공격  │  현재 안전    │
+└──────────┴──────────────┴──────────────┴──────────────┘
+
+<span class="cmt">/* 추가 보안 용어 */</span>
+(⑧): 무선 AP를 탐지하고 비인가 AP를 차단하는 시스템
+(⑨): 802.1X 기반 네트워크 접근 제어 시스템
+(⑩): 무선 네트워크의 이름 (서비스 집합 식별자)</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① RC4 ② AES-CCMP ③ AES-GCMP (또는 SAE + AES)<br>④ 64/128비트 ⑤ 매우 낮음 (취약) ⑥ PSK / Enterprise (802.1X)<br>⑦ IV(초기화 벡터) 재사용, 키 크래킹 용이<br>⑧ WIPS (Wireless IPS, 무선 침입 방지 시스템)<br>⑨ NAC (Network Access Control, 네트워크 접근 제어)<br>⑩ SSID (Service Set Identifier)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> WEP → WPA → WPA2 → WPA3 순으로 보안이 강화되었습니다.<br>
+        <div class="step">• <strong>WEP:</strong> RC4 스트림 암호 사용, IV가 24비트로 짧아 쉽게 크래킹됨 → 사용 금지</div>
+        <div class="step">• <strong>WPA2:</strong> AES-CCMP 블록 암호 사용, 현재 가장 널리 사용됨</div>
+        <div class="step">• <strong>WPA3:</strong> SAE(Simultaneous Authentication of Equals) 핸드셰이크로 KRACK 공격 방어</div>
+        <div class="step">• <strong>SAE:</strong> 오프라인 사전 공격에 강하고, 순방향 비밀성(Forward Secrecy) 제공</div>
+        <div class="trap">⚠️ WEP은 보안 취약으로 절대 사용하면 안 됩니다. 시험에서 WEP의 취약점을 묻는 문제가 출제됩니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  정보처리기사 실기 대비 학습 자료 | 네트워크/보안 문제 10선
+</footer>
+
+<script>
+(function() {
+  const total = document.querySelectorAll('.question-card details').length;
+  let revealed = 0;
+  const progText = document.getElementById('prog-text');
+  const progFill = document.getElementById('prog-fill');
+
+  function updateProgress() {
+    progText.textContent = revealed + ' / ' + total;
+    progFill.style.width = (revealed / total * 100) + '%';
+  }
+
+  document.querySelectorAll('.question-card details').forEach(function(det) {
+    let counted = false;
+    det.addEventListener('toggle', function() {
+      if (det.open && !counted) {
+        counted = true;
+        revealed++;
+        updateProgress();
+      }
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

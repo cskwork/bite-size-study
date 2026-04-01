@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C언어 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-links">
+    <a href="index.html">🏠 홈</a>
+    <a href="java.html">☕ Java</a>
+    <a href="python.html">🐍 Python</a>
+    <a href="c.html" class="active">⚙️ C</a>
+    <a href="sql.html">🗄️ SQL</a>
+    <a href="network.html">🌐 네트워크</a>
+    <a href="os.html">💻 OS</a>
+    <a href="software-engineering.html">🔧 소프트웨어공학</a>
+    <a href="db.html">📊 DB</a>
+    <a href="algorithm.html">🧮 알고리즘</a>
+    <a href="uml.html">📐 UML</a>
+    <a href="newtech.html">🆕 신기술</a>
+    <a href="integration.html">🔗 통합</a>
+  </div>
+</nav>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <span class="label">진행률</span>
+  <div class="track"><div class="fill" id="prog-fill"></div></div>
+  <span class="count" id="prog-text">0 / 10</span>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>⚙️ C언어 코드 예측 문제</h1>
+  <p class="subtitle">정보처리기사 실기 기출 유형 10선 — 포인터, 재귀, 비트연산 완벽 대비</p>
+  <span class="badge badge-red">포인터</span>
+  <span class="badge badge-purple">재귀함수</span>
+  <span class="badge badge-blue">구조체</span>
+  <span class="badge badge-orange">비트연산</span>
+  <span class="badge badge-green">매크로</span>
+</div>
+
+<!-- CONCEPT GRID -->
+<div class="concept-grid">
+  <div class="concept-card">
+    <h3>포인터와 배열</h3>
+    <p>*(arr+i)와 arr[i]는 동일, &amp;arr[i]는 주소</p>
+  </div>
+  <div class="concept-card">
+    <h3>포인터와 문자열</h3>
+    <p>char *str로 문자열 접근, 널 문자(\0) 종료</p>
+  </div>
+  <div class="concept-card">
+    <h3>구조체 struct</h3>
+    <p>사용자 정의 자료형, 멤버 접근 연산자(. , ->)</p>
+  </div>
+  <div class="concept-card">
+    <h3>재귀함수</h3>
+    <p>자기 자신을 호출, 종료 조건 필수, 스택 추적</p>
+  </div>
+  <div class="concept-card">
+    <h3>비트 연산</h3>
+    <p>&amp;(AND), |(OR), ^(XOR), &lt;&lt;(좌시프트), &gt;&gt;(우시프트)</p>
+  </div>
+  <div class="concept-card">
+    <h3>printf 서식</h3>
+    <p>%d, %f, %c, %s, %o, %x, %-10d 등 서식 지정자</p>
+  </div>
+  <div class="concept-card">
+    <h3>#define 매크로</h3>
+    <p>선행처리기 텍스트 치환, 괄호 주의</p>
+  </div>
+  <div class="concept-card">
+    <h3>2차원 배열</h3>
+    <p>arr[i][j] = *(*(arr+i)+j), 행 우선 저장</p>
+  </div>
+  <div class="concept-card">
+    <h3>switch-case</h3>
+    <p>break 없으면 fall-through, default 처리</p>
+  </div>
+  <div class="concept-card">
+    <h3>call by value/reference</h3>
+    <p>값 전달 vs 주소 전달(포인터), 원본 변경 여부</p>
+  </div>
+</div>
+
+<!-- ========== 문제 1 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 1</span>
+    <div class="q-meta">
+      <span class="q-topic">포인터와 배열</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">int</span> arr[] = {<span class="num">10</span>, <span class="num">20</span>, <span class="num">30</span>, <span class="num">40</span>, <span class="num">50</span>};
+    <span class="kw">int</span> *p = arr;
+
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, *p);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, *(p + <span class="num">2</span>));
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, *p + <span class="num">2</span>);
+    p += <span class="num">3</span>;
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, *p);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, p[-<span class="num">1</span>]);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">10<br>30<br>12<br>40<br>30</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 포인터 산술과 역참조 연산자 우선순위를 구분하세요.<br>
+        <div class="step">• <strong>*p</strong> → arr[0] = 10</div>
+        <div class="step">• <strong>*(p+2)</strong> → arr[2] = 30 (포인터를 2칸 이동 후 역참조)</div>
+        <div class="step">• <strong>*p+2</strong> → arr[0]+2 = 10+2 = 12 (*가 +보다 우선순위 높음)</div>
+        <div class="step">• <strong>p+=3</strong> 후 <strong>*p</strong> → arr[3] = 40</div>
+        <div class="step">• <strong>p[-1]</strong> → *(p-1) → arr[2] = 30</div>
+        <div class="trap">*(p+2)와 *p+2는 완전히 다른 결과! 괄호 위치에 주의하세요.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 2 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 2</span>
+    <div class="q-meta">
+      <span class="q-topic">포인터와 문자열</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">char</span> *str = <span class="str">"HELLO"</span>;
+    <span class="kw">int</span> count = <span class="num">0</span>;
+
+    <span class="kw">while</span> (*str != <span class="str">'\0'</span>) {
+        <span class="kw">if</span> (*str == <span class="str">'L'</span>)
+            count++;
+        str++;
+    }
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, count);
+
+    <span class="kw">char</span> *a = <span class="str">"ABCDEF"</span>;
+    <span class="fn">printf</span>(<span class="str">"%c\n"</span>, *(a + <span class="num">3</span>));
+    <span class="fn">printf</span>(<span class="str">"%s\n"</span>, a + <span class="num">2</span>);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">2<br>D<br>CDEF</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 문자열은 char 배열이며, 포인터로 각 문자에 접근합니다.<br>
+        <div class="step">• "HELLO"에서 'L'은 인덱스 2, 3에 위치 → count = <strong>2</strong></div>
+        <div class="step">• <strong>*(a+3)</strong> → 'D' (%c로 문자 출력)</div>
+        <div class="step">• <strong>a+2</strong> → "CDEF" (%s로 해당 주소부터 \0까지 출력)</div>
+        <div class="trap">%c는 한 문자, %s는 해당 주소부터 널 문자까지 전체 문자열을 출력합니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 3 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 3</span>
+    <div class="q-meta">
+      <span class="q-topic">구조체 struct</span>
+      <span class="q-diff">★★☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">struct</span> <span class="tp">Student</span> {
+    <span class="kw">char</span> name[<span class="num">20</span>];
+    <span class="kw">int</span> score;
+};
+
+<span class="kw">void</span> <span class="fn">addBonus</span>(<span class="kw">struct</span> <span class="tp">Student</span> *s, <span class="kw">int</span> bonus) {
+    s-&gt;score += bonus;
+}
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">struct</span> <span class="tp">Student</span> st = {<span class="str">"Kim"</span>, <span class="num">85</span>};
+
+    <span class="fn">printf</span>(<span class="str">"%s %d\n"</span>, st.name, st.score);
+    <span class="fn">addBonus</span>(&amp;st, <span class="num">10</span>);
+    <span class="fn">printf</span>(<span class="str">"%s %d\n"</span>, st.name, st.score);
+
+    <span class="kw">struct</span> <span class="tp">Student</span> *p = &amp;st;
+    p-&gt;score = <span class="num">100</span>;
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, st.score);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">Kim 85<br>Kim 95<br>100</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 구조체 포인터는 ->로 멤버에 접근하며, 주소를 전달하면 원본이 변경됩니다.<br>
+        <div class="step">• 초기값: name="Kim", score=85</div>
+        <div class="step">• <strong>addBonus(&amp;st, 10)</strong> → 포인터로 전달하여 score = 85+10 = <strong>95</strong></div>
+        <div class="step">• <strong>p->score = 100</strong> → 포인터로 직접 변경 → st.score = <strong>100</strong></div>
+        <div class="trap">구조체를 값으로 전달하면 복사본이 변경되고, 포인터로 전달해야 원본이 변경됩니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 4 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 4</span>
+    <div class="q-meta">
+      <span class="q-topic">재귀함수 추적</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">void</span> <span class="fn">func</span>(<span class="kw">int</span> n) {
+    <span class="kw">if</span> (n &lt;= <span class="num">0</span>)
+        <span class="kw">return</span>;
+    <span class="fn">func</span>(n - <span class="num">1</span>);
+    <span class="fn">printf</span>(<span class="str">"%d "</span>, n);
+    <span class="fn">func</span>(n - <span class="num">2</span>);
+}
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="fn">func</span>(<span class="num">4</span>);
+    <span class="fn">printf</span>(<span class="str">"\n"</span>);
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">1 2 1 3 1 4 1 2 1 </div>
+      <div class="explanation">
+        <strong>핵심:</strong> 이진 재귀 호출은 트리 구조로 추적합니다.<br>
+        <div class="step">• func(4): func(3) → print 4 → func(2)</div>
+        <div class="step">• func(3): func(2) → print 3 → func(1)</div>
+        <div class="step">• func(2): func(1) → print 2 → func(0)</div>
+        <div class="step">• func(1): func(0) → print 1 → func(-1)</div>
+        <div class="step">• 전체 순서: 1 2 1 3 1 4 1 2 1</div>
+        <div class="trap">재귀 호출이 printf 앞뒤로 있으면 출력 순서가 복잡해집니다. 트리를 그려서 추적하세요.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 5 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 5</span>
+    <div class="q-meta">
+      <span class="q-topic">비트 연산</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">int</span> a = <span class="num">12</span>;  <span class="cmt">// 1100</span>
+    <span class="kw">int</span> b = <span class="num">10</span>;  <span class="cmt">// 1010</span>
+
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, a &amp; b);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, a | b);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, a ^ b);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, a &lt;&lt; <span class="num">1</span>);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, b &gt;&gt; <span class="num">1</span>);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">8<br>14<br>6<br>24<br>5</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 2진수로 변환하여 비트 단위 연산을 수행합니다.<br>
+        <div class="step">• a=12(1100), b=10(1010)</div>
+        <div class="step">• <strong>a &amp; b</strong> → 1100 &amp; 1010 = 1000 = <strong>8</strong> (AND: 둘 다 1이면 1)</div>
+        <div class="step">• <strong>a | b</strong> → 1100 | 1010 = 1110 = <strong>14</strong> (OR: 하나라도 1이면 1)</div>
+        <div class="step">• <strong>a ^ b</strong> → 1100 ^ 1010 = 0110 = <strong>6</strong> (XOR: 서로 다르면 1)</div>
+        <div class="step">• <strong>a &lt;&lt; 1</strong> → 11000 = 24 (좌시프트: ×2 효과)</div>
+        <div class="step">• <strong>b &gt;&gt; 1</strong> → 0101 = 5 (우시프트: ÷2 효과)</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 6 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 6</span>
+    <div class="q-meta">
+      <span class="q-topic">printf 서식 지정자</span>
+      <span class="q-diff">★★☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">int</span> a = <span class="num">65</span>;
+    <span class="kw">float</span> b = <span class="num">3.14159</span>;
+
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, a);
+    <span class="fn">printf</span>(<span class="str">"%c\n"</span>, a);
+    <span class="fn">printf</span>(<span class="str">"%o\n"</span>, a);
+    <span class="fn">printf</span>(<span class="str">"%x\n"</span>, a);
+    <span class="fn">printf</span>(<span class="str">"%.2f\n"</span>, b);
+    <span class="fn">printf</span>(<span class="str">"%10.1f\n"</span>, b);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">65<br>A<br>101<br>41<br>3.14<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1</div>
+      <div class="explanation">
+        <strong>핵심:</strong> printf 서식 지정자에 따라 같은 값도 다르게 출력됩니다.<br>
+        <div class="step">• <strong>%d</strong> → 10진 정수: 65</div>
+        <div class="step">• <strong>%c</strong> → 문자: 65는 ASCII 'A'</div>
+        <div class="step">• <strong>%o</strong> → 8진수: 65 = 1×64 + 0×8 + 1 = <strong>101</strong></div>
+        <div class="step">• <strong>%x</strong> → 16진수: 65 = 4×16 + 1 = <strong>41</strong></div>
+        <div class="step">• <strong>%.2f</strong> → 소수점 2자리: <strong>3.14</strong></div>
+        <div class="step">• <strong>%10.1f</strong> → 전체 10칸, 소수점 1자리, 우측 정렬: <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1</strong></div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 7 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 7</span>
+    <div class="q-meta">
+      <span class="q-topic">#define 매크로</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+#<span class="kw">define</span> <span class="fn">SQ</span>(x) ((x) * (x))
+#<span class="kw">define</span> <span class="fn">ADD</span>(a, b) a + b
+#<span class="kw">define</span> <span class="fn">MUL</span>(a, b) ((a) * (b))
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">int</span> r1 = <span class="fn">SQ</span>(<span class="num">3</span> + <span class="num">1</span>);
+    <span class="kw">int</span> r2 = <span class="num">10</span> * <span class="fn">ADD</span>(<span class="num">2</span>, <span class="num">3</span>);
+    <span class="kw">int</span> r3 = <span class="num">10</span> * <span class="fn">MUL</span>(<span class="num">2</span>, <span class="num">3</span>);
+
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, r1);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, r2);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, r3);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">16<br>23<br>60</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 매크로는 단순 텍스트 치환입니다. 괄호 유무가 결과를 바꿉니다.<br>
+        <div class="step">• <strong>SQ(3+1)</strong> → ((3+1)*(3+1)) = 4*4 = <strong>16</strong> (괄호 있어서 정상)</div>
+        <div class="step">• <strong>10*ADD(2,3)</strong> → 10 * 2 + 3 = 20 + 3 = <strong>23</strong> (괄호 없어서 연산 우선순위 문제!)</div>
+        <div class="step">• <strong>10*MUL(2,3)</strong> → 10 * ((2)*(3)) = 10 * 6 = <strong>60</strong> (괄호 있어서 정상)</div>
+        <div class="trap">매크로 정의 시 매개변수와 전체 식을 괄호로 감싸지 않으면 연산 우선순위 오류가 발생합니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 8 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 8</span>
+    <div class="q-meta">
+      <span class="q-topic">2차원 배열과 포인터</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">int</span> arr[<span class="num">2</span>][<span class="num">3</span>] = {{<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>}, {<span class="num">4</span>, <span class="num">5</span>, <span class="num">6</span>}};
+
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, arr[<span class="num">1</span>][<span class="num">2</span>]);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, *(arr[<span class="num">0</span>] + <span class="num">4</span>));
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, *(*(arr + <span class="num">1</span>) + <span class="num">1</span>));
+
+    <span class="kw">int</span> *p = &amp;arr[<span class="num">0</span>][<span class="num">0</span>];
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, *(p + <span class="num">3</span>));
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, *(p + <span class="num">5</span>));
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">6<br>5<br>5<br>4<br>6</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 2차원 배열은 메모리에 행 우선으로 연속 저장됩니다: [1,2,3,4,5,6]<br>
+        <div class="step">• <strong>arr[1][2]</strong> → 2행 3열 = <strong>6</strong></div>
+        <div class="step">• <strong>*(arr[0]+4)</strong> → arr[0]은 첫 행의 시작 주소, +4하면 5번째 원소 = <strong>5</strong></div>
+        <div class="step">• <strong>*(*(arr+1)+1)</strong> → *(arr[1]+1) → arr[1][1] = <strong>5</strong></div>
+        <div class="step">• <strong>*(p+3)</strong> → 첫 원소부터 3칸 이동 = 4번째 원소 = <strong>4</strong></div>
+        <div class="step">• <strong>*(p+5)</strong> → 첫 원소부터 5칸 이동 = 6번째 원소 = <strong>6</strong></div>
+        <div class="trap">2차원 배열이지만 메모리는 1차원으로 연속 배치됩니다. arr[0]+4는 행을 넘어갑니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 9 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 9</span>
+    <div class="q-meta">
+      <span class="q-topic">switch-case fall-through</span>
+      <span class="q-diff">★★☆</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">int</span> n = <span class="num">2</span>;
+
+    <span class="kw">switch</span> (n) {
+        <span class="kw">case</span> <span class="num">1</span>:
+            <span class="fn">printf</span>(<span class="str">"A"</span>);
+        <span class="kw">case</span> <span class="num">2</span>:
+            <span class="fn">printf</span>(<span class="str">"B"</span>);
+        <span class="kw">case</span> <span class="num">3</span>:
+            <span class="fn">printf</span>(<span class="str">"C"</span>);
+            <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="num">4</span>:
+            <span class="fn">printf</span>(<span class="str">"D"</span>);
+        <span class="kw">default</span>:
+            <span class="fn">printf</span>(<span class="str">"E"</span>);
+    }
+    <span class="fn">printf</span>(<span class="str">"\n"</span>);
+
+    n = <span class="num">5</span>;
+    <span class="kw">switch</span> (n) {
+        <span class="kw">case</span> <span class="num">1</span>:
+            <span class="fn">printf</span>(<span class="str">"X"</span>);
+            <span class="kw">break</span>;
+        <span class="kw">default</span>:
+            <span class="fn">printf</span>(<span class="str">"Y"</span>);
+            <span class="kw">break</span>;
+        <span class="kw">case</span> <span class="num">3</span>:
+            <span class="fn">printf</span>(<span class="str">"Z"</span>);
+    }
+    <span class="fn">printf</span>(<span class="str">"\n"</span>);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">BC<br>Y</div>
+      <div class="explanation">
+        <strong>핵심:</strong> break가 없으면 다음 case로 fall-through됩니다.<br>
+        <div class="step">• n=2: case 2 매칭 → "B" 출력 → break 없으므로 case 3으로 fall-through → "C" 출력 → break 만남 → 종료</div>
+        <div class="step">• n=5: case 1 불일치, default 매칭 → "Y" 출력 → break → 종료</div>
+        <div class="trap">default는 어디에 있든 매칭되는 case가 없을 때 실행됩니다. 반드시 마지막이 아니어도 됩니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 10 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 10</span>
+    <div class="q-meta">
+      <span class="q-topic">call by value vs reference</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 C 코드의 실행 결과를 쓰시오.</p>
+<pre><code>#<span class="kw">include</span> <span class="str">&lt;stdio.h&gt;</span>
+
+<span class="kw">void</span> <span class="fn">swapByValue</span>(<span class="kw">int</span> a, <span class="kw">int</span> b) {
+    <span class="kw">int</span> temp = a;
+    a = b;
+    b = temp;
+}
+
+<span class="kw">void</span> <span class="fn">swapByRef</span>(<span class="kw">int</span> *a, <span class="kw">int</span> *b) {
+    <span class="kw">int</span> temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+<span class="kw">void</span> <span class="fn">increment</span>(<span class="kw">int</span> *p) {
+    (*p)++;
+}
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="kw">int</span> x = <span class="num">10</span>, y = <span class="num">20</span>;
+
+    <span class="fn">swapByValue</span>(x, y);
+    <span class="fn">printf</span>(<span class="str">"%d %d\n"</span>, x, y);
+
+    <span class="fn">swapByRef</span>(&amp;x, &amp;y);
+    <span class="fn">printf</span>(<span class="str">"%d %d\n"</span>, x, y);
+
+    <span class="fn">increment</span>(&amp;x);
+    <span class="fn">increment</span>(&amp;x);
+    <span class="fn">printf</span>(<span class="str">"%d\n"</span>, x);
+
+    <span class="kw">return</span> <span class="num">0</span>;
+}</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">10 20<br>20 10<br>22</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 값에 의한 호출은 복사본을, 주소에 의한 호출은 원본을 변경합니다.<br>
+        <div class="step">• <strong>swapByValue(x, y)</strong> → 복사본만 교환, 원본 변경 없음 → x=10, y=20</div>
+        <div class="step">• <strong>swapByRef(&amp;x, &amp;y)</strong> → 주소를 전달하여 원본 교환 → x=20, y=10</div>
+        <div class="step">• <strong>increment(&amp;x)</strong> 2회 → x=20 → 21 → <strong>22</strong></div>
+        <div class="trap">C언어에는 진정한 call by reference가 없고, 포인터를 이용한 call by address로 구현합니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  정보처리기사 실기 대비 학습 자료 | C언어 코드 예측 문제 10선
+</footer>
+
+<script>
+(function() {
+  const total = document.querySelectorAll('.question-card details').length;
+  let revealed = 0;
+  const progText = document.getElementById('prog-text');
+  const progFill = document.getElementById('prog-fill');
+
+  function updateProgress() {
+    progText.textContent = revealed + ' / ' + total;
+    progFill.style.width = (revealed / total * 100) + '%';
+  }
+
+  document.querySelectorAll('.question-card details').forEach(function(det) {
+    let counted = false;
+    det.addEventListener('toggle', function() {
+      if (det.open && !counted) {
+        counted = true;
+        revealed++;
+        updateProgress();
+      }
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

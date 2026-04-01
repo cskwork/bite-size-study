@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>신기술 용어 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-links">
+    <a href="index.html">🏠 홈</a>
+    <a href="java.html">☕ Java</a>
+    <a href="python.html">🐍 Python</a>
+    <a href="c.html">⚙️ C</a>
+    <a href="sql.html">🗄️ SQL</a>
+    <a href="network.html">🌐 네트워크</a>
+    <a href="os.html">💻 OS</a>
+    <a href="software-engineering.html">🔧 소프트웨어공학</a>
+    <a href="db.html">📊 DB</a>
+    <a href="algorithm.html">🧮 알고리즘</a>
+    <a href="uml.html">📐 UML</a>
+    <a href="newtech.html" class="active">🆕 신기술</a>
+    <a href="integration.html">🔗 통합</a>
+  </div>
+</nav>
+
+<!-- PROGRESS -->
+<div class="progress-bar">
+  <span class="label">진행률</span>
+  <div class="track"><div class="fill" id="prog-fill"></div></div>
+  <span class="count" id="prog-text">0 / 10</span>
+</div>
+
+<div class="container">
+
+<!-- HEADER -->
+<div class="page-header">
+  <h1>🆕 신기술 용어 문제</h1>
+  <p class="subtitle">정보처리기사 실기 기출 유형 10선 — 용어 설명, 빈칸 채우기, 비교표 완성</p>
+  <span class="badge badge-blue">클라우드</span>
+  <span class="badge badge-green">빅데이터</span>
+  <span class="badge badge-red">IoT/AI</span>
+  <span class="badge badge-purple">블록체인</span>
+  <span class="badge badge-orange">DevOps</span>
+</div>
+
+<!-- CONCEPT GRID -->
+<div class="concept-grid">
+  <div class="concept-card">
+    <h3>클라우드 컴퓨팅</h3>
+    <p>IaaS, PaaS, SaaS — 서비스 모델 3가지</p>
+  </div>
+  <div class="concept-card">
+    <h3>빅데이터</h3>
+    <p>3V: Volume(규모), Velocity(속도), Variety(다양성)</p>
+  </div>
+  <div class="concept-card">
+    <h3>IoT</h3>
+    <p>MQTT, CoAP, 엣지/포그 컴퓨팅</p>
+  </div>
+  <div class="concept-card">
+    <h3>AI/ML</h3>
+    <p>딥러닝, CNN, RNN, GAN, 전이학습</p>
+  </div>
+  <div class="concept-card">
+    <h3>블록체인</h3>
+    <p>분산원장, 합의알고리즘, 스마트컨트랙트</p>
+  </div>
+  <div class="concept-card">
+    <h3>DevOps</h3>
+    <p>CI/CD, 컨테이너, 도커, 쿠버네티스, MSA</p>
+  </div>
+  <div class="concept-card">
+    <h3>보안 신기술</h3>
+    <p>제로트러스트, 제로데이, APT, 랜섬웨어</p>
+  </div>
+  <div class="concept-card">
+    <h3>앱 개발 방식</h3>
+    <p>네이티브, 하이브리드, PWA, SPA, RIA</p>
+  </div>
+</div>
+
+<!-- ========== 문제 1 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 1</span>
+    <div class="q-meta">
+      <span class="q-topic">클라우드 컴퓨팅</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 클라우드 컴퓨팅 서비스 모델 비교표의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 클라우드 서비스 모델 비교 */</span>
+
+┌──────────┬──────────────────────────┬─────────────────┐
+│ 서비스모델 │          설명            │     예시         │
+├──────────┼──────────────────────────┼─────────────────┤
+│  (  ①  ) │ 서버, 스토리지, 네트워크   │ AWS EC2,        │
+│          │ 등 (  ②  )을/를 제공     │ Azure VM        │
+├──────────┼──────────────────────────┼─────────────────┤
+│  (  ③  ) │ 개발에 필요한 (  ④  )을/를│ Google App      │
+│          │ 제공 (OS, 미들웨어 포함)  │ Engine, Heroku  │
+├──────────┼──────────────────────────┼─────────────────┤
+│  (  ⑤  ) │ 완성된 (  ⑥  )을/를     │ Google Docs,    │
+│          │ 인터넷으로 제공           │ Office 365      │
+├──────────┼──────────────────────────┼─────────────────┤
+│  (  ⑦  ) │ 자체 데이터센터에서       │ 기업 전산실      │
+│          │ 직접 운영하는 방식        │                 │
+└──────────┴──────────────────────────┴─────────────────┘
+
+<span class="cmt">/* 관리 범위 비교 */</span>
+               사용자가 관리하는 영역
+온프레미스:    전부 (네트워크~애플리케이션)
+IaaS:        (  ⑧  ) 부터 위로
+PaaS:        (  ⑨  ) 만
+SaaS:        (  ⑩  )</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① IaaS(Infrastructure as a Service) ② IT 인프라<br>③ PaaS(Platform as a Service) ④ 플랫폼(개발 환경)<br>⑤ SaaS(Software as a Service) ⑥ 소프트웨어(응용프로그램)<br>⑦ 온프레미스(On-Premise)<br>⑧ OS/미들웨어/런타임 ⑨ 데이터와 애플리케이션 ⑩ 없음(모두 제공자가 관리)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 클라우드 서비스는 제공 수준에 따라 IaaS → PaaS → SaaS로 분류됩니다.<br>
+        <div class="step">• <strong>IaaS:</strong> 인프라(서버, 스토리지, 네트워크)만 제공 → 사용자가 OS부터 직접 설치·관리</div>
+        <div class="step">• <strong>PaaS:</strong> 플랫폼(OS+미들웨어+런타임)까지 제공 → 개발자는 코드만 작성</div>
+        <div class="step">• <strong>SaaS:</strong> 완성된 소프트웨어를 제공 → 사용자는 바로 사용</div>
+        <div class="step">• <strong>온프레미스:</strong> 자체 서버실에 직접 구축·운영 (클라우드의 반대 개념)</div>
+        <div class="trap">⚠️ 시험 포인트: IaaS/PaaS/SaaS 영문 풀네임과 각각의 예시를 함께 암기하세요!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 2 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 2</span>
+    <div class="q-meta">
+      <span class="q-topic">빅데이터</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 빅데이터의 특성과 분석 기술에 대한 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 빅데이터 3V + 확장 특성 */</span>
+
+빅데이터의 3대 특성(3V):
+  ① (     ): 데이터의 양(규모)이 방대함 → 테라~페타바이트급
+  ② (     ): 데이터 생성·수집·처리 (     )가 빠름
+  ③ (     ): 정형·반정형·비정형 등 데이터 유형이 (     )
+
+확장된 특성:
+  ④ (     ): 데이터의 정확성·신뢰성
+  ⑤ (     ): 데이터로부터 창출되는 가치
+
+<span class="cmt">/* 빅데이터 분석 기술 */</span>
+
+┌──────────────┬────────────────────────────────┐
+│   기술명      │           설명                  │
+├──────────────┼────────────────────────────────┤
+│   (  ⑥  )   │ 대용량 데이터 분산 처리 프레임워크 │
+│              │ (HDFS + MapReduce)              │
+├──────────────┼────────────────────────────────┤
+│   (  ⑦  )   │ 대규모 데이터를 빠르게 분석하는   │
+│              │ 인메모리 기반 처리 엔진           │
+├──────────────┼────────────────────────────────┤
+│   (  ⑧  )   │ 대량의 데이터에서 유용한 패턴과   │
+│              │ 규칙을 자동으로 발견하는 기법      │
+└──────────────┴────────────────────────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① Volume(규모/양) ② Velocity(속도) — 속도 ③ Variety(다양성) — 다양함<br>④ Veracity(정확성) ⑤ Value(가치)<br>⑥ 하둡(Hadoop) ⑦ 스파크(Spark) ⑧ 데이터마이닝(Data Mining)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 빅데이터의 3V는 가장 기본적인 출제 포인트입니다.<br>
+        <div class="step">• <strong>Volume:</strong> 수십 테라바이트~페타바이트 이상의 대규모 데이터</div>
+        <div class="step">• <strong>Velocity:</strong> 실시간 스트리밍, SNS 등 빠르게 생성되는 데이터</div>
+        <div class="step">• <strong>Variety:</strong> 텍스트, 이미지, 영상, 로그 등 다양한 형태</div>
+        <div class="step">• <strong>Hadoop:</strong> HDFS(분산파일시스템) + MapReduce(분산처리) 기반 프레임워크</div>
+        <div class="step">• <strong>Spark:</strong> Hadoop보다 최대 100배 빠른 인메모리 처리 엔진</div>
+        <div class="trap">⚠️ 함정: 3V에서 5V로 확장 시 Veracity(정확성)와 Value(가치)가 추가됩니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 3 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 3</span>
+    <div class="q-meta">
+      <span class="q-topic">IoT</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 IoT(사물인터넷) 관련 용어의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* IoT 프로토콜 비교 */</span>
+
+┌──────────┬──────────────────────────────────┐
+│ 프로토콜  │              특징                 │
+├──────────┼──────────────────────────────────┤
+│  (  ①  ) │ 경량 메시징 프로토콜, TCP 기반     │
+│          │ (  ②  ) 모델 사용                │
+│          │ 저전력·저대역폭 환경에 적합        │
+├──────────┼──────────────────────────────────┤
+│  (  ③  ) │ (  ④  ) 기반 경량 프로토콜        │
+│          │ RESTful 구조, 센서 네트워크에 적합  │
+└──────────┴──────────────────────────────────┘
+
+<span class="cmt">/* 컴퓨팅 위치에 따른 분류 */</span>
+
+┌─────────────┬──────────────────────────────────┐
+│   용어       │              설명                 │
+├─────────────┼──────────────────────────────────┤
+│ 클라우드     │ 중앙 데이터센터에서 처리            │
+│ 컴퓨팅      │                                   │
+├─────────────┼──────────────────────────────────┤
+│   (  ⑤  )  │ 네트워크 (  ⑥  )에서 데이터를     │
+│   컴퓨팅    │ 처리 → 지연시간 최소화             │
+├─────────────┼──────────────────────────────────┤
+│   (  ⑦  )  │ 클라우드와 엣지의 (  ⑧  ) 에서    │
+│   컴퓨팅    │ 데이터를 분산 처리                  │
+└─────────────┴──────────────────────────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① MQTT(Message Queuing Telemetry Transport) ② Publish/Subscribe(발행/구독)<br>③ CoAP(Constrained Application Protocol) ④ UDP<br>⑤ 엣지(Edge) ⑥ 가장자리(끝단/엣지) ⑦ 포그(Fog) ⑧ 중간</div>
+      <div class="explanation">
+        <strong>핵심:</strong> IoT 통신 프로토콜과 컴퓨팅 패러다임을 구분하세요.<br>
+        <div class="step">• <strong>MQTT:</strong> 브로커 기반 Pub/Sub 모델, QoS 3단계(0,1,2) 지원, 저전력 센서에 적합</div>
+        <div class="step">• <strong>CoAP:</strong> UDP 기반, HTTP와 유사한 REST 방식, 제한된 환경(Constrained)에 최적화</div>
+        <div class="step">• <strong>엣지 컴퓨팅:</strong> 데이터 발생 지점(엣지)에서 직접 처리 → 초저지연, 자율주행 등에 활용</div>
+        <div class="step">• <strong>포그 컴퓨팅:</strong> 시스코가 제안, 클라우드-엣지 중간 계층에서 분산 처리</div>
+        <div class="trap">⚠️ 함정: MQTT는 TCP 기반, CoAP는 UDP 기반 — 전송 계층이 다릅니다!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 4 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 4</span>
+    <div class="q-meta">
+      <span class="q-topic">AI/ML 용어</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 인공지능/머신러닝 관련 용어의 설명을 완성하시오.</p>
+<pre><code><span class="cmt">/* AI/ML 핵심 용어 */</span>
+
+┌──────────────┬───────────────────────────────────┐
+│    용어       │             설명                   │
+├──────────────┼───────────────────────────────────┤
+│   딥러닝      │ (  ①  )을 여러 층으로 쌓아         │
+│ (Deep Learning)│ 복잡한 패턴을 학습하는 기술        │
+├──────────────┼───────────────────────────────────┤
+│   (  ②  )    │ 합성곱 신경망, (  ③  ) 인식에 특화  │
+│              │ 합성곱(Convolution) 연산 활용       │
+├──────────────┼───────────────────────────────────┤
+│   (  ④  )    │ 순환 신경망, (  ⑤  ) 데이터 처리   │
+│              │ 자연어처리, 음성인식에 활용          │
+├──────────────┼───────────────────────────────────┤
+│   (  ⑥  )    │ 생성적 적대 신경망                  │
+│              │ (  ⑦  )과 판별자가 경쟁하며 학습    │
+│              │ 이미지 생성, 딥페이크 등에 활용      │
+├──────────────┼───────────────────────────────────┤
+│   (  ⑧  )    │ 사전 학습된 모델을 새로운 문제에    │
+│              │ (  ⑨  )하여 적용하는 기법           │
+├──────────────┼───────────────────────────────────┤
+│   (  ⑩  )    │ 강화학습에서 에이전트가 환경과      │
+│              │ 상호작용하며 보상을 최대화하는 학습   │
+└──────────────┴───────────────────────────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 인공신경망(Artificial Neural Network)<br>② CNN(Convolutional Neural Network) ③ 이미지(영상)<br>④ RNN(Recurrent Neural Network) ⑤ 시계열(순차적/시퀀스)<br>⑥ GAN(Generative Adversarial Network) ⑦ 생성자(Generator)<br>⑧ 전이학습(Transfer Learning) ⑨ 재학습(미세조정/Fine-Tuning)<br>⑩ 강화학습(Reinforcement Learning)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 각 신경망의 특징과 적용 분야를 구분하세요.<br>
+        <div class="step">• <strong>CNN:</strong> 이미지 분류, 객체 탐지 — 합성곱→풀링→완전연결 구조</div>
+        <div class="step">• <strong>RNN:</strong> 이전 출력이 다음 입력에 영향 → LSTM, GRU가 개선 모델</div>
+        <div class="step">• <strong>GAN:</strong> Generator(생성자)와 Discriminator(판별자)의 적대적 학습</div>
+        <div class="step">• <strong>전이학습:</strong> ImageNet으로 학습한 모델을 의료영상 등에 재활용</div>
+        <div class="trap">⚠️ 시험 포인트: CNN=이미지, RNN=시계열/자연어, GAN=생성 — 이 매핑을 기억하세요!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 5 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 5</span>
+    <div class="q-meta">
+      <span class="q-topic">블록체인</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 블록체인 관련 용어의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 블록체인 핵심 개념 */</span>
+
+블록체인이란?
+→ 거래 정보를 (  ①  ) 구조로 연결하여
+  (  ②  ) 네트워크에 분산 저장하는 기술
+
+핵심 구성 요소:
+┌───────────────┬───────────────────────────────┐
+│    용어        │           설명                 │
+├───────────────┼───────────────────────────────┤
+│   (  ③  )     │ 모든 참여자가 동일한 거래 장부를 │
+│               │ 공유·관리하는 분산 데이터베이스   │
+├───────────────┼───────────────────────────────┤
+│   (  ④  )     │ 블록 생성 시 참여자들이 거래의   │
+│               │ 유효성에 합의하는 메커니즘        │
+│               │ 예: PoW, PoS, PBFT             │
+├───────────────┼───────────────────────────────┤
+│   (  ⑤  )     │ 블록체인 위에서 자동 실행되는    │
+│               │ 프로그래밍 가능한 (  ⑥  )       │
+│               │ 대표 플랫폼: (  ⑦  )           │
+└───────────────┴───────────────────────────────┘
+
+<span class="cmt">/* 합의 알고리즘 비교 */</span>
+(  ⑧  ): 작업증명 — 채굴(연산력) 기반, 비트코인
+(  ⑨  ): 지분증명 — 보유 지분에 비례하여 검증 권한
+(  ⑩  ): 실용적 비잔틴 장애 허용 — 하이퍼레저</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 블록(Block) 체인(Chain) ② P2P(Peer-to-Peer)<br>③ 분산원장(Distributed Ledger) ④ 합의 알고리즘(Consensus Algorithm)<br>⑤ 스마트 컨트랙트(Smart Contract) ⑥ 계약(디지털 계약) ⑦ 이더리움(Ethereum)<br>⑧ PoW(Proof of Work) ⑨ PoS(Proof of Stake) ⑩ PBFT(Practical Byzantine Fault Tolerance)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 블록체인의 3대 구성요소: 분산원장, 합의알고리즘, 스마트컨트랙트<br>
+        <div class="step">• <strong>분산원장:</strong> 중앙 기관 없이 모든 참여 노드가 동일한 원장을 보유</div>
+        <div class="step">• <strong>합의 알고리즘:</strong> 새 블록의 유효성을 네트워크 참여자들이 합의하는 방식</div>
+        <div class="step">• <strong>스마트 컨트랙트:</strong> 조건 충족 시 자동 실행되는 코드 — 중개자 불필요</div>
+        <div class="step">• <strong>PoW vs PoS:</strong> PoW는 에너지 소모가 크고, PoS는 지분 기반으로 효율적</div>
+        <div class="trap">⚠️ 함정: 이더리움은 PoW에서 PoS로 전환했습니다(이더리움 2.0). 비트코인은 여전히 PoW입니다.</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 6 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 6</span>
+    <div class="q-meta">
+      <span class="q-topic">DevOps</span>
+      <span class="q-diff">★★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 DevOps 및 관련 기술의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* DevOps 핵심 용어 */</span>
+
+DevOps란?
+→ (  ①  )팀과 (  ②  )팀의 협업·자동화를 통해
+  소프트웨어 배포 주기를 단축하는 문화/방법론
+
+┌──────────────┬────────────────────────────────┐
+│    용어       │            설명                 │
+├──────────────┼────────────────────────────────┤
+│   (  ③  )    │ 코드 변경을 자동으로 빌드·테스트  │
+│              │ 하여 (  ④  )에 통합하는 프로세스  │
+├──────────────┼────────────────────────────────┤
+│   (  ⑤  )    │ 검증된 코드를 자동으로 운영 환경에│
+│              │ (  ⑥  )하는 프로세스             │
+├──────────────┼────────────────────────────────┤
+│   (  ⑦  )    │ 애플리케이션과 의존성을 격리된     │
+│              │ 환경에 패키징하는 가상화 기술      │
+│              │ 대표 도구: (  ⑧  )              │
+├──────────────┼────────────────────────────────┤
+│   (  ⑨  )    │ 다수의 컨테이너를 자동 배포·확장  │
+│              │ ·관리하는 (  ⑩  ) 도구           │
+│              │ 대표 도구: 쿠버네티스(K8s)        │
+├──────────────┼────────────────────────────────┤
+│   MSA        │ (  ⑪  ) 아키텍처                │
+│              │ 독립적인 작은 서비스 단위로 개발   │
+│              │ ↔ 반대: (  ⑫  ) 아키텍처         │
+└──────────────┴────────────────────────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 개발(Development) ② 운영(Operations)<br>③ CI(Continuous Integration, 지속적 통합) ④ 메인 저장소(공유 저장소)<br>⑤ CD(Continuous Deployment/Delivery, 지속적 배포) ⑥ 배포(Deploy)<br>⑦ 컨테이너(Container) ⑧ 도커(Docker)<br>⑨ 컨테이너 오케스트레이션(Container Orchestration) ⑩ 오케스트레이션<br>⑪ 마이크로서비스(Microservice) ⑫ 모놀리식(Monolithic)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> DevOps = Development + Operations, CI/CD 파이프라인이 핵심<br>
+        <div class="step">• <strong>CI:</strong> 개발자가 코드를 푸시하면 자동 빌드·테스트 수행 (Jenkins, GitLab CI 등)</div>
+        <div class="step">• <strong>CD:</strong> CI 통과 후 자동으로 스테이징/운영 환경에 배포</div>
+        <div class="step">• <strong>도커:</strong> 컨테이너 기반 가상화, VM보다 가볍고 빠름, Dockerfile로 이미지 생성</div>
+        <div class="step">• <strong>쿠버네티스:</strong> 컨테이너 자동 스케일링, 로드밸런싱, 롤링 업데이트 지원</div>
+        <div class="step">• <strong>MSA:</strong> 각 서비스가 독립 배포 가능, API로 통신, 장애 격리 용이</div>
+        <div class="trap">⚠️ 시험 단골: CI/CD 풀네임, 도커 vs VM 차이, MSA vs 모놀리식 비교 — 반드시 암기!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 7 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 7</span>
+    <div class="q-meta">
+      <span class="q-topic">보안 용어</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 보안 관련 신기술 용어의 설명을 읽고 해당하는 용어를 쓰시오.</p>
+<pre><code><span class="cmt">/* 보안 위협 및 대응 기술 */</span>
+
+(  ①  ):
+  '아무도 신뢰하지 않는다'는 원칙에 기반한 보안 모델
+  내부·외부 구분 없이 모든 접근에 대해 (  ②  )을 수행
+
+(  ③  ):
+  소프트웨어 취약점이 발견된 후 패치가 배포되기
+  (  ④  )에 해당 취약점을 악용하는 공격
+
+(  ⑤  ):
+  Advanced Persistent Threat의 약자
+  특정 대상을 목표로 (  ⑥  )적이고 지속적인 공격 수행
+  주로 국가 기관, 대기업 대상
+
+(  ⑦  ):
+  시스템을 감염시켜 파일을 (  ⑧  )하고
+  복호화 대가로 금전(암호화폐)을 요구하는 악성코드
+
+(  ⑨  ):
+  신뢰할 수 있는 기관을 사칭하여
+  개인정보·금융정보를 (  ⑩  )하는 사회공학적 공격</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 제로트러스트(Zero Trust) ② 인증·검증(Verify)<br>③ 제로데이 공격(Zero-Day Attack) ④ 전(0일, 패치 전)<br>⑤ APT(지능형 지속 위협) ⑥ 지능적(고도화된/계획적)<br>⑦ 랜섬웨어(Ransomware) ⑧ 암호화(Encrypt)<br>⑨ 피싱(Phishing) ⑩ 탈취(유출/빼내는)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 보안 위협 유형과 대응 기술을 정확히 구분하세요.<br>
+        <div class="step">• <strong>제로트러스트:</strong> "Never Trust, Always Verify" — 네트워크 위치에 관계없이 항상 검증</div>
+        <div class="step">• <strong>제로데이:</strong> 취약점 발견~패치 배포 사이의 0일 동안 공격 → 방어가 매우 어려움</div>
+        <div class="step">• <strong>APT:</strong> 사회공학+제로데이+백도어 등 복합적 기법으로 장기간 침투</div>
+        <div class="step">• <strong>랜섬웨어:</strong> Ransom(몸값) + Malware → 워너크라이(WannaCry)가 대표적</div>
+        <div class="step">• <strong>피싱:</strong> 이메일·문자로 가짜 사이트 유도 → 스미싱(SMS+Phishing)도 포함</div>
+        <div class="trap">⚠️ 추가 용어: 스피어피싱(특정 대상), 파밍(DNS 변조), 스니핑(도청)도 함께 암기!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 8 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 8</span>
+    <div class="q-meta">
+      <span class="q-topic">소프트웨어 아키텍처</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 소프트웨어 아키텍처 관련 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 소프트웨어 아키텍처 비교 */</span>
+
+┌──────────────┬─────────────────────────────────┐
+│  아키텍처     │            특징                  │
+├──────────────┼─────────────────────────────────┤
+│  (  ①  )     │ 하나의 큰 애플리케이션으로 개발    │
+│  아키텍처     │ 장점: 단순, 일관성               │
+│              │ 단점: (  ②  ), 확장 어려움        │
+├──────────────┼─────────────────────────────────┤
+│  (  ③  )     │ 작은 독립 서비스들로 분리하여 개발  │
+│  아키텍처     │ 각 서비스는 (  ④  )로 통신        │
+│              │ 독립 배포·확장 가능               │
+├──────────────┼─────────────────────────────────┤
+│  (  ⑤  )     │ 서버 관리 없이 코드(함수) 단위로   │
+│              │ 실행되는 클라우드 컴퓨팅 모델       │
+│              │ 예: AWS (  ⑥  ), Azure Functions │
+├──────────────┼─────────────────────────────────┤
+│  (  ⑦  )     │ 모든 API 요청의 단일 진입점 역할   │
+│              │ (  ⑧  ), 인증, 로깅, 로드밸런싱   │
+│              │ 수행                             │
+└──────────────┴─────────────────────────────────┘
+
+<span class="cmt">/* 서비스 간 통신 방식 */</span>
+동기 방식: (  ⑨  ) — 요청-응답, HTTP/REST 기반
+비동기 방식: (  ⑩  ) — 메시지 큐(Kafka, RabbitMQ) 활용</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 모놀리식(Monolithic) ② 부분 수정이 전체에 영향(높은 결합도)<br>③ 마이크로서비스(Microservice) ④ API(REST API 등)<br>⑤ 서버리스(Serverless) ⑥ Lambda<br>⑦ API 게이트웨이(API Gateway) ⑧ 라우팅(요청 분배)<br>⑨ 동기 통신(Synchronous) ⑩ 비동기 통신(Asynchronous)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 모놀리식 → 마이크로서비스로의 전환이 최근 트렌드입니다.<br>
+        <div class="step">• <strong>모놀리식:</strong> 모든 기능이 하나의 코드베이스 — 소규모 프로젝트에 적합</div>
+        <div class="step">• <strong>마이크로서비스:</strong> 서비스별 독립 DB, 독립 배포 — 넷플릭스, 아마존 등이 채택</div>
+        <div class="step">• <strong>서버리스:</strong> FaaS(Function as a Service), 사용한 만큼만 과금, 자동 스케일링</div>
+        <div class="step">• <strong>API 게이트웨이:</strong> 클라이언트↔마이크로서비스 사이의 중간 관문 역할</div>
+        <div class="trap">⚠️ 함정: 서버리스는 서버가 "없는 것"이 아니라 서버 관리를 "안 하는 것"입니다!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 9 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 9</span>
+    <div class="q-meta">
+      <span class="q-topic">데이터 관련</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 데이터 관리 및 분석 용어의 빈칸을 채우시오.</p>
+<pre><code><span class="cmt">/* 데이터 관련 핵심 용어 */</span>
+
+┌───────────────┬──────────────────────────────────┐
+│    용어        │            설명                   │
+├───────────────┼──────────────────────────────────┤
+│  (  ①  )      │ 정형·반정형·비정형 데이터를 원본   │
+│               │ 그대로 저장하는 (  ②  ) 저장소     │
+│               │ 스키마 없이 대규모 데이터 보관      │
+├───────────────┼──────────────────────────────────┤
+│  (  ③  )      │ 주제별로 통합·정제된 데이터를       │
+│               │ 저장하는 (  ④  ) 중심 저장소       │
+│               │ 의사결정 지원이 목적               │
+├───────────────┼──────────────────────────────────┤
+│  데이터마트    │ 데이터웨어하우스의 (  ⑤  )        │
+│               │ 특정 부서·주제 영역의 데이터        │
+├───────────────┼──────────────────────────────────┤
+│  (  ⑥  )      │ Extract(추출), (  ⑦  )(변환),   │
+│               │ Load(적재)의 약자                  │
+│               │ 데이터 이관·정제 프로세스           │
+├───────────────┼──────────────────────────────────┤
+│  (  ⑧  )      │ 대량의 데이터에서 숨겨진 패턴·규칙 │
+│               │ 을 자동으로 발견하는 기법           │
+│               │ 기법: 분류, (  ⑨  ), 연관규칙 등  │
+├───────────────┼──────────────────────────────────┤
+│  (  ⑩  )      │ 데이터의 정의·구조·관계 등         │
+│               │ '데이터에 대한 데이터'             │
+└───────────────┴──────────────────────────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 데이터레이크(Data Lake) ② 대규모(중앙 집중식)<br>③ 데이터웨어하우스(Data Warehouse) ④ 주제(Subject) / 분석<br>⑤ 부분집합(서브셋/하위집합)<br>⑥ ETL ⑦ Transform<br>⑧ 데이터마이닝(Data Mining) ⑨ 군집화(Clustering)<br>⑩ 메타데이터(Metadata)</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 데이터 저장·처리·분석 용어를 단계별로 이해하세요.<br>
+        <div class="step">• <strong>데이터레이크:</strong> 원본 데이터를 가공 없이 저장 → 나중에 필요할 때 분석 (Schema-on-Read)</div>
+        <div class="step">• <strong>데이터웨어하우스:</strong> 정제·변환된 구조화 데이터 저장 → 비즈니스 분석용 (Schema-on-Write)</div>
+        <div class="step">• <strong>ETL:</strong> 원본 시스템에서 추출(E) → 형식 변환(T) → 타겟 시스템에 적재(L)</div>
+        <div class="step">• <strong>데이터마이닝:</strong> 분류(Classification), 군집화(Clustering), 연관규칙(Association), 예측 등</div>
+        <div class="trap">⚠️ 함정: 데이터레이크 vs 데이터웨어하우스 — 전자는 비정형 포함, 후자는 정형 데이터 중심!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+<!-- ========== 문제 10 ========== -->
+<div class="question-card">
+  <div class="question-header">
+    <span class="q-num">문제 10</span>
+    <div class="q-meta">
+      <span class="q-topic">앱 개발 방식</span>
+      <span class="q-diff">★★★</span>
+    </div>
+  </div>
+  <div class="question-body">
+    <p class="q-text">다음 애플리케이션 개발 방식의 비교표를 완성하시오.</p>
+<pre><code><span class="cmt">/* 앱 개발 방식 비교 */</span>
+
+┌──────────────┬───────────────────┬─────────────┬─────────────┐
+│   개발 방식   │       특징         │    장점      │    단점      │
+├──────────────┼───────────────────┼─────────────┼─────────────┤
+│   (  ①  )    │ 각 OS(iOS/Android)│ 최적 성능    │ (  ②  )    │
+│   앱         │ 전용 언어로 개발   │ 디바이스 기능│             │
+│              │ Swift, Kotlin     │ 완전 활용    │             │
+├──────────────┼───────────────────┼─────────────┼─────────────┤
+│   (  ③  )    │ 웹 기술(HTML/CSS/ │ 한 번 개발로 │ 성능이       │
+│   앱         │ JS)+(  ④  ) 결합  │ 다중 플랫폼  │ (  ⑤  )    │
+│              │ React Native,    │             │             │
+│              │ Flutter          │             │             │
+├──────────────┼───────────────────┼─────────────┼─────────────┤
+│   (  ⑥  )    │ Progressive Web  │ 설치 없이    │ 일부 기능    │
+│              │ App              │ (  ⑦  ) 사용│ 제한        │
+│              │ 오프라인+푸시 가능 │ 자동 업데이트│             │
+├──────────────┼───────────────────┼─────────────┼─────────────┤
+│   (  ⑧  )    │ Single Page      │ 빠른 화면    │ (  ⑨  )    │
+│              │ Application      │ 전환, UX 향상│ 어려움      │
+│              │ 하나의 페이지에서  │             │             │
+│              │ 동적으로 콘텐츠 변경│             │             │
+├──────────────┼───────────────────┼─────────────┼─────────────┤
+│   (  ⑩  )    │ Rich Internet    │ 데스크톱 수준│ 플러그인     │
+│              │ Application      │ 풍부한 UI    │ 의존성      │
+│              │ 동적·인터랙티브   │             │             │
+└──────────────┴───────────────────┴─────────────┴─────────────┘</code></pre>
+  </div>
+  <details>
+    <summary>정답 및 해설 보기</summary>
+    <div class="answer-content">
+      <div class="answer-value">① 네이티브(Native) ② 플랫폼별 별도 개발 필요(비용·시간 증가)<br>③ 하이브리드(Hybrid) ④ 네이티브 컨테이너(WebView) ⑤ 네이티브보다 낮음<br>⑥ PWA ⑦ 앱처럼(앱 설치 없이 웹에서)<br>⑧ SPA ⑨ 초기 로딩 속도 느림, SEO(검색엔진 최적화)<br>⑩ RIA</div>
+      <div class="explanation">
+        <strong>핵심:</strong> 각 개발 방식의 장단점과 대표 기술을 비교하세요.<br>
+        <div class="step">• <strong>네이티브:</strong> iOS=Swift/Obj-C, Android=Kotlin/Java — 최고 성능, 비용↑</div>
+        <div class="step">• <strong>하이브리드:</strong> 웹+네이티브 결합 — React Native, Flutter, Ionic 등</div>
+        <div class="step">• <strong>PWA:</strong> Service Worker + Web App Manifest — 오프라인·푸시알림 가능한 웹앱</div>
+        <div class="step">• <strong>SPA:</strong> React, Vue, Angular — 페이지 새로고침 없이 동적 콘텐츠 렌더링</div>
+        <div class="step">• <strong>RIA:</strong> Ajax, Flex, Silverlight — 풍부한 인터렉션을 제공하는 웹 애플리케이션</div>
+        <div class="trap">⚠️ 시험 포인트: PWA의 핵심은 Service Worker(오프라인), SPA의 핵심은 클라이언트 사이드 렌더링!</div>
+      </div>
+    </div>
+  </details>
+</div>
+
+</div><!-- /container -->
+
+<footer>
+  정보처리기사 실기 대비 학습 자료 | 신기술 용어 문제 10선
+</footer>
+
+<script>
+(function() {
+  const total = document.querySelectorAll('.question-card details').length;
+  let revealed = 0;
+  const progText = document.getElementById('prog-text');
+  const progFill = document.getElementById('prog-fill');
+
+  function updateProgress() {
+    progText.textContent = revealed + ' / ' + total;
+    progFill.style.width = (revealed / total * 100) + '%';
+  }
+
+  document.querySelectorAll('.question-card details').forEach(function(det) {
+    let counted = false;
+    det.addEventListener('toggle', function() {
+      if (det.open && !counted) {
+        counted = true;
+        revealed++;
+        updateProgress();
+      }
+    });
+  });
+
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

@@ -2,29 +2,39 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>통합 실전 모의고사 | 정보처리기사 실기 퀴즈</title>
+<meta name="theme-color" content="#4f46e5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="실기퀴즈">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-top">
+    <a href="index.html" class="logo">정보처리기사 실기</a>
+    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
   <div class="nav-links">
-    <a href="index.html">🏠 홈</a>
-    <a href="java.html">☕ Java</a>
-    <a href="python.html">🐍 Python</a>
-    <a href="c.html">⚙️ C</a>
-    <a href="sql.html">🗄️ SQL</a>
-    <a href="network.html">🌐 네트워크</a>
-    <a href="os.html">💻 OS</a>
-    <a href="software-engineering.html">🔧 소프트웨어공학</a>
-    <a href="db.html">📊 DB</a>
-    <a href="algorithm.html">🧮 알고리즘</a>
-    <a href="uml.html">📐 UML</a>
-    <a href="newtech.html">🆕 신기술</a>
-    <a href="integration.html" class="active">🔗 통합</a>
+    <a href="index.html">홈</a>
+    <a href="java.html">Java</a>
+    <a href="python.html">Python</a>
+    <a href="c.html">C</a>
+    <a href="sql.html">SQL</a>
+    <a href="network.html">네트워크</a>
+    <a href="os.html">OS</a>
+    <a href="software-engineering.html">소프트웨어공학</a>
+    <a href="db.html">DB</a>
+    <a href="algorithm.html">알고리즘</a>
+    <a href="uml.html">UML</a>
+    <a href="newtech.html">신기술</a>
+    <a href="integration.html" class="active">통합</a>
   </div>
 </nav>
 
@@ -39,35 +49,35 @@
 
 <!-- HEADER -->
 <div class="page-header">
-  <h1>🔗 통합 실전 모의고사</h1>
+  <h1>통합 실전 모의고사</h1>
   <p class="subtitle">정보처리기사 실기 전 과목 통합 20문제 — 실전처럼 풀어보세요!</p>
-  <span class="badge badge-red">☕ Java</span>
-  <span class="badge badge-blue">⚙️ C</span>
-  <span class="badge badge-green">🐍 Python</span>
-  <span class="badge badge-purple">🗄️ SQL</span>
-  <span class="badge badge-orange">📡 네트워크·OS</span>
-  <span class="badge badge-red">🔧 소프트웨어공학</span>
-  <span class="badge badge-blue">📊 DB</span>
-  <span class="badge badge-purple">🧮 알고리즘</span>
-  <span class="badge badge-green">🆕 신기술·보안</span>
+  <span class="badge badge-red">Java</span>
+  <span class="badge badge-blue">C</span>
+  <span class="badge badge-green">Python</span>
+  <span class="badge badge-purple">SQL</span>
+  <span class="badge badge-orange">네트워크/OS</span>
+  <span class="badge badge-red">소프트웨어공학</span>
+  <span class="badge badge-blue">DB</span>
+  <span class="badge badge-purple">알고리즘</span>
+  <span class="badge badge-green">신기술/보안</span>
 </div>
 
 <!-- CONCEPT GRID -->
 <div class="concept-grid">
   <div class="concept-card">
-    <h3>⏱ 시험 시간</h3>
+    <h3>시험 시간</h3>
     <p>실제 시험: 150분 / 본 모의고사 20문: 약 60분 권장</p>
   </div>
   <div class="concept-card">
-    <h3>📋 출제 범위</h3>
+    <h3>출제 범위</h3>
     <p>프로그래밍(Java·C·Python), SQL, DB, 네트워크, OS, 소프트웨어공학, 보안, 신기술</p>
   </div>
   <div class="concept-card">
-    <h3>✍️ 답안 작성 팁</h3>
+    <h3>답안 작성 팁</h3>
     <p>코드 출력 문제: 공백·줄바꿈 정확히! 용어 문제: 영문 철자 주의!</p>
   </div>
   <div class="concept-card">
-    <h3>🎯 합격 기준</h3>
+    <h3>합격 기준</h3>
     <p>60점 이상 (20문제 중 12문제 이상 정답)</p>
   </div>
 </div>
@@ -920,5 +930,16 @@ r = <span class="tp">Rectangle</span>(<span class="num">3</span>, <span class="n
 })();
 </script>
 
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
 </body>
 </html>

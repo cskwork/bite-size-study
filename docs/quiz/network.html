@@ -2,29 +2,39 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>네트워크/보안 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<meta name="theme-color" content="#4f46e5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="실기퀴즈">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-top">
+    <a href="index.html" class="logo">정보처리기사 실기</a>
+    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
   <div class="nav-links">
-    <a href="index.html">🏠 홈</a>
-    <a href="java.html">☕ Java</a>
-    <a href="python.html">🐍 Python</a>
-    <a href="c.html">⚙️ C</a>
-    <a href="sql.html">🗄️ SQL</a>
-    <a href="network.html" class="active">🌐 네트워크</a>
-    <a href="os.html">💻 OS</a>
-    <a href="software-engineering.html">🔧 소프트웨어공학</a>
-    <a href="db.html">📊 DB</a>
-    <a href="algorithm.html">🧮 알고리즘</a>
-    <a href="uml.html">📐 UML</a>
-    <a href="newtech.html">🆕 신기술</a>
-    <a href="integration.html">🔗 통합</a>
+    <a href="index.html">홈</a>
+    <a href="java.html">Java</a>
+    <a href="python.html">Python</a>
+    <a href="c.html">C</a>
+    <a href="sql.html">SQL</a>
+    <a href="network.html" class="active">네트워크</a>
+    <a href="os.html">OS</a>
+    <a href="software-engineering.html">소프트웨어공학</a>
+    <a href="db.html">DB</a>
+    <a href="algorithm.html">알고리즘</a>
+    <a href="uml.html">UML</a>
+    <a href="newtech.html">신기술</a>
+    <a href="integration.html">통합</a>
   </div>
 </nav>
 
@@ -39,7 +49,7 @@
 
 <!-- HEADER -->
 <div class="page-header">
-  <h1>🌐 네트워크/보안 문제</h1>
+  <h1>네트워크/보안 문제</h1>
   <p class="subtitle">정보처리기사 실기 기출 유형 10선 — 빈칸 채우기, 용어 설명, 비교표 완성</p>
   <span class="badge badge-blue">OSI 7계층</span>
   <span class="badge badge-green">TCP/IP</span>
@@ -129,7 +139,7 @@
         <div class="step">• <strong>네트워크 계층(3):</strong> IP 주소 기반 라우팅, 최적 경로 결정</div>
         <div class="step">• <strong>데이터링크 계층(2):</strong> MAC 주소, 오류 검출(CRC), 흐름 제어</div>
         <div class="step">• <strong>물리 계층(1):</strong> 전기/광 신호로 비트 전송, 케이블·허브</div>
-        <div class="trap">⚠️ 함정: ARP는 IP→MAC 변환이지만 3계층(네트워크)에서 동작합니다. RARP는 MAC→IP 변환입니다.</div>
+        <div class="trap">함정: ARP는 IP→MAC 변환이지만 3계층(네트워크)에서 동작합니다. RARP는 MAC→IP 변환입니다.</div>
       </div>
     </div>
   </details>
@@ -172,7 +182,7 @@
         <div class="step">• <strong>4-Way Handshake (해제):</strong> FIN → ACK → FIN → ACK</div>
         <div class="step">• <strong>TCP 흐름제어:</strong> 슬라이딩 윈도우(Sliding Window) 방식</div>
         <div class="step">• <strong>TCP 혼잡제어:</strong> 슬로우 스타트, 혼잡 회피, 빠른 재전송, 빠른 회복</div>
-        <div class="trap">⚠️ 시험 포인트: 3-Way / 4-Way Handshake 과정은 반드시 기억하세요!</div>
+        <div class="trap">시험 포인트: 3-Way / 4-Way Handshake 과정은 반드시 기억하세요!</div>
       </div>
     </div>
   </details>
@@ -225,7 +235,7 @@
         <div class="step"><strong>Step 5. 호스트 범위</strong><br>
           시작: 네트워크 주소 + 1 = 192.168.10.<strong>129</strong><br>
           끝: 브로드캐스트 - 1 = 192.168.10.<strong>190</strong></div>
-        <div class="trap">⚠️ 자주 나오는 CIDR: /24=256호스트, /25=128, /26=64, /27=32, /28=16, /30=4(호스트2개-P2P)</div>
+        <div class="trap">자주 나오는 CIDR: /24=256호스트, /25=128, /26=64, /27=32, /28=16, /30=4(호스트2개-P2P)</div>
       </div>
     </div>
   </details>
@@ -273,7 +283,7 @@
         <div class="step">• <strong>403 Forbidden:</strong> 서버가 요청을 이해했으나 권한 부족으로 거부</div>
         <div class="step">• <strong>404 Not Found:</strong> 요청한 리소스를 서버에서 찾을 수 없음</div>
         <div class="step">• <strong>500 Internal Server Error:</strong> 서버 내부에서 예기치 않은 오류 발생</div>
-        <div class="trap">⚠️ 403 vs 401: 401(Unauthorized)은 인증 실패, 403(Forbidden)은 인가(권한) 실패입니다.</div>
+        <div class="trap">403 vs 401: 401(Unauthorized)은 인증 실패, 403(Forbidden)은 인가(권한) 실패입니다.</div>
       </div>
     </div>
   </details>
@@ -312,7 +322,7 @@
         <div class="step">• <strong>OSPF:</strong> 링크 상태 변화 시에만 업데이트, Area 개념으로 계층적 관리, 수렴 속도 빠름</div>
         <div class="step">• <strong>BGP:</strong> 인터넷의 AS 간 경로 교환, ISP 간 라우팅에 사용, TCP 포트 179 사용</div>
         <div class="step">• <strong>IGP vs EGP:</strong> IGP는 AS 내부(RIP, OSPF), EGP는 AS 간(BGP) 라우팅</div>
-        <div class="trap">⚠️ RIPv1은 클래스풀, RIPv2는 클래스리스(VLSM 지원). OSPF는 영역(Area) 0이 백본입니다.</div>
+        <div class="trap">RIPv1은 클래스풀, RIPv2는 클래스리스(VLSM 지원). OSPF는 영역(Area) 0이 백본입니다.</div>
       </div>
     </div>
   </details>
@@ -357,7 +367,7 @@ n명이 대칭키 암호로 통신할 때 필요한 키 수: (  ⑪  )
         <div class="step">• <strong>대칭키:</strong> 같은 키로 암호화/복호화 → 빠르지만 키 분배가 어려움</div>
         <div class="step">• <strong>비대칭키:</strong> 공개키로 암호화, 개인키로 복호화 → 전자서명 가능</div>
         <div class="step">• <strong>해시:</strong> 단방향 함수로 원문 복원 불가 → 무결성 확인용</div>
-        <div class="trap">⚠️ DES(56비트)는 취약하여 AES(128/192/256비트)로 대체. MD5도 취약하여 SHA-256 이상 사용 권장.</div>
+        <div class="trap">DES(56비트)는 취약하여 AES(128/192/256비트)로 대체. MD5도 취약하여 SHA-256 이상 사용 권장.</div>
       </div>
     </div>
   </details>
@@ -413,7 +423,7 @@ pstmt.setString(<span class="num">1</span>, input);</code></pre>
         <div class="step">• <strong>XSS:</strong> Stored(저장형), Reflected(반사형), DOM 기반 3가지 유형 → 방어: 출력 인코딩, CSP</div>
         <div class="step">• <strong>CSRF:</strong> 사용자의 인증 세션을 악용 → 방어: CSRF 토큰, SameSite 쿠키, Referer 검증</div>
         <div class="step">• <strong>XSS vs CSRF:</strong> XSS는 클라이언트 스크립트 실행, CSRF는 서버에 위조 요청 전송</div>
-        <div class="trap">⚠️ SQL Injection 방어의 핵심은 PreparedStatement(매개변수화 쿼리) 사용입니다. 시험에서 코드 형태로 자주 출제!</div>
+        <div class="trap">SQL Injection 방어의 핵심은 PreparedStatement(매개변수화 쿼리) 사용입니다. 시험에서 코드 형태로 자주 출제!</div>
       </div>
     </div>
   </details>
@@ -458,7 +468,7 @@ pstmt.setString(<span class="num">1</span>, input);</code></pre>
         <div class="step">• <strong>IPS:</strong> 인라인(직렬) 방식으로 트래픽을 직접 검사 → 위협 발견 시 즉시 차단</div>
         <div class="step">• <strong>오용 탐지:</strong> 알려진 공격만 탐지 가능 (False Negative 높음)</div>
         <div class="step">• <strong>이상 탐지:</strong> 새로운 공격도 탐지 가능하지만 오탐(False Positive) 높음</div>
-        <div class="trap">⚠️ IDS/IPS의 탐지 방식(오용/이상)과 각 장단점을 비교하여 출제됩니다.</div>
+        <div class="trap">IDS/IPS의 탐지 방식(오용/이상)과 각 장단점을 비교하여 출제됩니다.</div>
       </div>
     </div>
   </details>
@@ -502,7 +512,7 @@ pstmt.setString(<span class="num">1</span>, input);</code></pre>
         <div class="step">• <strong>NAT 종류:</strong> Static NAT(1:1), Dynamic NAT(N:N), PAT/NAPT(N:1 포트변환)</div>
         <div class="step">• <strong>PAT(Port Address Translation):</strong> 하나의 공인 IP로 여러 사설 IP가 포트 번호를 다르게 하여 통신</div>
         <div class="step">• <strong>VLAN:</strong> 스위치에서 포트 기반, MAC 기반, 프로토콜 기반으로 구성 가능</div>
-        <div class="trap">⚠️ 사설 IP 3개 대역(A: 10.x, B: 172.16~31.x, C: 192.168.x)은 반드시 암기!</div>
+        <div class="trap">사설 IP 3개 대역(A: 10.x, B: 172.16~31.x, C: 192.168.x)은 반드시 암기!</div>
       </div>
     </div>
   </details>
@@ -546,7 +556,7 @@ pstmt.setString(<span class="num">1</span>, input);</code></pre>
         <div class="step">• <strong>WPA2:</strong> AES-CCMP 블록 암호 사용, 현재 가장 널리 사용됨</div>
         <div class="step">• <strong>WPA3:</strong> SAE(Simultaneous Authentication of Equals) 핸드셰이크로 KRACK 공격 방어</div>
         <div class="step">• <strong>SAE:</strong> 오프라인 사전 공격에 강하고, 순방향 비밀성(Forward Secrecy) 제공</div>
-        <div class="trap">⚠️ WEP은 보안 취약으로 절대 사용하면 안 됩니다. 시험에서 WEP의 취약점을 묻는 문제가 출제됩니다.</div>
+        <div class="trap">WEP은 보안 취약으로 절대 사용하면 안 됩니다. 시험에서 WEP의 취약점을 묻는 문제가 출제됩니다.</div>
       </div>
     </div>
   </details>
@@ -585,5 +595,16 @@ pstmt.setString(<span class="num">1</span>, input);</code></pre>
 })();
 </script>
 
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
 </body>
 </html>

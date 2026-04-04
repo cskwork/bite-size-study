@@ -2,29 +2,39 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>UML/디자인패턴 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<meta name="theme-color" content="#4f46e5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="실기퀴즈">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-top">
+    <a href="index.html" class="logo">정보처리기사 실기</a>
+    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
   <div class="nav-links">
-    <a href="index.html">🏠 홈</a>
-    <a href="java.html">☕ Java</a>
-    <a href="python.html">🐍 Python</a>
-    <a href="c.html">⚙️ C</a>
-    <a href="sql.html">🗄️ SQL</a>
-    <a href="network.html">🌐 네트워크</a>
-    <a href="os.html">💻 OS</a>
-    <a href="software-engineering.html">🔧 소프트웨어공학</a>
-    <a href="db.html">📊 DB</a>
-    <a href="algorithm.html">🧮 알고리즘</a>
-    <a href="uml.html" class="active">📐 UML</a>
-    <a href="newtech.html">🆕 신기술</a>
-    <a href="integration.html">🔗 통합</a>
+    <a href="index.html">홈</a>
+    <a href="java.html">Java</a>
+    <a href="python.html">Python</a>
+    <a href="c.html">C</a>
+    <a href="sql.html">SQL</a>
+    <a href="network.html">네트워크</a>
+    <a href="os.html">OS</a>
+    <a href="software-engineering.html">소프트웨어공학</a>
+    <a href="db.html">DB</a>
+    <a href="algorithm.html">알고리즘</a>
+    <a href="uml.html" class="active">UML</a>
+    <a href="newtech.html">신기술</a>
+    <a href="integration.html">통합</a>
   </div>
 </nav>
 
@@ -39,7 +49,7 @@
 
 <!-- HEADER -->
 <div class="page-header">
-  <h1>📐 UML / 디자인패턴 문제</h1>
+  <h1>UML / 디자인패턴 문제</h1>
   <p class="subtitle">정보처리기사 실기 기출 유형 10선 — UML 다이어그램, GoF 패턴, SOLID 원칙</p>
   <span class="badge badge-red">UML</span>
   <span class="badge badge-purple">GoF 패턴</span>
@@ -134,8 +144,8 @@
 │  │ 7. 타이밍 다이어그램 (Timing)        │      │
 │  └──────────────────────────────────────┘      │
 └────────────────────────────────────────────────┘</code></pre>
-        <div class="step">• 💡 암기 팁 구조: <strong>클객컴배복패프</strong></div>
-        <div class="step">• 💡 암기 팁 행위: <strong>유활상시커상타</strong></div>
+        <div class="step">• Tip: 암기 팁 구조: <strong>클객컴배복패프</strong></div>
+        <div class="step">• Tip: 암기 팁 행위: <strong>유활상시커상타</strong></div>
         <div class="step">• 시퀀스, 커뮤니케이션, 상호작용개요, 타이밍은 <strong>상호작용 다이어그램</strong>의 하위</div>
       </div>
     </div>
@@ -457,7 +467,7 @@
 │     → 생성 비용이 클 때 유용                       │
 │     예: 게임 캐릭터 복제, 스프레드시트 셀 복사     │
 └────────────────────────────────────────────────────┘</code></pre>
-        <div class="step">• 💡 암기: <strong>"싱팩빌프추"</strong> (Singleton, Factory, Builder, Prototype, Abstract Factory)</div>
+        <div class="step">• Tip: 암기: <strong>"싱팩빌프추"</strong> (Singleton, Factory, Builder, Prototype, Abstract Factory)</div>
         <div class="step">• Factory Method vs Abstract Factory: 단일 객체 vs 객체 군</div>
         <div class="step">• 생성 패턴의 공통 목적: 객체 생성의 <strong>유연성과 재사용성</strong> 향상</div>
       </div>
@@ -536,7 +546,7 @@
 │     → 공유를 통해 메모리 절약                      │
 │     예: 문자 폰트 객체 공유                        │
 └────────────────────────────────────────────────────┘</code></pre>
-        <div class="step">• 💡 암기: <strong>"어브컴데퍼프플"</strong></div>
+        <div class="step">• Tip: 암기: <strong>"어브컴데퍼프플"</strong></div>
         <div class="step">• Adapter vs Bridge: Adapter는 기존 호환, Bridge는 설계 시 분리</div>
         <div class="step">• Decorator vs Proxy: Decorator는 기능 추가, Proxy는 접근 제어</div>
       </div>
@@ -670,7 +680,7 @@ D - ( ? )</code></pre>
 │       추상화에 의존해야 한다"                      │
 │      → 인터페이스/추상클래스에 의존                │
 └────────────────────────────────────────────────────┘</code></pre>
-        <div class="step">• 💡 암기: <strong>단개리인의</strong> (단일책임, 개방폐쇄, 리스코프, 인터페이스분리, 의존역전)</div>
+        <div class="step">• Tip: 암기: <strong>단개리인의</strong> (단일책임, 개방폐쇄, 리스코프, 인터페이스분리, 의존역전)</div>
         <div class="step">• SOLID는 <strong>결합도↓ 응집도↑</strong>를 위한 설계 원칙</div>
         <div class="step">• 시험 빈출: 각 원칙의 영문 약자와 한글 의미 모두 숙지 필요</div>
       </div>
@@ -806,5 +816,16 @@ D - ( ? )</code></pre>
 })();
 </script>
 
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
 </body>
 </html>

@@ -2,16 +2,26 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Python 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<meta name="theme-color" content="#4f46e5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="실기퀴즈">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-  <a class="logo" href="index.html">📝 정보처리기사 실기</a>
+  <div class="nav-top">
+    <a href="index.html" class="logo">정보처리기사 실기</a>
+    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
   <div class="nav-links">
-    <a href="index.html">🏠 홈</a>
+    <a href="index.html">홈</a>
     <a href="java.html">Java</a>
     <a href="python.html" class="active">Python</a>
     <a href="c.html">C언어</a>
@@ -36,7 +46,7 @@
 
 <div class="container">
   <div class="page-header">
-    <h1>🐍 Python 코드 실행결과 문제</h1>
+    <h1>Python 코드 실행결과 문제</h1>
     <p class="subtitle">정보처리기사 실기 기출 유형 — 다음 코드의 실행 결과를 쓰시오.</p>
     <span class="badge badge-blue">총 10문제</span>
   </div>
@@ -468,5 +478,16 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
 </body>
 </html>

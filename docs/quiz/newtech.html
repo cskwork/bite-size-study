@@ -2,29 +2,39 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>신기술 용어 기출 문제 | 정보처리기사 실기 퀴즈</title>
+<meta name="theme-color" content="#4f46e5">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="실기퀴즈">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- NAVIGATION -->
 <nav>
-  <a href="index.html" class="logo">📝 정보처리기사 실기</a>
+  <div class="nav-top">
+    <a href="index.html" class="logo">정보처리기사 실기</a>
+    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
   <div class="nav-links">
-    <a href="index.html">🏠 홈</a>
-    <a href="java.html">☕ Java</a>
-    <a href="python.html">🐍 Python</a>
-    <a href="c.html">⚙️ C</a>
-    <a href="sql.html">🗄️ SQL</a>
-    <a href="network.html">🌐 네트워크</a>
-    <a href="os.html">💻 OS</a>
-    <a href="software-engineering.html">🔧 소프트웨어공학</a>
-    <a href="db.html">📊 DB</a>
-    <a href="algorithm.html">🧮 알고리즘</a>
-    <a href="uml.html">📐 UML</a>
-    <a href="newtech.html" class="active">🆕 신기술</a>
-    <a href="integration.html">🔗 통합</a>
+    <a href="index.html">홈</a>
+    <a href="java.html">Java</a>
+    <a href="python.html">Python</a>
+    <a href="c.html">C</a>
+    <a href="sql.html">SQL</a>
+    <a href="network.html">네트워크</a>
+    <a href="os.html">OS</a>
+    <a href="software-engineering.html">소프트웨어공학</a>
+    <a href="db.html">DB</a>
+    <a href="algorithm.html">알고리즘</a>
+    <a href="uml.html">UML</a>
+    <a href="newtech.html" class="active">신기술</a>
+    <a href="integration.html">통합</a>
   </div>
 </nav>
 
@@ -39,7 +49,7 @@
 
 <!-- HEADER -->
 <div class="page-header">
-  <h1>🆕 신기술 용어 문제</h1>
+  <h1>신기술 용어 문제</h1>
   <p class="subtitle">정보처리기사 실기 기출 유형 10선 — 용어 설명, 빈칸 채우기, 비교표 완성</p>
   <span class="badge badge-blue">클라우드</span>
   <span class="badge badge-green">빅데이터</span>
@@ -130,7 +140,7 @@ SaaS:        (  ⑩  )</code></pre>
         <div class="step">• <strong>PaaS:</strong> 플랫폼(OS+미들웨어+런타임)까지 제공 → 개발자는 코드만 작성</div>
         <div class="step">• <strong>SaaS:</strong> 완성된 소프트웨어를 제공 → 사용자는 바로 사용</div>
         <div class="step">• <strong>온프레미스:</strong> 자체 서버실에 직접 구축·운영 (클라우드의 반대 개념)</div>
-        <div class="trap">⚠️ 시험 포인트: IaaS/PaaS/SaaS 영문 풀네임과 각각의 예시를 함께 암기하세요!</div>
+        <div class="trap">시험 포인트: IaaS/PaaS/SaaS 영문 풀네임과 각각의 예시를 함께 암기하세요!</div>
       </div>
     </div>
   </details>
@@ -184,7 +194,7 @@ SaaS:        (  ⑩  )</code></pre>
         <div class="step">• <strong>Variety:</strong> 텍스트, 이미지, 영상, 로그 등 다양한 형태</div>
         <div class="step">• <strong>Hadoop:</strong> HDFS(분산파일시스템) + MapReduce(분산처리) 기반 프레임워크</div>
         <div class="step">• <strong>Spark:</strong> Hadoop보다 최대 100배 빠른 인메모리 처리 엔진</div>
-        <div class="trap">⚠️ 함정: 3V에서 5V로 확장 시 Veracity(정확성)와 Value(가치)가 추가됩니다.</div>
+        <div class="trap">함정: 3V에서 5V로 확장 시 Veracity(정확성)와 Value(가치)가 추가됩니다.</div>
       </div>
     </div>
   </details>
@@ -239,7 +249,7 @@ SaaS:        (  ⑩  )</code></pre>
         <div class="step">• <strong>CoAP:</strong> UDP 기반, HTTP와 유사한 REST 방식, 제한된 환경(Constrained)에 최적화</div>
         <div class="step">• <strong>엣지 컴퓨팅:</strong> 데이터 발생 지점(엣지)에서 직접 처리 → 초저지연, 자율주행 등에 활용</div>
         <div class="step">• <strong>포그 컴퓨팅:</strong> 시스코가 제안, 클라우드-엣지 중간 계층에서 분산 처리</div>
-        <div class="trap">⚠️ 함정: MQTT는 TCP 기반, CoAP는 UDP 기반 — 전송 계층이 다릅니다!</div>
+        <div class="trap">함정: MQTT는 TCP 기반, CoAP는 UDP 기반 — 전송 계층이 다릅니다!</div>
       </div>
     </div>
   </details>
@@ -291,7 +301,7 @@ SaaS:        (  ⑩  )</code></pre>
         <div class="step">• <strong>RNN:</strong> 이전 출력이 다음 입력에 영향 → LSTM, GRU가 개선 모델</div>
         <div class="step">• <strong>GAN:</strong> Generator(생성자)와 Discriminator(판별자)의 적대적 학습</div>
         <div class="step">• <strong>전이학습:</strong> ImageNet으로 학습한 모델을 의료영상 등에 재활용</div>
-        <div class="trap">⚠️ 시험 포인트: CNN=이미지, RNN=시계열/자연어, GAN=생성 — 이 매핑을 기억하세요!</div>
+        <div class="trap">시험 포인트: CNN=이미지, RNN=시계열/자연어, GAN=생성 — 이 매핑을 기억하세요!</div>
       </div>
     </div>
   </details>
@@ -345,7 +355,7 @@ SaaS:        (  ⑩  )</code></pre>
         <div class="step">• <strong>합의 알고리즘:</strong> 새 블록의 유효성을 네트워크 참여자들이 합의하는 방식</div>
         <div class="step">• <strong>스마트 컨트랙트:</strong> 조건 충족 시 자동 실행되는 코드 — 중개자 불필요</div>
         <div class="step">• <strong>PoW vs PoS:</strong> PoW는 에너지 소모가 크고, PoS는 지분 기반으로 효율적</div>
-        <div class="trap">⚠️ 함정: 이더리움은 PoW에서 PoS로 전환했습니다(이더리움 2.0). 비트코인은 여전히 PoW입니다.</div>
+        <div class="trap">함정: 이더리움은 PoW에서 PoS로 전환했습니다(이더리움 2.0). 비트코인은 여전히 PoW입니다.</div>
       </div>
     </div>
   </details>
@@ -401,7 +411,7 @@ DevOps란?
         <div class="step">• <strong>도커:</strong> 컨테이너 기반 가상화, VM보다 가볍고 빠름, Dockerfile로 이미지 생성</div>
         <div class="step">• <strong>쿠버네티스:</strong> 컨테이너 자동 스케일링, 로드밸런싱, 롤링 업데이트 지원</div>
         <div class="step">• <strong>MSA:</strong> 각 서비스가 독립 배포 가능, API로 통신, 장애 격리 용이</div>
-        <div class="trap">⚠️ 시험 단골: CI/CD 풀네임, 도커 vs VM 차이, MSA vs 모놀리식 비교 — 반드시 암기!</div>
+        <div class="trap">시험 단골: CI/CD 풀네임, 도커 vs VM 차이, MSA vs 모놀리식 비교 — 반드시 암기!</div>
       </div>
     </div>
   </details>
@@ -452,7 +462,7 @@ DevOps란?
         <div class="step">• <strong>APT:</strong> 사회공학+제로데이+백도어 등 복합적 기법으로 장기간 침투</div>
         <div class="step">• <strong>랜섬웨어:</strong> Ransom(몸값) + Malware → 워너크라이(WannaCry)가 대표적</div>
         <div class="step">• <strong>피싱:</strong> 이메일·문자로 가짜 사이트 유도 → 스미싱(SMS+Phishing)도 포함</div>
-        <div class="trap">⚠️ 추가 용어: 스피어피싱(특정 대상), 파밍(DNS 변조), 스니핑(도청)도 함께 암기!</div>
+        <div class="trap">추가 용어: 스피어피싱(특정 대상), 파밍(DNS 변조), 스니핑(도청)도 함께 암기!</div>
       </div>
     </div>
   </details>
@@ -505,7 +515,7 @@ DevOps란?
         <div class="step">• <strong>마이크로서비스:</strong> 서비스별 독립 DB, 독립 배포 — 넷플릭스, 아마존 등이 채택</div>
         <div class="step">• <strong>서버리스:</strong> FaaS(Function as a Service), 사용한 만큼만 과금, 자동 스케일링</div>
         <div class="step">• <strong>API 게이트웨이:</strong> 클라이언트↔마이크로서비스 사이의 중간 관문 역할</div>
-        <div class="trap">⚠️ 함정: 서버리스는 서버가 "없는 것"이 아니라 서버 관리를 "안 하는 것"입니다!</div>
+        <div class="trap">함정: 서버리스는 서버가 "없는 것"이 아니라 서버 관리를 "안 하는 것"입니다!</div>
       </div>
     </div>
   </details>
@@ -560,7 +570,7 @@ DevOps란?
         <div class="step">• <strong>데이터웨어하우스:</strong> 정제·변환된 구조화 데이터 저장 → 비즈니스 분석용 (Schema-on-Write)</div>
         <div class="step">• <strong>ETL:</strong> 원본 시스템에서 추출(E) → 형식 변환(T) → 타겟 시스템에 적재(L)</div>
         <div class="step">• <strong>데이터마이닝:</strong> 분류(Classification), 군집화(Clustering), 연관규칙(Association), 예측 등</div>
-        <div class="trap">⚠️ 함정: 데이터레이크 vs 데이터웨어하우스 — 전자는 비정형 포함, 후자는 정형 데이터 중심!</div>
+        <div class="trap">함정: 데이터레이크 vs 데이터웨어하우스 — 전자는 비정형 포함, 후자는 정형 데이터 중심!</div>
       </div>
     </div>
   </details>
@@ -616,7 +626,7 @@ DevOps란?
         <div class="step">• <strong>PWA:</strong> Service Worker + Web App Manifest — 오프라인·푸시알림 가능한 웹앱</div>
         <div class="step">• <strong>SPA:</strong> React, Vue, Angular — 페이지 새로고침 없이 동적 콘텐츠 렌더링</div>
         <div class="step">• <strong>RIA:</strong> Ajax, Flex, Silverlight — 풍부한 인터렉션을 제공하는 웹 애플리케이션</div>
-        <div class="trap">⚠️ 시험 포인트: PWA의 핵심은 Service Worker(오프라인), SPA의 핵심은 클라이언트 사이드 렌더링!</div>
+        <div class="trap">시험 포인트: PWA의 핵심은 Service Worker(오프라인), SPA의 핵심은 클라이언트 사이드 렌더링!</div>
       </div>
     </div>
   </details>
@@ -655,5 +665,16 @@ DevOps란?
 })();
 </script>
 
+<script>
+document.querySelector('.nav-toggle').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.nav-links').classList.toggle('open');
+});
+</script>
+<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./sw.js');
+}
+</script>
 </body>
 </html>

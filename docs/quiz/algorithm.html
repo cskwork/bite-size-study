@@ -4,51 +4,68 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>알고리즘 기출 문제 | 정보처리기사 실기 퀴즈</title>
-<meta name="theme-color" content="#4f46e5">
+<meta name="theme-color" content="#e4e8ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11141a" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="알고리즘 기출 문제 — 정보처리기사 실기 대비 문제를 풀고, 정답과 풀이를 확인하고, 스스로 채점해 틀린 문제만 다시 보세요.">
+<meta property="og:title" content="알고리즘 기출 문제 | 정보처리기사 실기 퀴즈">
+<meta property="og:description" content="알고리즘 기출 문제 — 정보처리기사 실기 대비 문제를 풀고, 정답과 풀이를 확인하고, 스스로 채점해 틀린 문제만 다시 보세요.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://quiz-sigma-wine.vercel.app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="실기퀴즈">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/icon-192.svg">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&amp;text=%ED%95%A8%EC%A0%95%EB%8B%B5&amp;display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-deck="algorithm" data-group="code">
 
-<!-- NAVIGATION -->
-<nav>
-  <div class="nav-top">
-    <a href="index.html" class="logo">정보처리기사 실기</a>
-    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="brand-ring" aria-hidden="true"></span>실기퀴즈</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="deck-nav" aria-label="과목 메뉴 열기"><span></span><span></span><span></span></button>
   </div>
-  <div class="nav-links">
+  <nav id="deck-nav" class="deck-nav" aria-label="과목">
     <a href="index.html">홈</a>
-    <a href="java.html">Java</a>
-    <a href="python.html">Python</a>
-    <a href="c.html">C</a>
-    <a href="sql.html">SQL</a>
-    <a href="network.html">네트워크</a>
-    <a href="os.html">OS</a>
-    <a href="software-engineering.html">소프트웨어공학</a>
-    <a href="db.html">DB</a>
-    <a href="algorithm.html" class="active">알고리즘</a>
-    <a href="uml.html">UML</a>
-    <a href="newtech.html">신기술</a>
-    <a href="integration.html">통합</a>
-  </div>
-</nav>
+    <a href="java.html" data-group="code">Java</a>
+    <a href="python.html" data-group="code">Python</a>
+    <a href="c.html" data-group="code">C언어</a>
+    <a href="algorithm.html" data-group="code" aria-current="page">알고리즘</a>
+    <a href="sql.html" data-group="data">SQL</a>
+    <a href="db.html" data-group="data">DB설계</a>
+    <a href="network.html" data-group="theory">네트워크</a>
+    <a href="os.html" data-group="theory">운영체제</a>
+    <a href="software-engineering.html" data-group="theory">소프트웨어공학</a>
+    <a href="uml.html" data-group="theory">UML</a>
+    <a href="newtech.html" data-group="new">신기술</a>
+    <a href="integration.html" data-group="exam">모의고사</a>
+  </nav>
+</header>
 
-<!-- PROGRESS -->
-<div class="progress-bar">
-  <span class="label">진행률</span>
-  <div class="track"><div class="fill" id="prog-fill"></div></div>
-  <span class="count" id="prog-text">0 / 10</span>
+<div class="deck-bar">
+  <div class="deck-bar-inner">
+    <div class="tally" data-tally aria-hidden="true"></div>
+    <p class="tally-text" data-tally-text aria-live="polite">채점 기록을 불러오는 중</p>
+    <div class="filters" role="group" aria-label="문제 걸러 보기">
+      <button type="button" data-filter="all" aria-pressed="true">전체</button>
+      <button type="button" data-filter="todo" aria-pressed="false">안 푼 문제</button>
+      <button type="button" data-filter="wrong" aria-pressed="false">틀린 문제</button>
+    </div>
+    <button type="button" class="reset" data-reset>기록 지우기</button>
+  </div>
 </div>
 
 <div class="container">
 
 <!-- HEADER -->
-<div class="page-header">
+<div class="page-header deck-cover">
+  <span class="ring" aria-hidden="true"></span>
   <h1>알고리즘 문제</h1>
   <p class="subtitle">정보처리기사 실기 기출 유형 10선 — 정렬, 탐색, 자료구조, 그래프 알고리즘</p>
   <span class="badge badge-red">정렬</span>
@@ -59,6 +76,7 @@
 </div>
 
 <!-- CONCEPT GRID -->
+<h2 class="visually-hidden">핵심 개념</h2>
 <div class="concept-grid">
   <div class="concept-card">
     <h3>버블 정렬</h3>
@@ -103,7 +121,7 @@
 </div>
 
 <!-- ========== 문제 1 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-1" data-q="1">
   <div class="question-header">
     <span class="q-num">문제 1</span>
     <div class="q-meta">
@@ -146,7 +164,7 @@
 </div>
 
 <!-- ========== 문제 2 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-2" data-q="2">
   <div class="question-header">
     <span class="q-num">문제 2</span>
     <div class="q-meta">
@@ -186,7 +204,7 @@
 </div>
 
 <!-- ========== 문제 3 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-3" data-q="3">
   <div class="question-header">
     <span class="q-num">문제 3</span>
     <div class="q-meta">
@@ -225,7 +243,7 @@
 </div>
 
 <!-- ========== 문제 4 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-4" data-q="4">
   <div class="question-header">
     <span class="q-num">문제 4</span>
     <div class="q-meta">
@@ -269,7 +287,7 @@
 </div>
 
 <!-- ========== 문제 5 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-5" data-q="5">
   <div class="question-header">
     <span class="q-num">문제 5</span>
     <div class="q-meta">
@@ -330,7 +348,7 @@ h(8)  = 8 mod 7  = 1</code></pre>
 </div>
 
 <!-- ========== 문제 6 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-6" data-q="6">
   <div class="question-header">
     <span class="q-num">문제 6</span>
     <div class="q-meta">
@@ -385,7 +403,7 @@ pop()    → ?              dequeue()  → ?</code></pre>
 </div>
 
 <!-- ========== 문제 7 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-7" data-q="7">
   <div class="question-header">
     <span class="q-num">문제 7</span>
     <div class="q-meta">
@@ -439,7 +457,7 @@ pop()    → ?              dequeue()  → ?</code></pre>
 </div>
 
 <!-- ========== 문제 8 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-8" data-q="8">
   <div class="question-header">
     <span class="q-num">문제 8</span>
     <div class="q-meta">
@@ -504,7 +522,7 @@ pop()    → ?              dequeue()  → ?</code></pre>
 </div>
 
 <!-- ========== 문제 9 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-9" data-q="9">
   <div class="question-header">
     <span class="q-num">문제 9</span>
     <div class="q-meta">
@@ -553,7 +571,7 @@ pop()    → ?              dequeue()  → ?</code></pre>
 </div>
 
 <!-- ========== 문제 10 ========== -->
-<div class="question-card">
+<div class="question-card" id="q-10" data-q="10">
   <div class="question-header">
     <span class="q-num">문제 10</span>
     <div class="q-meta">
@@ -616,43 +634,6 @@ O(1) &lt; O(log n) &lt; O(n) &lt; O(n log n) &lt; O(n²) &lt; O(2ⁿ) &lt; O(n!)
   정보처리기사 실기 대비 학습 자료 | 알고리즘 문제 10선
 </footer>
 
-<script>
-(function() {
-  const total = document.querySelectorAll('.question-card details').length;
-  let revealed = 0;
-  const progText = document.getElementById('prog-text');
-  const progFill = document.getElementById('prog-fill');
-
-  function updateProgress() {
-    progText.textContent = revealed + ' / ' + total;
-    progFill.style.width = (revealed / total * 100) + '%';
-  }
-
-  document.querySelectorAll('.question-card details').forEach(function(det) {
-    let counted = false;
-    det.addEventListener('toggle', function() {
-      if (det.open && !counted) {
-        counted = true;
-        revealed++;
-        updateProgress();
-      }
-    });
-  });
-
-  updateProgress();
-})();
-</script>
-
-<script>
-document.querySelector('.nav-toggle').addEventListener('click', function() {
-  this.classList.toggle('active');
-  document.querySelector('.nav-links').classList.toggle('open');
-});
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
-}
-</script>
+<script src="quiz.js" defer></script>
 </body>
 </html>

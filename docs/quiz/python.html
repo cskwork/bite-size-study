@@ -4,55 +4,73 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Python 기출 문제 | 정보처리기사 실기 퀴즈</title>
-<meta name="theme-color" content="#4f46e5">
+<meta name="theme-color" content="#e4e8ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#11141a" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Python 기출 문제 — 정보처리기사 실기 대비 문제를 풀고, 정답과 풀이를 확인하고, 스스로 채점해 틀린 문제만 다시 보세요.">
+<meta property="og:title" content="Python 기출 문제 | 정보처리기사 실기 퀴즈">
+<meta property="og:description" content="Python 기출 문제 — 정보처리기사 실기 대비 문제를 풀고, 정답과 풀이를 확인하고, 스스로 채점해 틀린 문제만 다시 보세요.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://quiz-sigma-wine.vercel.app/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="실기퀴즈">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/icon-192.svg">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&amp;text=%ED%95%A8%EC%A0%95%EB%8B%B5&amp;display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-deck="python" data-group="code">
 
-<nav>
-  <div class="nav-top">
-    <a href="index.html" class="logo">정보처리기사 실기</a>
-    <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="brand-ring" aria-hidden="true"></span>실기퀴즈</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="deck-nav" aria-label="과목 메뉴 열기"><span></span><span></span><span></span></button>
   </div>
-  <div class="nav-links">
+  <nav id="deck-nav" class="deck-nav" aria-label="과목">
     <a href="index.html">홈</a>
-    <a href="java.html">Java</a>
-    <a href="python.html" class="active">Python</a>
-    <a href="c.html">C언어</a>
-    <a href="sql.html">SQL</a>
-    <a href="network.html">네트워크</a>
-    <a href="os.html">운영체제</a>
-    <a href="software-engineering.html">소프트웨어공학</a>
-    <a href="db.html">DB</a>
-    <a href="algorithm.html">알고리즘</a>
-    <a href="uml.html">UML</a>
-    <a href="newtech.html">신기술</a>
-    <a href="integration.html">통합</a>
-  </div>
-</nav>
+    <a href="java.html" data-group="code">Java</a>
+    <a href="python.html" data-group="code" aria-current="page">Python</a>
+    <a href="c.html" data-group="code">C언어</a>
+    <a href="algorithm.html" data-group="code">알고리즘</a>
+    <a href="sql.html" data-group="data">SQL</a>
+    <a href="db.html" data-group="data">DB설계</a>
+    <a href="network.html" data-group="theory">네트워크</a>
+    <a href="os.html" data-group="theory">운영체제</a>
+    <a href="software-engineering.html" data-group="theory">소프트웨어공학</a>
+    <a href="uml.html" data-group="theory">UML</a>
+    <a href="newtech.html" data-group="new">신기술</a>
+    <a href="integration.html" data-group="exam">모의고사</a>
+  </nav>
+</header>
 
-<div class="progress-bar">
-  <span class="label">진행률</span>
-  <div class="track"><div class="fill" id="progressBar"></div></div>
-  <span class="count" id="progressText">0 / 10</span>
-  <button class="reset-btn" onclick="resetProgress()" style="background:var(--bg-tertiary);color:var(--text-secondary);border:1px solid var(--border);padding:0.3rem 0.8rem;border-radius:6px;cursor:pointer;font-size:0.8rem;">초기화</button>
+<div class="deck-bar">
+  <div class="deck-bar-inner">
+    <div class="tally" data-tally aria-hidden="true"></div>
+    <p class="tally-text" data-tally-text aria-live="polite">채점 기록을 불러오는 중</p>
+    <div class="filters" role="group" aria-label="문제 걸러 보기">
+      <button type="button" data-filter="all" aria-pressed="true">전체</button>
+      <button type="button" data-filter="todo" aria-pressed="false">안 푼 문제</button>
+      <button type="button" data-filter="wrong" aria-pressed="false">틀린 문제</button>
+    </div>
+    <button type="button" class="reset" data-reset>기록 지우기</button>
+  </div>
 </div>
 
 <div class="container">
-  <div class="page-header">
+  <div class="page-header deck-cover">
+  <span class="ring" aria-hidden="true"></span>
     <h1>Python 코드 실행결과 문제</h1>
     <p class="subtitle">정보처리기사 실기 기출 유형 — 다음 코드의 실행 결과를 쓰시오.</p>
     <span class="badge badge-blue">총 10문제</span>
   </div>
 
   <!-- Q1: 리스트 슬라이싱 및 메서드 -->
-  <div class="question-card" id="card-1">
+  <div class="question-card" id="q-1" data-q="1">
     <div class="question-header">
       <span class="q-num">Q1</span>
       <div class="q-meta">
@@ -79,13 +97,12 @@ a.<span class="fn">reverse</span>()
           <div class="step">4. <code>a.reverse()</code> → <code>[6, 5, 4, 2, 1]</code></div>
           <div class="step">5. <code>a[1:4]</code> → 인덱스 1~3 → <code>[5, 4, 2]</code></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(1, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q2: 딕셔너리 활용 -->
-  <div class="question-card" id="card-2">
+  <div class="question-card" id="q-2" data-q="2">
     <div class="question-header">
       <span class="q-num">Q2</span>
       <div class="q-meta">
@@ -114,13 +131,12 @@ d[<span class="str">'d'</span>] = <span class="num">4</span>
           <div class="step">4. <code>len(d)</code> → 키 4개이므로 <strong>4</strong></div>
           <div class="step">5. <code>list(d.keys())</code> → <strong>['a', 'b', 'c', 'd']</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(2, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q3: 문자열 메서드 -->
-  <div class="question-card" id="card-3">
+  <div class="question-card" id="q-3" data-q="3">
     <div class="question-header">
       <span class="q-num">Q3</span>
       <div class="q-meta">
@@ -150,13 +166,12 @@ a:b:c:d</div>
           <div class="step">3. <code>s.replace("Hello", "Hi")</code> → 모든 "Hello"를 "Hi"로 교체 → <strong>Hi World Hi</strong></div>
           <div class="step">4. <code>a.split("-")</code> → <code>['a','b','c','d']</code>, <code>":".join(...)</code> → <strong>a:b:c:d</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(3, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q4: 클래스 상속과 메서드 오버라이딩 -->
-  <div class="question-card" id="card-4">
+  <div class="question-card" id="q-4" data-q="4">
     <div class="question-header">
       <span class="q-num">Q4</span>
       <div class="q-meta">
@@ -194,13 +209,12 @@ True</div>
           <div class="step">3. <code>c.greet()</code> → Child에 없으므로 Parent의 greet() 호출 → <strong>Hello</strong></div>
           <div class="step">4. <code>isinstance(c, Parent)</code> → Child는 Parent의 하위 클래스이므로 → <strong>True</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(4, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q5: lambda, map, filter -->
-  <div class="question-card" id="card-5">
+  <div class="question-card" id="q-5" data-q="5">
     <div class="question-header">
       <span class="q-num">Q5</span>
       <div class="q-meta">
@@ -225,13 +239,12 @@ c = <span class="bi">list</span>(<span class="bi">filter</span>(<span class="kw"
           <div class="step">1. <code>map(lambda x: x**2, a)</code> → 각 원소를 제곱 → <strong>[1, 4, 9, 16, 25]</strong></div>
           <div class="step">2. <code>filter(lambda x: x%2==0, b)</code> → 짝수만 필터링 → 4, 16 → <strong>[4, 16]</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(5, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q6: 리스트 컴프리헨션 -->
-  <div class="question-card" id="card-6">
+  <div class="question-card" id="q-6" data-q="6">
     <div class="question-header">
       <span class="q-num">Q6</span>
       <div class="q-meta">
@@ -255,13 +268,12 @@ b = [x <span class="kw">for</span> x <span class="kw">in</span> <span class="bi"
           <div class="step">1. 이중 for문: i=1,j=1→1, i=1,j=2→2, i=2,j=1→2, i=2,j=2→4, i=3,j=1→3, i=3,j=2→6 → <strong>[1, 2, 2, 4, 3, 6]</strong></div>
           <div class="step">2. 0~9 중 3의 배수: 0, 3, 6, 9 → <strong>[0, 3, 6, 9]</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(6, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q7: 재귀함수 -->
-  <div class="question-card" id="card-7">
+  <div class="question-card" id="q-7" data-q="7">
     <div class="question-header">
       <span class="q-num">Q7</span>
       <div class="q-meta">
@@ -287,13 +299,12 @@ b = [x <span class="kw">for</span> x <span class="kw">in</span> <span class="bi"
           <div class="step">func(0)=0, func(1)=1, func(2)=1, func(3)=2, func(4)=3, func(5)=5, func(6)=8</div>
           <div class="step">따라서 결과는 <strong>8</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(7, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q8: 전역변수/지역변수 -->
-  <div class="question-card" id="card-8">
+  <div class="question-card" id="q-8" data-q="8">
     <div class="question-header">
       <span class="q-num">Q8</span>
       <div class="q-meta">
@@ -330,13 +341,12 @@ b = [x <span class="kw">for</span> x <span class="kw">in</span> <span class="bi"
           <div class="step">3. <code>bar()</code> 호출 → 지역변수 x=30, <code>print(x)</code> → <strong>30</strong> (전역 x 영향 없음)</div>
           <div class="step">4. <code>print(x)</code> → 전역변수 x는 여전히 20 → <strong>20</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(8, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q9: *args, **kwargs -->
-  <div class="question-card" id="card-9">
+  <div class="question-card" id="q-9" data-q="9">
     <div class="question-header">
       <span class="q-num">Q9</span>
       <div class="q-meta">
@@ -365,13 +375,12 @@ age=25</div>
           <div class="step">3. <code>**kwargs</code>는 키워드 인자를 딕셔너리로 받음 → <code>{'name':'Kim', 'age':25}</code></div>
           <div class="step">4. items()로 순회하며 f-string 출력 → <strong>name=Kim</strong>, <strong>age=25</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(9, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
 
   <!-- Q10: 얕은복사 vs 깊은복사 -->
-  <div class="question-card" id="card-10">
+  <div class="question-card" id="q-10" data-q="10">
     <div class="question-header">
       <span class="q-num">Q10</span>
       <div class="q-meta">
@@ -406,7 +415,6 @@ a[<span class="num">1</span>] = [<span class="num">6</span>, <span class="num">7
           <div class="step">5. <code>b</code> → <strong>[[1, 2, 5], [3, 4]]</strong></div>
           <div class="step">6. <code>c</code> → <strong>[[1, 2], [3, 4]]</strong></div>
         </div>
-        <label class="solve-check"><input type="checkbox" onchange="toggleSolved(10, this.checked)"> 풀이 완료</label>
       </div>
     </details>
   </div>
@@ -417,77 +425,6 @@ a[<span class="num">1</span>] = [<span class="num">6</span>, <span class="num">7
   정보처리기사 실기 대비 Python 퀴즈 | 학습 진행률은 브라우저에 자동 저장됩니다
 </footer>
 
-<style>
-  .solve-check {
-    display: inline-flex; align-items: center; gap: 0.4rem;
-    margin-top: 0.7rem; cursor: pointer; font-size: 0.85rem;
-    color: var(--text-secondary); user-select: none;
-  }
-  .solve-check input { accent-color: var(--green); width: 16px; height: 16px; cursor: pointer; }
-  .solve-check:has(input:checked) { color: var(--green); }
-  .question-card.solved { border-color: var(--green); }
-</style>
-
-<script>
-const TOTAL = 10;
-const STORAGE_KEY = 'python-quiz-progress';
-
-function loadProgress() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}; }
-  catch { return {}; }
-}
-
-function saveProgress(data) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-}
-
-function updateUI() {
-  const data = loadProgress();
-  const solved = Object.keys(data).filter(k => data[k]).length;
-  document.getElementById('progressBar').style.width = (solved / TOTAL * 100) + '%';
-  document.getElementById('progressText').textContent = solved + ' / ' + TOTAL;
-  for (let i = 1; i <= TOTAL; i++) {
-    const card = document.getElementById('card-' + i);
-    if (data[i]) card.classList.add('solved');
-    else card.classList.remove('solved');
-  }
-}
-
-function toggleSolved(num, checked) {
-  const data = loadProgress();
-  data[num] = checked;
-  saveProgress(data);
-  updateUI();
-}
-
-function resetProgress() {
-  localStorage.removeItem(STORAGE_KEY);
-  document.querySelectorAll('.solve-check input').forEach(cb => cb.checked = false);
-  updateUI();
-}
-
-window.addEventListener('DOMContentLoaded', () => {
-  const data = loadProgress();
-  for (let i = 1; i <= TOTAL; i++) {
-    if (data[i]) {
-      const cb = document.querySelector('#card-' + i + ' .solve-check input');
-      if (cb) cb.checked = true;
-    }
-  }
-  updateUI();
-});
-</script>
-
-<script>
-document.querySelector('.nav-toggle').addEventListener('click', function() {
-  this.classList.toggle('active');
-  document.querySelector('.nav-links').classList.toggle('open');
-});
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
-}
-</script>
+<script src="quiz.js" defer></script>
 </body>
 </html>

@@ -1,171 +1,223 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>정보처리기사 실기 퀴즈 - 합격 대비</title>
-    <meta name="theme-color" content="#4f46e5">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="실기퀴즈">
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="icons/icon-192.svg">
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>정보처리기사 실기 퀴즈 - 합격 대비</title>
+<meta name="description" content="정보처리기사 실기 12개 과목 130문제. 코드 실행 결과, SQL, 네트워크·보안, 소프트웨어공학 문제를 풀고, 풀이를 확인하고, 스스로 채점해 틀린 문제만 다시 보세요.">
+<meta name="theme-color" content="#dfe7f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#10141b" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="정보처리기사 실기 퀴즈 130제">
+<meta property="og:description" content="12개 과목 · 풀고, 채점하고, 틀린 문제만 다시.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://quiz-sigma-wine.vercel.app/">
+<meta property="og:image" content="https://quiz-sigma-wine.vercel.app/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="링으로 묶인 색색의 단어장 카드와 빨간 펜 동그라미, '정보처리기사 실기 퀴즈 130제' 제목">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="실기퀴즈">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/icon-192.svg">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&amp;text=%ED%95%A8%EC%A0%95%EB%8B%B5&amp;display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <nav class="nav">
-        <div class="nav-container">
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:0 1rem;height:48px;border-bottom:1px solid var(--border-subtle)">
-                <a href="index.html" class="nav-logo" style="padding:0;height:auto;border:none">정보처리기사 실기 퀴즈</a>
-                <button class="nav-toggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
-            </div>
-            <ul class="nav-links">
-                <li><a href="java.html">Java</a></li>
-                <li><a href="python.html">Python</a></li>
-                <li><a href="c.html">C언어</a></li>
-                <li><a href="sql.html">SQL</a></li>
-                <li><a href="network.html">네트워크</a></li>
-                <li><a href="os.html">운영체제</a></li>
-                <li><a href="software-engineering.html">소프트웨어공학</a></li>
-                <li><a href="db.html">DB설계</a></li>
-                <li><a href="algorithm.html">알고리즘</a></li>
-                <li><a href="uml.html">UML</a></li>
-                <li><a href="newtech.html">신기술</a></li>
-                <li><a href="integration.html">모의고사</a></li>
-            </ul>
+<body data-hub>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="brand"><span class="brand-ring" aria-hidden="true"></span>실기퀴즈</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="deck-nav" aria-label="과목 메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+  <nav id="deck-nav" class="deck-nav" aria-label="과목">
+    <a href="index.html" aria-current="page">홈</a>
+    <a href="java.html" data-group="code">Java</a>
+    <a href="python.html" data-group="code">Python</a>
+    <a href="c.html" data-group="code">C언어</a>
+    <a href="algorithm.html" data-group="code">알고리즘</a>
+    <a href="sql.html" data-group="data">SQL</a>
+    <a href="db.html" data-group="data">DB설계</a>
+    <a href="network.html" data-group="theory">네트워크</a>
+    <a href="os.html" data-group="theory">운영체제</a>
+    <a href="software-engineering.html" data-group="theory">소프트웨어공학</a>
+    <a href="uml.html" data-group="theory">UML</a>
+    <a href="newtech.html" data-group="new">신기술</a>
+    <a href="integration.html" data-group="exam">모의고사</a>
+  </nav>
+</header>
+
+<main>
+  <section class="desk-hero" aria-labelledby="hero-title">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="img/hero-decks-dark-900.webp 900w, img/hero-decks-dark.webp 1536w" sizes="100vw">
+      <img class="desk-hero-img" src="img/hero-decks.webp" srcset="img/hero-decks-900.webp 900w, img/hero-decks.webp 1536w" sizes="100vw" width="1536" height="1024" fetchpriority="high"
+        alt="책상 위에 링으로 묶인 노랑·민트·코랄 단어장 카드 묶음과 파란 표지의 두꺼운 묶음, 빨간 동그라미가 그려진 흰 카드와 빨간 펜">
+    </picture>
+    <div class="desk-hero-copy">
+      <h1 id="hero-title">정보처리기사 실기<br>합격 대비 퀴즈</h1>
+      <p class="lede">총 12개 과목, 130문제로 실기 시험을 완벽하게 준비하세요.</p>
+      <p class="sub">프로그래밍 출력 결과, SQL 쿼리, 네트워크/보안, 소프트웨어공학 등 핵심 영역을 모두 다룹니다.</p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="java.html#q-1" data-resume>
+          <span data-resume-label>첫 문제부터 풀기</span>
+          <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M4 10h11M11 5l5 5-5 5"/></svg>
+        </a>
+        <a class="btn-quiet" href="#decks-title" data-review hidden>틀린 문제 다시 보기</a>
+      </div>
+      <p class="hub-tally" data-hub-tally aria-live="polite"></p>
+    </div>
+  </section>
+
+  <div class="hub-main">
+    <section aria-labelledby="decks-title">
+      <h2 id="decks-title">과목별 퀴즈</h2>
+      <p class="section-lede">문제를 손으로 풀고 카드를 넘겨 답을 확인한 뒤, 맞았는지 틀렸는지 표시하세요. 기록은 이 브라우저에만 저장됩니다.</p>
+
+      <div class="deck-groups">
+        <div class="deck-group">
+          <h3>코드 실행 결과 <small>코드를 따라가며 출력 예측</small></h3>
+          <div class="deck-row">
+            <a href="java.html" class="deck" data-group="code" data-deck-card="java">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">Ja</span>
+              <h4 class="deck-name">Java 프로그래밍</h4>
+              <p class="deck-desc">클래스, 상속, 오버라이딩, 인터페이스, 컬렉션 등 Java 코드의 실행 결과를 예측하는 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+            <a href="python.html" class="deck" data-group="code" data-deck-card="python">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">Py</span>
+              <h4 class="deck-name">Python 프로그래밍</h4>
+              <p class="deck-desc">리스트, 딕셔너리, 슬라이싱, 함수, 클래스 등 Python 코드의 출력 결과를 맞추는 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+            <a href="c.html" class="deck" data-group="code" data-deck-card="c">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">C</span>
+              <h4 class="deck-name">C언어 프로그래밍</h4>
+              <p class="deck-desc">포인터, 배열, 구조체, 재귀함수 등 C언어 코드의 실행 결과를 분석하는 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+            <a href="algorithm.html" class="deck" data-group="code" data-deck-card="algorithm">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">AL</span>
+              <h4 class="deck-name">알고리즘</h4>
+              <p class="deck-desc">정렬, 탐색, 그래프, 동적 프로그래밍, 시간 복잡도 등 알고리즘 핵심 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+          </div>
         </div>
-    </nav>
 
-    <main class="main-content">
-        <section class="hero">
-            <h1>정보처리기사 실기<br>합격 대비 퀴즈</h1>
-            <p>총 12개 과목, 130문제로 실기 시험을 완벽하게 준비하세요.</p>
-            <p>프로그래밍 출력 결과, SQL 쿼리, 네트워크/보안, 소프트웨어공학 등 핵심 영역을 모두 다룹니다.</p>
-        </section>
+        <div class="deck-group">
+          <h3>SQL · 데이터베이스 <small>쿼리 작성과 설계</small></h3>
+          <div class="deck-row">
+            <a href="sql.html" class="deck" data-group="data" data-deck-card="sql">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">SQ</span>
+              <h4 class="deck-name">SQL 활용</h4>
+              <p class="deck-desc">SELECT, JOIN, GROUP BY, 서브쿼리, DDL/DML 등 SQL 쿼리 작성 및 결과 예측 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+            <a href="db.html" class="deck" data-group="data" data-deck-card="db">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">DB</span>
+              <h4 class="deck-name">데이터베이스 설계</h4>
+              <p class="deck-desc">정규화, ER 다이어그램, 트랜잭션, 인덱스, 관계 대수 등 DB 설계 관련 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+          </div>
+        </div>
 
-        <section class="index-section">
-            <h2>과목별 퀴즈</h2>
-            <div class="index-grid">
-                <a href="java.html" class="index-card">
-                    <div class="index-card-icon icon-java">Ja</div>
-                    <h3>Java 프로그래밍</h3>
-                    <p>클래스, 상속, 오버라이딩, 인터페이스, 컬렉션 등 Java 코드의 실행 결과를 예측하는 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="python.html" class="index-card">
-                    <div class="index-card-icon icon-python">Py</div>
-                    <h3>Python 프로그래밍</h3>
-                    <p>리스트, 딕셔너리, 슬라이싱, 함수, 클래스 등 Python 코드의 출력 결과를 맞추는 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="c.html" class="index-card">
-                    <div class="index-card-icon icon-c">C</div>
-                    <h3>C언어 프로그래밍</h3>
-                    <p>포인터, 배열, 구조체, 재귀함수 등 C언어 코드의 실행 결과를 분석하는 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="sql.html" class="index-card">
-                    <div class="index-card-icon icon-sql">SQ</div>
-                    <h3>SQL 활용</h3>
-                    <p>SELECT, JOIN, GROUP BY, 서브쿼리, DDL/DML 등 SQL 쿼리 작성 및 결과 예측 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="network.html" class="index-card">
-                    <div class="index-card-icon icon-network">NW</div>
-                    <h3>네트워크/보안</h3>
-                    <p>OSI 7계층, TCP/IP, 라우팅, 암호화, 보안 공격 유형 등 네트워크와 보안 관련 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="os.html" class="index-card">
-                    <div class="index-card-icon icon-os">OS</div>
-                    <h3>운영체제</h3>
-                    <p>프로세스 스케줄링, 메모리 관리, 교착상태, 페이지 교체 알고리즘 등 OS 핵심 개념 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="software-engineering.html" class="index-card">
-                    <div class="index-card-icon icon-se">SE</div>
-                    <h3>소프트웨어공학</h3>
-                    <p>개발 방법론, 테스트 기법, 형상관리, 요구사항 분석, 품질 관리 등 공학적 개념 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="db.html" class="index-card">
-                    <div class="index-card-icon icon-db">DB</div>
-                    <h3>데이터베이스 설계</h3>
-                    <p>정규화, ER 다이어그램, 트랜잭션, 인덱스, 관계 대수 등 DB 설계 관련 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="algorithm.html" class="index-card">
-                    <div class="index-card-icon icon-algo">AL</div>
-                    <h3>알고리즘</h3>
-                    <p>정렬, 탐색, 그래프, 동적 프로그래밍, 시간 복잡도 등 알고리즘 핵심 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="uml.html" class="index-card">
-                    <div class="index-card-icon icon-uml">UM</div>
-                    <h3>UML/디자인패턴</h3>
-                    <p>클래스 다이어그램, 시퀀스 다이어그램, GoF 디자인패턴, SOLID 원칙 등 설계 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="newtech.html" class="index-card">
-                    <div class="index-card-icon icon-newtech">NT</div>
-                    <h3>신기술 용어</h3>
-                    <p>클라우드, 빅데이터, IoT, AI, 블록체인, DevOps 등 최신 IT 기술 용어 문제</p>
-                    <span class="index-card-count">10문제</span>
-                </a>
-                <a href="integration.html" class="index-card index-card-featured">
-                    <div class="index-card-icon icon-integration">EX</div>
-                    <h3>통합 실전 모의고사</h3>
-                    <p>전 과목을 아우르는 실전 모의고사. 실제 시험처럼 다양한 유형의 문제를 풀어보세요.</p>
-                    <span class="index-card-count">20문제</span>
-                </a>
-            </div>
-        </section>
+        <div class="deck-group">
+          <h3>이론 · 개념 <small>용어와 원리 서술</small></h3>
+          <div class="deck-row">
+            <a href="network.html" class="deck" data-group="theory" data-deck-card="network">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">NW</span>
+              <h4 class="deck-name">네트워크/보안</h4>
+              <p class="deck-desc">OSI 7계층, TCP/IP, 라우팅, 암호화, 보안 공격 유형 등 네트워크와 보안 관련 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+            <a href="os.html" class="deck" data-group="theory" data-deck-card="os">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">OS</span>
+              <h4 class="deck-name">운영체제</h4>
+              <p class="deck-desc">프로세스 스케줄링, 메모리 관리, 교착상태, 페이지 교체 알고리즘 등 OS 핵심 개념 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+            <a href="software-engineering.html" class="deck" data-group="theory" data-deck-card="software-engineering">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">SE</span>
+              <h4 class="deck-name">소프트웨어공학</h4>
+              <p class="deck-desc">개발 방법론, 테스트 기법, 형상관리, 요구사항 분석, 품질 관리 등 공학적 개념 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+            <a href="uml.html" class="deck" data-group="theory" data-deck-card="uml">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">UM</span>
+              <h4 class="deck-name">UML/디자인패턴</h4>
+              <p class="deck-desc">클래스 다이어그램, 시퀀스 다이어그램, GoF 디자인패턴, SOLID 원칙 등 설계 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+          </div>
+        </div>
 
-        <section class="tips-section">
-            <h2>합격을 위한 학습 팁</h2>
-            <div class="concept-grid">
-                <div class="concept-card">
-                    <h3>코드 실행 결과 문제</h3>
-                    <p>Java, Python, C언어 코드를 직접 손으로 트레이싱하면서 풀어보세요. 변수의 값 변화를 하나씩 추적하는 연습이 핵심입니다.</p>
-                </div>
-                <div class="concept-card">
-                    <h3>반복 학습</h3>
-                    <p>틀린 문제는 반드시 다시 풀어보세요. 해설을 꼼꼼히 읽고, 왜 틀렸는지 이해하는 것이 중요합니다.</p>
-                </div>
-                <div class="concept-card">
-                    <h3>용어 암기</h3>
-                    <p>신기술 용어, 네트워크 프로토콜, 소프트웨어공학 용어는 영문 약어와 함께 정확히 암기하세요.</p>
-                </div>
-                <div class="concept-card">
-                    <h3>시간 관리</h3>
-                    <p>실기 시험은 시간이 부족할 수 있습니다. 모의고사를 통해 시간 배분 연습을 해보세요.</p>
-                </div>
-                <div class="concept-card">
-                    <h3>서술형 대비</h3>
-                    <p>단답형뿐 아니라 서술형 문제도 출제됩니다. 개념을 자신의 말로 설명할 수 있도록 연습하세요.</p>
-                </div>
-                <div class="concept-card">
-                    <h3>기출 분석</h3>
-                    <p>최근 기출문제 경향을 파악하고, 자주 출제되는 유형을 집중적으로 학습하세요.</p>
-                </div>
-            </div>
-        </section>
-    </main>
+        <div class="deck-group">
+          <h3>신기술 <small>최신 IT 용어</small></h3>
+          <div class="deck-row">
+            <a href="newtech.html" class="deck" data-group="new" data-deck-card="newtech">
+              <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">NT</span>
+              <h4 class="deck-name">신기술 용어</h4>
+              <p class="deck-desc">클라우드, 빅데이터, IoT, AI, 블록체인, DevOps 등 최신 IT 기술 용어 문제</p>
+              <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>10문제</span></span>
+            </a>
+          </div>
+        </div>
 
-    <footer class="footer">
-        <p>정보처리기사 실기 퀴즈 | 합격을 응원합니다.</p>
-    </footer>
-<script>
-document.querySelector('.nav-toggle').addEventListener('click', function() {
-  this.classList.toggle('active');
-  document.querySelector('.nav-links').classList.toggle('open');
-});
-</script>
-<script>
-if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw.js');
-}
-</script>
+        <div class="deck-group">
+          <h3>실전 <small>전 과목 통합</small></h3>
+          <a href="integration.html" class="deck deck-exam" data-group="exam" data-deck-card="integration">
+            <span class="deck-ring" aria-hidden="true"></span><span class="deck-tab" aria-hidden="true">EX</span>
+            <h4 class="deck-name">통합 실전 모의고사</h4>
+            <p class="deck-desc">전 과목을 아우르는 실전 모의고사. 실제 시험처럼 다양한 유형의 문제를 풀어보세요.</p>
+            <span class="deck-meta"><span class="deck-meter" data-deck-meter aria-hidden="true"></span><span data-deck-progress>20문제</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips" aria-labelledby="tips-title">
+      <h2 id="tips-title">합격을 위한 학습 팁</h2>
+      <ul class="tips-list">
+        <li>
+          <h3>코드 실행 결과 문제</h3>
+          <p>Java, Python, C언어 코드를 직접 손으로 트레이싱하면서 풀어보세요. 변수의 값 변화를 하나씩 추적하는 연습이 핵심입니다.</p>
+        </li>
+        <li>
+          <h3>반복 학습</h3>
+          <p>틀린 문제는 반드시 다시 풀어보세요. 해설을 꼼꼼히 읽고, 왜 틀렸는지 이해하는 것이 중요합니다.</p>
+        </li>
+        <li>
+          <h3>용어 암기</h3>
+          <p>신기술 용어, 네트워크 프로토콜, 소프트웨어공학 용어는 영문 약어와 함께 정확히 암기하세요.</p>
+        </li>
+        <li>
+          <h3>시간 관리</h3>
+          <p>실기 시험은 시간이 부족할 수 있습니다. 모의고사를 통해 시간 배분 연습을 해보세요.</p>
+        </li>
+        <li>
+          <h3>서술형 대비</h3>
+          <p>단답형뿐 아니라 서술형 문제도 출제됩니다. 개념을 자신의 말로 설명할 수 있도록 연습하세요.</p>
+        </li>
+        <li>
+          <h3>기출 분석</h3>
+          <p>최근 기출문제 경향을 파악하고, 자주 출제되는 유형을 집중적으로 학습하세요.</p>
+        </li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="hub-footer">
+  정보처리기사 실기 퀴즈 | 합격을 응원합니다. 채점 기록은 이 브라우저에만 저장됩니다.
+</footer>
+
+<script src="quiz.js" defer></script>
 </body>
 </html>

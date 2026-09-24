@@ -1,12 +1,12 @@
 {
   "name": "정보처리기사 실기 퀴즈",
   "short_name": "실기퀴즈",
-  "description": "정보처리기사 실기 시험 대비 퀴즈 - 12개 과목 130문제",
+  "description": "정보처리기사 실기 시험 대비 퀴즈 - 12개 과목 130문제, 스스로 채점하고 틀린 문제만 다시 보기",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#4f46e5",
+  "background_color": "#dde5ee",
+  "theme_color": "#dde5ee",
   "orientation": "portrait-primary",
   "icons": [
     {

@@ -1,4 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
-  <rect width="192" height="192" rx="38" fill="#4f46e5"/>
-  <text x="96" y="124" font-family="monospace" font-size="100" font-weight="bold" fill="#ffffff" text-anchor="middle">Q</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="192" height="192">
+  <rect width="512" height="512" rx="100" fill="#2f538c"/>
+  <rect x="100" y="146" width="340" height="276" rx="30" fill="#f48a7f"/>
+  <rect x="86" y="128" width="340" height="276" rx="30" fill="#f6ef77"/>
+  <rect x="80" y="110" width="340" height="276" rx="30" fill="#ffffff"/>
+  <circle cx="138" cy="166" r="20" fill="#2f538c"/>
+  <path d="M112 164 C 96 110, 150 70, 176 118" fill="none" stroke="#c9d1db" stroke-width="16" stroke-linecap="round"/>
+  <path d="M268 170c-52 0-92 34-92 84 0 48 38 84 88 84 52 0 90-36 90-84 0-46-38-82-92-80" fill="none" stroke="#cf2b22" stroke-width="22" stroke-linecap="round"/>
 </svg>

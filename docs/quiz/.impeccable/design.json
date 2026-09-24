@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-24T09:30:00Z",
+  "title": "Design System: 정보처리기사 실기 퀴즈",
+  "extensions": {
+    "colorMeta": {
+      "grading-red": { "role": "primary", "displayName": "Grading Red", "canonical": "#cf2b22" },
+      "ballpoint-ink": { "role": "primary", "displayName": "Ballpoint Ink", "canonical": "#18202c" },
+      "stock-code-yellow": { "role": "secondary", "displayName": "Code Card Yellow", "canonical": "#f6ef77" },
+      "stock-data-mint": { "role": "secondary", "displayName": "Data Card Mint", "canonical": "#a6d9c3" },
+      "stock-theory-coral": { "role": "secondary", "displayName": "Theory Card Coral", "canonical": "#f48a7f" },
+      "stock-new-lilac": { "role": "secondary", "displayName": "New-Tech Card Lilac", "canonical": "#c9b8f4" },
+      "stock-exam-cobalt": { "role": "tertiary", "displayName": "Mock Exam Cobalt", "canonical": "#2f538c" },
+      "desk": { "role": "neutral", "displayName": "Desk Laminate", "canonical": "#dde5ee" },
+      "card-stock": { "role": "neutral", "displayName": "Card Stock", "canonical": "#ffffff" },
+      "night-desk": { "role": "neutral", "displayName": "Night Desk", "canonical": "#11141a" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hub hero headline only." },
+      "headline": { "displayName": "Deck Cover", "purpose": "Subject page cover title." },
+      "title": { "displayName": "Title", "purpose": "Deck names and question numbers." },
+      "code": { "displayName": "Code", "purpose": "Code blocks and answers." },
+      "pen": { "displayName": "Red Pen", "purpose": "Only the 정답 and 함정 labels." }
+    },
+    "shadows": [
+      { "name": "card-rest", "value": "0 1px 1px rgba(24,32,44,.06), 0 10px 24px -14px rgba(24,32,44,.28)", "purpose": "Every card and sheet at rest." },
+      { "name": "card-lift", "value": "0 2px 3px rgba(24,32,44,.08), 0 18px 36px -18px rgba(24,32,44,.4)", "purpose": "Hub deck hover and targeted card." },
+      { "name": "stack-edges", "value": "0 6px 0 -3px var(--card), 0 7px 0 -3px var(--card-edge), 0 12px 0 -6px var(--paper-2), 0 13px 0 -6px var(--card-edge)", "purpose": "Cards stacked beneath a cover; covers and hub decks only." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "All transitions." },
+      { "name": "flip-down", "value": "rotateX(-72deg) to 0 from the top edge, 460ms", "purpose": "Answer face swinging down from the ring." },
+      { "name": "pen-stroke", "value": "stroke-dashoffset 180 to 0, 420ms", "purpose": "Drawing the ○ / ✕ mark on grade." }
+    ],
+    "breakpoints": [
+      { "name": "phone", "value": "768px" },
+      { "name": "narrow", "value": "400px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Resume action on the hub.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">이어서 풀기 · Java 3번</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-height:52px;padding:0 1.4rem;border-radius:12px;background:#18202c;color:#fff;font-weight:800;text-decoration:none;box-shadow:0 10px 22px -12px rgba(24,32,44,.7);transition:transform .2s cubic-bezier(.16,1,.3,1)}.ds-btn-primary:hover{transform:translateY(-2px)}.ds-btn-primary:focus-visible{outline:2px solid #18202c;outline-offset:3px}"
+    },
+    {
+      "name": "Review Button",
+      "kind": "button",
+      "refersTo": "button-review",
+      "description": "Jump to the deck with the most misses, filtered to wrong cards.",
+      "html": "<a class=\"ds-btn-review\" href=\"#\">틀린 문제 다시 보기 · SQL 2개</a>",
+      "css": ".ds-btn-review{display:inline-flex;align-items:center;min-height:52px;padding:0 1.4rem;border-radius:12px;background:rgba(255,255,255,.82);color:#a8231b;font-weight:800;text-decoration:none;box-shadow:inset 0 0 0 1.5px #cf2b22}.ds-btn-review:hover{background:#fff}"
+    },
+    {
+      "name": "Grade Buttons",
+      "kind": "custom",
+      "refersTo": "grade-button",
+      "description": "Self-grading after reading the answer.",
+      "html": "<div class=\"ds-grade\"><button class=\"ds-grade-btn\" aria-pressed=\"true\"><svg viewBox=\"0 0 64 64\"><path d=\"M33 7c-14 0-26 10-26 25 0 14 11 25 25 25 15 0 25-11 25-25C57 18 46 8 31 9\"/></svg>맞았어요</button><button class=\"ds-grade-btn\" aria-pressed=\"false\"><svg viewBox=\"0 0 64 64\"><path d=\"M12 12c13 12 27 26 40 41\"/><path d=\"M52 10C39 24 26 38 11 53\"/></svg>틀렸어요</button></div>",
+      "css": ".ds-grade{display:flex;gap:.6rem}.ds-grade-btn{display:inline-flex;align-items:center;gap:.5rem;min-height:44px;padding:0 1.05rem 0 .8rem;border:0;border-radius:10px;background:#fff;color:#18202c;font-weight:700;box-shadow:0 0 0 1px #c7d1dd;cursor:pointer}.ds-grade-btn svg{width:20px;height:20px;fill:none;stroke:#cf2b22;stroke-width:6;stroke-linecap:round}.ds-grade-btn:hover{box-shadow:0 0 0 1.5px #cf2b22}.ds-grade-btn[aria-pressed=true]{background:#fde9e6;box-shadow:0 0 0 2px #cf2b22}"
+    },
+    {
+      "name": "Filter Chips",
+      "kind": "chip",
+      "refersTo": "filter-chip-selected",
+      "description": "전체 / 안 푼 문제 / 틀린 문제 filter.",
+      "html": "<div class=\"ds-filters\"><button aria-pressed=\"true\">전체</button><button aria-pressed=\"false\">안 푼 문제</button><button aria-pressed=\"false\">틀린 문제</button></div>",
+      "css": ".ds-filters{display:inline-flex;padding:3px;gap:2px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px #c7d1dd}.ds-filters button{min-height:34px;padding:0 .85rem;border:0;border-radius:999px;background:transparent;color:#465163;font-weight:600;cursor:pointer}.ds-filters button:hover{color:#18202c}.ds-filters button[aria-pressed=true]{background:#18202c;color:#dde5ee}"
+    },
+    {
+      "name": "Hub Deck",
+      "kind": "card",
+      "refersTo": "question-card",
+      "description": "One subject as a deck of dyed card stock.",
+      "html": "<a class=\"ds-deck\" href=\"#\"><strong>SQL 활용</strong><span>10문제</span></a>",
+      "css": ".ds-deck{display:flex;flex-direction:column;gap:.5rem;padding:3rem 1.35rem 1.25rem;border-radius:16px;background:#a6d9c3;color:#18202c;text-decoration:none;box-shadow:0 5px 0 -2px #cbe8db,0 6px 0 -2px #5b776b,0 1px 1px rgba(24,32,44,.06),0 10px 24px -14px rgba(24,32,44,.28);transition:transform .26s cubic-bezier(.16,1,.3,1)}.ds-deck:hover{transform:translateY(-4px) rotate(-.6deg)}.ds-deck strong{font-size:1.25rem;font-weight:800}"
+    },
+    {
+      "name": "Deck Nav",
+      "kind": "nav",
+      "description": "Subject tabs with dye swatches.",
+      "html": "<nav class=\"ds-nav\"><a aria-current=\"page\">홈</a><a><i style=\"background:#f6ef77\"></i>Java</a><a><i style=\"background:#a6d9c3\"></i>SQL</a></nav>",
+      "css": ".ds-nav{display:flex;gap:.25rem}.ds-nav a{display:inline-flex;align-items:center;gap:.45rem;min-height:36px;padding:0 .75rem;border-radius:999px;font-weight:600;color:#465163}.ds-nav a:hover{background:#fff;color:#18202c}.ds-nav a[aria-current=page]{background:#18202c;color:#dde5ee}.ds-nav i{width:9px;height:12px;border-radius:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Ring-Bound Deck",
+    "overview": "Every subject is a 단어장 deck of dyed card stock on a steel ring, and every problem is a white card on that ring. The candidate reads the card, works it out by hand, flips it down from the ring to see the back, and grades it with a red ballpoint: a circle for right, a cross for wrong. The system is an Operate surface first; colour lives in the covers and the four subject dyes, never in chrome.",
+    "keyCharacteristics": ["Card stock, rings and punched holes are the structure, not decoration.", "Four subject dyes plus one exam cobalt; grading red is the only other hue.", "Korean-first typography with keep-all line breaking.", "One signature motion: the answer face swings down from the ring hinge."],
+    "rules": [
+      { "name": "The Four Dyes Rule", "body": "Subject colour comes only from the four stock dyes and exam cobalt, assigned by subject group. Never add a per-subject hue.", "section": "colors" },
+      { "name": "The Red Pen Rule", "body": "Grading red means graded or answer. Do not use it for decoration, links or errors unrelated to grading.", "section": "colors" },
+      { "name": "The Keep-All Rule", "body": "Korean text uses word-break: keep-all; never let a word split mid-syllable-block.", "section": "typography" },
+      { "name": "The Pen Is Rare Rule", "body": "The pen face appears only for 정답 and 함정 labels. It never sets sentences.", "section": "typography" },
+      { "name": "The Stack Only Rule", "body": "Offset, zero-blur layers are allowed only to draw the cards under a cover. Nowhere else.", "section": "elevation" }
+    ],
+    "dos": ["Do take subject colour from the group dye (see The Four Dyes Rule).", "Do keep answers in the code face inside the red-outlined 정답 box, preserving line breaks for multi-line output.", "Do give every new card-like surface the punched hole, and every deck cover the ring.", "Do provide a dark-mode value for every new token; dark mode is a night desk, not an inverted page."],
+    "donts": ["Don't add gamification (points, streaks, badges); grading is a private red-pen mark.", "Don't use colored left borders thicker than 1px on steps, notes or callouts.", "Don't use gradient text, glass panels or eyebrow labels above headings.", "Don't introduce a sixth dye or a second accent hue."]
+  }
+}
